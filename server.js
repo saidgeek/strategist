@@ -32,7 +32,7 @@ var passport = require('./lib/config/passport');
 // Setup Express
 var app = express();
 require('./lib/config/express')(app);
-require('./lib/routes')(app);
+require('./lib/routes')(app, passport);
 
 // Start server
 app.listen(config.port, config.ip, function () {
