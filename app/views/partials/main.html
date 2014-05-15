@@ -1,22 +1,47 @@
-<div ng-include="'partials/navbar'"></div>
+      <div class="relative">
+        <div class="contenedor">
 
-<div class="jumbotron">
-  <h1>'Allo, 'Allo <span ng-show="currentUser">{{ currentUser.name }}</span>!</h1>
-  <p class="lead">
-    <img src="images/yeoman.png" alt="I'm Yeoman"><br>
-    Always a pleasure scaffolding your apps.
-  </p>
-  <p><a class="btn btn-lg btn-success" ng-href="#">Splendid!</a></p>
-  <p><a class="btn btn-lg btn-success" href="/api/auth/facebook" target="_self">facebook!</a></p>
-</div>
+          <div class="logos animate">
+            <div class="mmt">
+              <a href="#;">
+                <img src="images/mimejortactica-logo.png" alt="Mi Mejor Táctica. LG">
+              </a>
+            </div>
+            <div class="ecdf">
+              <a href="">
+                <span><img src="images/estadio-cdf-logo.png" alt="Estadio CDF"></span>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. <span>ver más</span>.</p>
+              </a>
+            </div>
+            <div class="elg">
+              <a href="">
+                <span><img src="images/estadio-lg-logo.png" alt="Estadio LG"></span>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. <span>ver más</span>.</p>
+              </a>
+            </div>
+          </div><!--// .logos //-->
+            
+          <div class="hinchas animate">
+            <div class="imghinchas"><img src="images/hinchas.png" alt="hinchas"></div>
+          </div><!--// .hinchas //-->
 
-<div class="row marketing">
-  <div ng-repeat="thing in awesomeThings">
-      <h4>{{thing.name}}</h4>
-      <p>{{thing.info}}</p>
-  </div>
-</div>
+          <div class="forma animate">
+            <div class="txt">
+              <h1>¡Arma tu mejor táctica y sale a ganar!</h1>
+              <p>Por cada partido de la Selección en el Mundial, comparte tu táctica ganadora en 140 caracteres. Vota y gánate la Smart TV que mereces <span>+ x mes gratis de CDF.</span></p>
+              <ul class="logeo animate">
+                <li class="facebook"><a href="/api/auth/facebook" target="_self">Ingresa vía <span>Facebook</span></a></li>
+                <li class="twitter"><a href="/api/auth/twitter" target="_self">Ingresa vía <span>Twitter</span></a></a></li>
+              </ul>
+            </div>
+            <div class="tv"><img src="images/tv-lg.png" alt="Smart TV LG"></div>
+          </div><!--// .forma //-->
+            
+          <div class="last">
+            <div>
+              <a href="http://www.lg.com/cl/televisores" target="_blank" title="LG. Life's Good"><img src="images/LG-logo.png" alt="LG logo"></a>
+            </div>
+          </div>
 
-<div class="footer">
-  <p>♥ from the Yeoman team</p>
-</div>
+        </div><!--// .contenedor //-->
+      </div><!--// .relative //-->
