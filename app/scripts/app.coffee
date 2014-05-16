@@ -14,7 +14,7 @@ angular.module('strategistApp', [
     $stateProvider
       .state 'home',
         url: '/'
-        templateUrl: 'partials/main'
+        templateUrl: 'partials/site/index'
         authenticate: false
       .state 'strategy',
         url: '/mi-mejor-tactica/'
