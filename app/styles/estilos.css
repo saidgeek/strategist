@@ -88,8 +88,10 @@ a, a:hover, a:focus{
 }
 #menu ul.apps{
   float: right;
-  width: 270px;
+  width: 229px;
   background: none;
+  border-left: 1px solid rgba(255,255,255,0.2);
+  margin-left: 40px;
 }
 #menu ul li{
     display: table-cell;
@@ -111,10 +113,6 @@ a, a:hover, a:focus{
     background: url("../images/bkg-li-menu.png") no-repeat 0 0;
     line-height: 1.55em;
     color: #000;
-}
-#menu ul.apps li a span{
-    text-indent: -999px;
-    text-align: left;
 }
 #menu ul.apps li.applg a span{
     background: url("../images/icon-apps.png") no-repeat 100% 0;
@@ -170,7 +168,7 @@ a, a:hover, a:focus{
 }
 .logos p{
     font: 12px 'geogrotesque_ullgultralight';
-    line-height: 1.8em;
+    line-height: 1.3em;
 }
 .logos .mmt{
     padding: 0 0 0 20px;
@@ -215,9 +213,21 @@ a, a:hover, a:focus{
     z-index: 10;
     bottom: 0;
 }
+.forma .number{
+  display: block;
+  width: 56px;
+  height: 56px;
+  text-align: center;
+  font: normal 44px 'geogrotesque_lglight';
+  background: url("../images/bkg-numero.png") no-repeat 0 0;
+  color: #ee2642;
+  position: absolute;
+  left: 20px;
+  top: 0;
+}
 .forma .txt{
-    width: 460px;
-    margin: 0 0 0 87px;
+    width: 480px;
+    margin: 0 0 0 60px;
     padding: 35px 0 0 0;
 }
 .forma .txt h1{
@@ -230,14 +240,16 @@ a, a:hover, a:focus{
 .forma .txt p{
     font: 13px 'geogrotesque_ullgultralight';
     text-transform: uppercase;
-    margin: 10px 0;
-    line-height: 2em;
+    margin: 20px 0;
+    line-height: 1.6em;
     padding: 0;
     text-align: center;
 }
+.forma .txt p strong{
+    font:normal 13px 'geogrotesque_smbdsemibold';
+}
 .forma .txt p span{
     display: block;
-    font-family: 'geogrotesque_smbdsemibold';
 }
 .forma ul.logeo{
     margin: 0;
@@ -341,6 +353,20 @@ a, a:hover, a:focus{
 .last{
     padding: 12px 0;
     text-align: right;
+}
+.last ul{
+  float: left;
+  list-style: none;
+  padding: 18px 0;
+  margin: 0;
+}
+.last ul li a{
+  color: #fff;
+  font: 11px 'geogrotesque_ullgultralight';
+  text-transform: uppercase;
+}
+.last ul li a:hover{
+  text-decoration: underline;
 }
 /* loader */
 #loader{
@@ -455,3 +481,93 @@ a, a:hover, a:focus{
     transition: all 500ms ease;  
 }
 /* fin animacion de home */
+
+
+.overlay{
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.7);
+  z-index: 990;
+}
+
+.overlay .lightbox{
+  width: 340px;
+  height: 340px;
+  padding: 30px;
+  background: url("../images/lb-login.png") no-repeat 0 0;
+  position: absolute;
+  top:50%;
+  left: 50%;
+  margin: -200px 0 0 -200px;
+}
+.overlay .lightbox .term-cond{
+  height: 220px;
+  overflow: auto;
+  font: 13px 'geogrotesque_ullgultralight';
+  text-align: justify;
+}
+.overlay .lightbox .term-cond h2{
+  margin: 0;
+  padding: 0;
+  font: normal 18px 'geogrotesque_bdbold';
+  text-transform: uppercase;
+}
+.overlay .lightbox .term-cond p{
+  margin: 15px 15px 15px 0;
+  line-height: 1.5em;
+}
+
+.overlay .lightbox .form{
+  display: table;
+  padding: 20px 0 0 0;
+  margin: 0 auto;
+}
+.overlay .lightbox .form .cell{
+  display: table-cell;
+  vertical-align: middle;
+}
+.overlay .lightbox .form .cell .check{
+  width: 17px;
+  height: 17px;
+  overflow: hidden;
+  background: url("../images/icon-checkbox.png") no-repeat 0 0;
+  margin: 0 10px 0 0;
+  cursor: pointer;
+}
+.overlay .lightbox .form .cell .check.checked{
+  background: url("../images/icon-checkbox.png") no-repeat 0 100%;
+}
+.overlay .lightbox .form .cell input{
+  display: none;
+
+}
+.overlay .lightbox input.confirmar{
+  background: #f1f1f1;
+  display: block;
+  padding: 8px 21px;
+  color: #ee2642;
+  font: normal 14px 'geogrotesque_bdbold';
+  text-transform: uppercase;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  line-height: 1.8em;
+  position: relative;
+  -webkit-box-shadow: 0 3px 0 0 #cacbd2;
+  box-shadow: 0 3px 0 0 #cacbd2;
+  border: none;
+  outline: none;
+  margin: 15px auto 0 auto;
+}
+.overlay .lightbox input.confirmar:active{
+  margin: 17px auto 0 auto;
+  -webkit-box-shadow: 0 1px 0 0 #cacbd2;
+  box-shadow: 0 1px 0 0 #cacbd2;
+}
+
+
+
+
+
