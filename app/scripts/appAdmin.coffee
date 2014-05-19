@@ -12,12 +12,13 @@ angular.module('strategistApp', [
     $stateProvider
       .state 'login',
         url: '/admin'
+        controller: 'LoginCtrl'
         templateUrl: 'partials/admin/login'
         authenticate: false
       .state 'moderate',
         url: '/admin/moderar/'
         templateUrl: 'partials/admin/index'
-        authenticate: false
+        authenticate: true
 
     $locationProvider.html5Mode true
   
@@ -40,21 +41,9 @@ angular.module('strategistApp', [
       return config;
 
   .run ($rootScope, $state, Auth, $timeout) ->
-    
     # Redirect to login if route requires auth and you're not logged in
     $rootScope.$on '$stateChangeStart', (event, toState, toParams, fromParams) ->
-      angular.element("#loader").show();
-      # if toState.authenticate and not Auth.isLoggedIn()
-      #   $state.transitionTo 'home'
-      #   event.preventDefault()
-
-    $rootScope.$on '$viewContentLoaded', (event, toState, toParams, fromParams) ->
-      angular.element("#loader").fadeOut("slow");
-
-      $timeout () =>
-        $('.hinchas').removeClass('animate');
-      , 600
-
-      $timeout () =>
-        $('.forma').removeClass('animate');
-      , 350
+      console.log 'toState.authenticate:', toState.authenticate
+      if toState.authenticate and not Auth.isLoggedIn()
+        $state.transitionTo 'login'
+        event.preventDefault()
