@@ -2,7 +2,8 @@ angular.module('strategistApp', [
   'ngCookies',
   'ngResource',
   'ngSanitize',
-  'ui.router'
+  'ui.router',
+  'ui.bootstrap'
 ])
   .config ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) ->
     $httpProvider.interceptors.push 'noCacheInterceptor'
@@ -11,14 +12,21 @@ angular.module('strategistApp', [
 
     $stateProvider
       .state 'login',
-        url: '/admin'
+        url: '/admin/login/'
         controller: 'LoginCtrl'
         templateUrl: 'partials/admin/login'
         authenticate: false
-      .state 'moderate',
-        url: '/admin/moderar/'
-        templateUrl: 'partials/admin/index'
+      .state 'admin',
+        templateUrl: 'partials/admin/layout'
         authenticate: true
+      .state 'admin.moderate',
+        url: '/admin/moderar/'
+        controller: 'ModerateCtrl'
+        views:
+          'layout':
+            templateUrl: 'partials/admin/index'
+        authenticate: true
+
 
     $locationProvider.html5Mode true
   

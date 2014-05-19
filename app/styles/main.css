@@ -14,3 +14,14 @@ body {
   left: 50%;
   margin-left: -150px;
 }
+
+.container #layout {
+  margin-top: 50px;
+}
+
+.container #layout .row.item {
+  position: relative;
+  width: 32.4%;
+  margin: 5px;
+  float: left;
+}
