@@ -143,7 +143,7 @@ a, a:hover, a:focus{
     z-index: 100;
 }
 .pattern{
-    position: absolute;
+    position: fixed;
     left: 0;
     top: 0;
     right: 0;
@@ -453,12 +453,11 @@ a, a:hover, a:focus{
     top: -60px;
     opacity: 0;
 }
-.hinchas.animate, .forma.animate{
+.hinchas.animate, .forma.animate, .contador.animate{
     position: relative;
     bottom: -60px;
     opacity: 0;
 }
-
 .hinchas.animate, .forma.animate, #menu.animate, .logos.animate, #menu ul li a, #menu ul li a:hover, #menu ul li a span, #menu ul li a:hover span, .logos .mmt img, .logos .mmt:hover img{
     -webkit-transition: all 300ms ease;
     -moz-transition: all 300ms ease;
@@ -473,7 +472,7 @@ a, a:hover, a:focus{
     -o-transition: all 300ms ease;
     transition: all 300ms ease;
 }
-.hinchas, .forma{
+.hinchas, .forma, .contador.animate, .contador{
     -webkit-transition: all 500ms ease;
     -moz-transition: all 500ms ease;
     -ms-transition: all 500ms ease;
@@ -542,7 +541,6 @@ a, a:hover, a:focus{
 }
 .overlay .lightbox .form .cell input{
   display: none;
-
 }
 .overlay .lightbox input.confirmar{
   background: #f1f1f1;
@@ -566,7 +564,145 @@ a, a:hover, a:focus{
   -webkit-box-shadow: 0 1px 0 0 #cacbd2;
   box-shadow: 0 1px 0 0 #cacbd2;
 }
+/*----// PASO 2//----*/
 
+#tactica .hinchas{
+  margin: 0;
+}
+#tactica .hinchas ul.liketable{
+  display: table;
+  width: 68%;
+  margin: 0 auto;
+  padding: 0;
+}
+#tactica .hinchas ul.liketable li{
+  display: table-cell;
+  vertical-align: top;
+}
+#tactica .hinchas ul.liketable li.vs{
+  padding: 20px 0 0 0;
+}
+#tactica .forma{
+  background: url("../images/forma-2.png") no-repeat 50% 0;
+  margin: -80px auto 0 auto;
+  height: 215px;
+}
+#tactica .forma .txt{
+  margin: 0 auto;
+  width: 590px;
+}
+#tactica .forma .txt p{
+  margin: 10px;
+  line-height: 2em;
+}
+.contador{
+  text-align: center;
+  margin: -10px 0 30px 0;
+  position: relative;
+  bottom: 0;
+  opacity: 1;
+}
+.contador p{
+  text-transform: uppercase;
+  font-family: 'geogrotesque_lglight';
+  margin:10px 0 0 0;
+}
+.contador p.faltan{
+  font: normal 26px 'geogrotesque_bdbold';
+  text-transform: uppercase;
+  margin: 0;
+}
+#defaultCountdown{
+  background: rgba(38,36,44,0.7);
+  display: table;
+  margin: 0 auto;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+}
+#defaultCountdown .countdown-section{
+  display: table-cell;
+  padding: 10px 13px 10px 10px;
+  text-align: center;
+  background: url("../images/two-dots.png") no-repeat 100% 0;
+  width: 30px;
+}
+#defaultCountdown .countdown-section:last-child{
+  padding: 10px;
+  background: none;
+}
+#defaultCountdown .countdown-section .countdown-amount{
+  font: 26px 'geogrotesque_bdbold';
+  display: block;
+  color: #fff;
+}
+#defaultCountdown .countdown-section .countdown-period{
+  font: 12px 'geogrotesque_lglight';
+  color: #ee2642;
+  text-transform: uppercase;
+}
+form{
+  margin: 0;
+  padding: 0;
+}
+form textarea{
+  background: #ad293b;
+  border: none;
+  padding: 15px;
+  width: 100%;
+  height: 80px;
+  resize: none;
+  color: #fff;
+  font: 14px 'geogrotesque_lglight'; 
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+form textarea:focus{
+  outline: none;
+}
+::-webkit-input-placeholder {
+  color: #fa657a;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+  color: #fa657a;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+  color: #fa657a;
+}
+
+:-ms-input-placeholder {  
+  color: #fa657a;
+}
+form input.submit {
+  background: #f1f1f1;
+  display: block;
+  padding: 8px 21px;
+  color: #ee2642;
+  font: normal 14px 'geogrotesque_bdbold';
+  text-transform: uppercase;
+  border-radius: 3px;
+  line-height: 1.8em;
+  position: relative;
+  box-shadow: 0 3px 0 0 #cacbd2;
+  border: none;
+  outline: none;
+  margin: 15px auto 0 auto;
+}
+form#post textarea{
+  width: 80%;
+  float: left;
+}
+form#post input.submit{
+  float: right;
+  margin: 35px 0 0 0;
+}
+form#post input.submit:active{
+  margin: 37px 0 0 0;
+  box-shadow: 0 1px 0 0 #cacbd2;
+}
+/*----// FIN PASO 2//----*/
 
 
 

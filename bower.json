@@ -13,6 +13,7 @@
     "angular-route": ">=1.2.*",
     "modernizr": "~2.8.1",
     "angular-ui-router": "~0.2.10",
+    "countdown": "~1.0.1",
     "angular-bootstrap": "~0.11.0"
   },
   "devDependencies": {
