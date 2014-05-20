@@ -18,6 +18,7 @@ angular.module('strategistApp', [
         authenticate: false
       .state 'admin',
         templateUrl: 'partials/admin/layout'
+        controller: 'MenuCtrl'
         authenticate: true
       .state 'admin.moderate',
         url: '/admin/moderar/'
@@ -41,7 +42,7 @@ angular.module('strategistApp', [
     ]
   .factory 'noCacheInterceptor', () =>
     request: (config) ->
-      if config.method is 'GET' and config.url.indexOf('partials/') is -1 and config.url.indexOf('directives/')
+      if config.method is 'GET' and config.url.indexOf('partials/') is -1 and config.url.indexOf('directives/') is -1 and config.url.indexOf('template/') is -1
         separator = '&'
         if config.url.indexOf('?') is -1
           separator = '?'
