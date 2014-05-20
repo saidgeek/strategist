@@ -48,7 +48,7 @@ module.exports = function (grunt) {
     },
     watch: {
       coffee: {
-        files: ['<%= yeoman.app %>/scripts/{,*/**/}*.{coffee,litcoffee,coffee.md}'],
+        files: ['<%= yeoman.app %>/scripts/{,*/**/**/}*.{coffee,litcoffee,coffee.md}'],
         tasks: ['newer:coffee:dist']
       },
       coffeeTest: {
@@ -64,9 +64,9 @@ module.exports = function (grunt) {
       },
       livereload: {
         files: [
-          '<%= yeoman.app %>/views/{,*/**/*}*.{html,jade}',
+          '<%= yeoman.app %>/views/{,*/**/**/*}*.{html,jade}',
           '{.tmp,<%= yeoman.app %>}/styles/{,*//*}*.css',
-          '{.tmp,<%= yeoman.app %>}/scripts/{,*//*}*.js',
+          '{.tmp,<%= yeoman.app %>}/scripts/{,*/**/**/*}*.js',
           '<%= yeoman.app %>/images/{,*//*}*.{png,jpg,jpeg,gif,webp,svg}'
         ],
 
@@ -196,7 +196,7 @@ module.exports = function (grunt) {
         files: [{
           expand: true,
           cwd: '<%= yeoman.app %>/scripts',
-          src: '{,*/**/}*.coffee',
+          src: '{,*/**/**/}*.coffee',
           dest: '.tmp/scripts',
           ext: '.js'
         }]

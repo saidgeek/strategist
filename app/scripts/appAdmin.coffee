@@ -2,7 +2,8 @@ angular.module('strategistApp', [
   'ngCookies',
   'ngResource',
   'ngSanitize',
-  'ui.router'
+  'ui.router',
+  'ui.bootstrap'
 ])
   .config ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) ->
     $httpProvider.interceptors.push 'noCacheInterceptor'
@@ -11,13 +12,21 @@ angular.module('strategistApp', [
 
     $stateProvider
       .state 'login',
-        url: '/admin'
+        url: '/admin/login/'
+        controller: 'LoginCtrl'
         templateUrl: 'partials/admin/login'
         authenticate: false
-      .state 'moderate',
+      .state 'admin',
+        templateUrl: 'partials/admin/layout'
+        authenticate: true
+      .state 'admin.moderate',
         url: '/admin/moderar/'
-        templateUrl: 'partials/admin/index'
-        authenticate: false
+        controller: 'ModerateCtrl'
+        views:
+          'layout':
+            templateUrl: 'partials/admin/index'
+        authenticate: true
+
 
     $locationProvider.html5Mode true
   
@@ -40,21 +49,9 @@ angular.module('strategistApp', [
       return config;
 
   .run ($rootScope, $state, Auth, $timeout) ->
-    
     # Redirect to login if route requires auth and you're not logged in
     $rootScope.$on '$stateChangeStart', (event, toState, toParams, fromParams) ->
-      angular.element("#loader").show();
-      # if toState.authenticate and not Auth.isLoggedIn()
-      #   $state.transitionTo 'home'
-      #   event.preventDefault()
-
-    $rootScope.$on '$viewContentLoaded', (event, toState, toParams, fromParams) ->
-      angular.element("#loader").fadeOut("slow");
-
-      $timeout () =>
-        $('.hinchas').removeClass('animate');
-      , 600
-
-      $timeout () =>
-        $('.forma').removeClass('animate');
-      , 350
+      console.log 'toState.authenticate:', toState.authenticate
+      if toState.authenticate and not Auth.isLoggedIn()
+        $state.transitionTo 'login'
+        event.preventDefault()
