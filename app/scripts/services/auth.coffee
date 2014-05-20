@@ -50,14 +50,14 @@ angular.module('strategistApp')
     @param  {Function} callback - optional
     @return {Promise}
     ###
-    createUser: (user, callback) ->
-      cb = callback or angular.noop
-      User.save(user, (user) ->
-        $rootScope.currentUser = user
-        cb user
-      , (err) ->
-        cb err
-      ).$promise
+    # createUser: (user, callback) ->
+    #   cb = callback or angular.noop
+    #   User.save(user, (user) ->
+    #     $rootScope.currentUser = user
+    #     cb user
+    #   , (err) ->
+    #     cb err
+    #   ).$promise
 
     
     ###
