@@ -3,7 +3,8 @@ angular.module('strategistApp', [
   'ngResource',
   'ngSanitize',
   'ui.router',
-  'ui.bootstrap'
+  'ui.bootstrap',
+  'ui.bootstrap.datetimepicker'
 ])
   .config ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) ->
     $httpProvider.interceptors.push 'noCacheInterceptor'
@@ -26,6 +27,13 @@ angular.module('strategistApp', [
         views:
           'layout':
             templateUrl: 'partials/admin/index'
+        authenticate: true
+      .state 'admin.match',
+        url: '/admin/partidos/'
+        views:
+          'layout':
+            templateUrl: 'partials/admin/match'
+            controller: 'MatchCtrl'
         authenticate: true
 
 
