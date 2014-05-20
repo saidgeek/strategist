@@ -12,7 +12,8 @@
     "angular-sanitize": ">=1.2.*",
     "angular-route": ">=1.2.*",
     "modernizr": "~2.8.1",
-    "angular-ui-router": "~0.2.10"
+    "angular-ui-router": "~0.2.10",
+    "countdown": "~1.0.1"
   },
   "devDependencies": {
     "angular-mocks": ">=1.2.*",

@@ -76,3 +76,7 @@ angular.module('strategistApp', [
       $timeout () =>
         $('.forma').removeClass('animate');
       , 350
+
+      $timeout () =>
+        $('.contador').removeClass('animate');
+      , 850

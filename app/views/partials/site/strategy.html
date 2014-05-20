@@ -1,0 +1,69 @@
+        <div class="relative" id="tactica">
+            <div class="contenedor">
+                
+                <div class="logos">
+                    <div class="mmt">
+                        <a href="#;">
+                            <img src="images/mimejortactica-logo.png" alt="Mi Mejor Táctica. LG">
+                        </a>
+                    </div>
+                    <div class="ecdf">
+                        <a href="">
+                            <span><img src="images/estadio-cdf-logo.png" alt="Estadio CDF"></span>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. <span>ver más</span>.</p>
+                        </a>
+                    </div>
+                    <div class="elg">
+                        <a href="">
+                            <span><img src="images/estadio-lg-logo.png" alt="Estadio LG"></span>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. <span>ver más</span>.</p>
+                        </a>
+                    </div>
+                </div><!--// .logos //-->
+                
+                <div class="contador animate">
+                    <p class="faltan">Faltan</p>
+                    <div id="defaultCountdown"></div>
+                    <p>para el próximo encuentro de la Selección</p>
+                </div>
+
+                <div class="hinchas animate">
+                    <ul class="liketable">
+                        <li><img src="images/chile.png" alt="Chile"></li>
+                        <li class="vs"><img src="images/vs.png" alt="v/s"></li>
+                        <li><img src="images/holanda.png" alt="Holanda"></li>
+                    </ul>
+                </div><!--// .hinchas //-->
+
+                <div class="forma animate">
+                    <div class="txt">
+                        <h1>¿Cuál es tu mejor táctica para que Chile triunfe?</h1>
+                        <p>Escríbela aquí en 140 caracteres y consigue votos para obtener más posibilidades de ganar.</p>
+                        <form action="" id="post">
+                            <textarea name="elpost" id="elpost" placeholder="Escribe tu táctica aquí"></textarea>
+                            <input type="submit" value="Enviar" class="submit">
+                        </form>
+                        <span class="number">2</span>
+                    </div>
+                </div><!--// .forma //-->
+                
+                <div class="last">
+                    <div>
+                        <a href="http://www.lg.com/cl/televisores" target="_blank" title="LG. Life's Good"><img src="images/LG-logo.png" alt="LG logo"></a>
+                    </div>
+                </div>
+
+            </div><!--// .contenedor //-->
+        </div><!--// .relative //-->
+
+        <script>
+        $(function () {
+            var endDate = "June 14, 2014 00:15:00";
+            $('#defaultCountdown').countdown({
+                date: endDate,
+                render: function(data) {
+                $(this.el).html("<div class='countdown-section'><span class='countdown-amount'>" + this.leadingZeros(data.days, 2) +"</span> <span class='countdown-period'>Días</span></div><div class='countdown-section'><span class='countdown-amount'>" + this.leadingZeros(data.hours, 2) + "</span> <span class='countdown-period'>hrs</span></div><div class='countdown-section'><span class='countdown-amount'>" + this.leadingZeros(data.min, 2) + "</span> <span class='countdown-period'>min</span></div><div class='countdown-section'><span class='countdown-amount'>" + this.leadingZeros(data.sec, 2) + "</span> <span class='countdown-period'>sec</span></div>");
+                }
+            });
+        });
+        </script>        
