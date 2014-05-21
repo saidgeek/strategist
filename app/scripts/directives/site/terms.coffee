@@ -19,7 +19,7 @@ angular.module('strategistApp')
       if !$rootScope.currentUser
         angular.element('[data-sgk-terms]').remove()
 
-      if $rootScope.currentUser.terms
+      if $rootScope.currentUser?.terms
         angular.element('[data-sgk-terms]').remove()
 
       $element.on 'click', '.check', (e) =>
@@ -28,7 +28,7 @@ angular.module('strategistApp')
         $element.find("#aceptar-term-cond").trigger 'click'
 
       $rootScope.$watch 'currentUser', (user) =>
-        if user.terms
+        if user?.terms
           angular.element('[data-sgk-terms]').remove()
       
 

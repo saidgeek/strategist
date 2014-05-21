@@ -15,6 +15,11 @@ angular.module("strategistApp")
           match: '@match'
         url: '/api/match'
 
+      current:
+        method: 'GET'
+        params: {}
+        url: '/api/match/current'
+
     _index = (cb) ->
       resource.index(
         {}
@@ -33,10 +38,21 @@ angular.module("strategistApp")
         cb err.data
       ).$promise
 
+    _current = (cb) ->
+      resource.current(
+        {}
+      , (match) ->
+        cb null, match
+      , (err) ->
+        cb err.data
+      ).$promise
+
 
     return {
       index: (cb) ->
         _index(cb)
       create: (data, cb) ->
         _create(data, cb)
+      current: (cb) ->
+        _current(cb)
     }
