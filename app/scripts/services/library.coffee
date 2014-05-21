@@ -13,13 +13,13 @@ angular.module("strategistApp")
         method: 'POST'
         params:
           library: '@library'
-        url: '/api/library'
+        url: '/api/libraries'
 
       remove:
         method: 'DELETE'
         params:
           id: '@id'
-        url: '/api/library/:id'
+        url: '/api/libraries/:id'
 
     _index = (cb) ->
       resource.index(

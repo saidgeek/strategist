@@ -17,7 +17,7 @@ angular.module("strategistApp")
           id: '@id'
         data:
           user: '@user'
-        url: '/api/user/:id/terms'
+        url: '/api/users/:id/terms'
 
     _accept_terms = (id, data, cb) ->
       resource.accept_terms(

@@ -6,19 +6,19 @@ angular.module("strategistApp")
       index:
         method: 'GET'
         params: {}
-        url: '/api/match'
+        url: '/api/matches'
         isArray: true
 
       create:
         method: 'POST'
         params:
           match: '@match'
-        url: '/api/match'
+        url: '/api/matches'
 
       current:
         method: 'GET'
         params: {}
-        url: '/api/match/current'
+        url: '/api/matches/current'
 
     _index = (cb) ->
       resource.index(
