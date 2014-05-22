@@ -4,7 +4,8 @@ var express = require('express'),
     path = require('path'),
     fs = require('fs'),
     mongoose = require('mongoose'),
-    kue = require('kue');
+    kue = require('kue'),
+    mandrill = require('mandrill-api/mandrill');
 
 /**
  * Main application file
@@ -44,6 +45,8 @@ var app = express();
 require('./lib/config/express')(app);
 require('./lib/routes')(app, passport);
 
+// starts mandrill
+require('./lib/config/mandrill')(mandrill, config.mandrill);
 // starts jobs
 require('./lib/config/kue')(app, kue, jobs);
 
