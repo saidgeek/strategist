@@ -15,12 +15,9 @@
     "angular-ui-router": "~0.2.10",
     "countdown": "~1.0.1",
     "angular-bootstrap": "~0.11.0",
-<<<<<<< HEAD
-    "ng-scrollbar": "~0.0.5"
-=======
+    "ng-scrollbar": "~0.0.5",
     "moment": "~2.6.0",
     "angular-bootstrap-datetimepicker": "~0.2.2"
->>>>>>> FETCH_HEAD
   },
   "devDependencies": {
     "angular-mocks": ">=1.2.*",
