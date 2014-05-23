@@ -3,7 +3,8 @@ angular.module('strategistApp', [
   'ngResource',
   'ngSanitize',
   'ui.router',
-  'ui.bootstrap'
+  'ui.bootstrap',
+  'ui.bootstrap.datetimepicker'
 ])
   .config ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) ->
     $httpProvider.interceptors.push 'noCacheInterceptor'
@@ -18,6 +19,7 @@ angular.module('strategistApp', [
         authenticate: false
       .state 'admin',
         templateUrl: 'partials/admin/layout'
+        controller: 'MenuCtrl'
         authenticate: true
       .state 'admin.moderate',
         url: '/admin/moderar/'
@@ -25,6 +27,13 @@ angular.module('strategistApp', [
         views:
           'layout':
             templateUrl: 'partials/admin/index'
+        authenticate: true
+      .state 'admin.match',
+        url: '/admin/partidos/'
+        views:
+          'layout':
+            templateUrl: 'partials/admin/match'
+            controller: 'MatchCtrl'
         authenticate: true
 
 
@@ -41,7 +50,7 @@ angular.module('strategistApp', [
     ]
   .factory 'noCacheInterceptor', () =>
     request: (config) ->
-      if config.method is 'GET' and config.url.indexOf('partials/') is -1 and config.url.indexOf('directives/')
+      if config.method is 'GET' and config.url.indexOf('partials/') is -1 and config.url.indexOf('directives/') is -1 and config.url.indexOf('template/') is -1
         separator = '&'
         if config.url.indexOf('?') is -1
           separator = '?'

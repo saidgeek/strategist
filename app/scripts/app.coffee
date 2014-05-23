@@ -19,6 +19,7 @@ angular.module('strategistApp', [
         authenticate: false
       .state 'strategy',
         url: '/mi-mejor-tactica/'
+        controller: 'StrategyCtrl'
         templateUrl: 'partials/site/strategy'
         authenticate: false
       .state 'votes',

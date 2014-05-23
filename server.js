@@ -3,7 +3,9 @@
 var express = require('express'),
     path = require('path'),
     fs = require('fs'),
-    mongoose = require('mongoose');
+    mongoose = require('mongoose'),
+    kue = require('kue'),
+    mandrill = require('mandrill-api/mandrill');
 
 /**
  * Main application file
@@ -14,6 +16,15 @@ process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 
 var config = require('./lib/config/config');
 var db = mongoose.connect(config.mongo.uri, config.mongo.options);
+
+var jobs = kue.createQueue({
+  redis: {
+    port: config.redis.port,
+    host: config.redis.host,
+    auth: config.redis.auth
+  },
+  disableSearch: true
+});
 
 // Bootstrap models
 var modelsPath = path.join(__dirname, 'lib/models');
@@ -33,6 +44,11 @@ var passport = require('./lib/config/passport');
 var app = express();
 require('./lib/config/express')(app);
 require('./lib/routes')(app, passport);
+
+// starts mandrill
+require('./lib/config/mandrill')(mandrill, config.mandrill);
+// starts jobs
+require('./lib/config/kue')(app, kue, jobs);
 
 // Start server
 app.listen(config.port, config.ip, function () {

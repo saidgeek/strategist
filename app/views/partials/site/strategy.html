@@ -20,12 +20,8 @@
                         </a>
                     </div>
                 </div><!--// .logos //-->
-                
-                <div class="contador animate">
-                    <p class="faltan">Faltan</p>
-                    <div id="defaultCountdown"></div>
-                    <p>para el próximo encuentro de la Selección</p>
-                </div>
+
+                <div data-sgk-countdown></div>
 
                 <div class="hinchas animate">
                     <ul class="liketable">
@@ -58,15 +54,3 @@
 
             </div><!--// .contenedor //-->
         </div><!--// .relative //-->
-
-        <script>
-        $(function () {
-            var endDate = "June 14, 2014 00:15:00";
-            $('#defaultCountdown').countdown({
-                date: endDate,
-                render: function(data) {
-                $(this.el).html("<div class='countdown-section'><span class='countdown-amount'>" + this.leadingZeros(data.days, 2) +"</span> <span class='countdown-period'>Días</span></div><div class='countdown-section'><span class='countdown-amount'>" + this.leadingZeros(data.hours, 2) + "</span> <span class='countdown-period'>hrs</span></div><div class='countdown-section'><span class='countdown-amount'>" + this.leadingZeros(data.min, 2) + "</span> <span class='countdown-period'>min</span></div><div class='countdown-section'><span class='countdown-amount'>" + this.leadingZeros(data.sec, 2) + "</span> <span class='countdown-period'>sec</span></div>");
-                }
-            });
-        });
-        </script>        
