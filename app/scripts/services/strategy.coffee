@@ -13,7 +13,7 @@ angular.module("strategistApp")
         method: 'POST'
         params:
           strategy: '@strategy'
-        url: '/api/strategy'
+        url: '/api/strategies'
 
       _create = (data, cb) ->
         resource.create(

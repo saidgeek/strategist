@@ -30,14 +30,16 @@
               <h1>¡Arma tu mejor táctica y sale a ganar!</h1>
               <p>Comparte tu táctica ideal para la Selección en 140 caracteres para ganar y participa por un <strong>Smart TV LG  + X meses de Estadio CDF</strong>. <span>Mientras más votos obtengan tus tácticas, ¡más posibilidades tienes de ganar!</span></p>
               <span class="number">1</span>
-              <ul class="logeo animate">
+              <ul class="logeo animate" ng-if="!currentUser">
                 <li class="facebook"><a href="/auth/facebook" target="_self">Ingresa vía <span>Facebook</span></a></li>
                 <li class="twitter"><a href="/auth/twitter" target="_self">Ingresa vía <span>Twitter</span></a></a></li>
               </ul>
-              <ul class="logeo animate">
-                <li class="concursar"><a href="/mi-mejor-tactica/" target="_self">Ir a Concursar</a></li>
+              <ul class="logeo animate" ng-if="currentUser">
+                <li class="concursar">
+                  <a ui-sref="strategy" target="_self">Ir a Concursar</a>
+                </li>
               </ul>
-              <p class="acepto">Acepto Bases del Concurso</p>
+              <p class="acepto" ng-if="!currentUser">Acepto Bases del Concurso</p>
             </div>
             <div class="tv"><img src="images/tv-lg.png" alt="Smart TV LG"></div>
           </div><!--// .forma //-->

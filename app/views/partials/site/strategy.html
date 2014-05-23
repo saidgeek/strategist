@@ -23,21 +23,17 @@
 
                 <div data-sgk-countdown></div>
 
-                <div class="hinchas animate">
-                    <ul class="liketable">
-                        <li><img src="images/chile.png" alt="Chile"></li>
-                        <li class="vs"><img src="images/vs.png" alt="v/s"></li>
-                        <li><img src="images/holanda.png" alt="Holanda"></li>
-                    </ul>
-                </div><!--// .hinchas //-->
+                <div data-sgk-vs></div>
 
                 <div class="forma animate">
                     <div class="txt">
                         <h1>¿Cuál es tu mejor táctica para que Chile triunfe?</h1>
                         <p>Escríbela aquí en 140 caracteres y consigue votos para obtener más posibilidades de ganar.</p>
-                        <form action="" id="post">
-                            <textarea name="elpost" id="elpost" placeholder="Escribe tu táctica aquí"></textarea>
-                            <input type="submit" value="Enviar" class="submit">
+                        <form name="form" ng-submit="create(form, match._id)" novalidate>
+                            <textarea name="elpost" id="elpost" placeholder="Escribe tu táctica aquí" ng-trim="false" maxlength="140" ng-model="strategy.content" required></textarea>
+                            <span>{{ strategy.content.length }}</span>
+                            <input type="submit" ng-click="submitted = true" value="Enviar" class="submit">
+                            <p ng-show="submitted && form.elpost.$error.required">Este campo es requerido</p>
                         </form>
                         <span class="number">2</span>
                     </div>
