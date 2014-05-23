@@ -1,23 +1,17 @@
 <div class="overlay">
   <div class="lightbox">
-    <div class="term-cond">
-      <h2>Bases del Concurso</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vehicula posuere nisl quis semper. Quisque vel mattis lectus. Nullam vitae mauris urna. Proin lectus risus, vehicula a risus eget, laoreet pharetra orci. Duis eleifend massa ut pharetra varius. Etiam nec ligula massa. Duis rutrum tortor et diam dapibus varius.</p>
-      <p>Duis id faucibus sapien, sit amet semper mi. Aliquam rutrum sed turpis eu tristique. Donec tristique velit ac sollicitudin tempus. Morbi tincidunt ultricies consectetur. Nunc feugiat et mi sed molestie. Nam at dapibus eros, quis vulputate arcu. Duis aliquet pretium mauris, ac accumsan felis dapibus ut. Donec molestie tellus ut porttitor ultricies. Ut ac egestas enim. Nam fermentum ultricies lectus eget aliquam.</p>
-      <p>Maecenas et accumsan eros, eu auctor turpis. Nulla nec commodo massa. Etiam venenatis, nunc vel volutpat faucibus, tortor purus eleifend dolor, vel porttitor lectus tellus in odio. Vivamus consectetur sem in turpis auctor, nec malesuada mauris elementum. Sed vitae ante quis nibh bibendum tempus eu ac arcu. Nam congue turpis id tortor vestibulum, sit amet mattis odio dapibus. Praesent accumsan tincidunt sem sit amet auctor. Phasellus nec augue nulla. Mauris adipiscing ultricies sagittis. Vivamus mollis facilisis egestas. Mauris eu nunc ac augue feugiat vehicula. Praesent quis mi enim. Praesent ultrices pretium odio, id imperdiet erat aliquam sit amet.</p>
-      <p>Mauris vitae cursus sem, in pharetra lectus. Suspendisse nec feugiat nisl. Sed in accumsan sem. Vestibulum justo orci, ornare feugiat eros quis, adipiscing iaculis risus. Fusce mollis consectetur velit, vel mollis mi fermentum at. Morbi porttitor pellentesque elit, et fermentum eros varius eget. Aliquam erat volutpat.</p>
-      <p>Nunc congue diam ac nibh feugiat, eget hendrerit ipsum auctor. In elementum dui sed laoreet laoreet. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In vitae tellus tortor. Nunc imperdiet sem vel turpis fermentum, non iaculis dui dapibus. Curabitur ultrices, diam fermentum vestibulum rhoncus, tellus mi condimentum enim, in convallis massa erat quis felis. Donec id libero vehicula, rutrum dui pulvinar, sollicitudin ligula. Curabitur elementum lorem nec nibh malesuada hendrerit.</p>
-    </div>
-    <form name="form" ng-submit="terms(form)">
-      <div class="form">
-        <div class="cell">
-          <div class="check"></div>
-          <input type="checkbox" id="aceptar-term-cond" name="aceptar-term-cond" ng-model="user.accept_terms" required />
+    <div class="square">
+      <div class="term-cond" ng-scrollbar>
+        <div>
+          <h2>Bases del Concurso</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vehicula posuere nisl quis semper. Quisque vel mattis lectus. Nullam vitae mauris urna. Proin lectus risus, vehicula a risus eget, laoreet pharetra orci. Duis eleifend massa ut pharetra varius. Etiam nec ligula massa. Duis rutrum tortor et diam dapibus varius.</p>
+          <p>Duis id faucibus sapien, sit amet semper mi. Aliquam rutrum sed turpis eu tristique. Donec tristique velit ac sollicitudin tempus. Morbi tincidunt ultricies consectetur. Nunc feugiat et mi sed molestie. Nam at dapibus eros, quis vulputate arcu. Duis aliquet pretium mauris, ac accumsan felis dapibus ut. Donec molestie tellus ut porttitor ultricies. Ut ac egestas enim. Nam fermentum ultricies lectus eget aliquam.</p>
+          <p>Maecenas et accumsan eros, eu auctor turpis. Nulla nec commodo massa. Etiam venenatis, nunc vel volutpat faucibus, tortor purus eleifend dolor, vel porttitor lectus tellus in odio. Vivamus consectetur sem in turpis auctor, nec malesuada mauris elementum. Sed vitae ante quis nibh bibendum tempus eu ac arcu. Nam congue turpis id tortor vestibulum, sit amet mattis odio dapibus. Praesent accumsan tincidunt sem sit amet auctor. Phasellus nec augue nulla. Mauris adipiscing ultricies sagittis. Vivamus mollis facilisis egestas. Mauris eu nunc ac augue feugiat vehicula. Praesent quis mi enim. Praesent ultrices pretium odio, id imperdiet erat aliquam sit amet.</p>
+          <p>Mauris vitae cursus sem, in pharetra lectus. Suspendisse nec feugiat nisl. Sed in accumsan sem. Vestibulum justo orci, ornare feugiat eros quis, adipiscing iaculis risus. Fusce mollis consectetur velit, vel mollis mi fermentum at. Morbi porttitor pellentesque elit, et fermentum eros varius eget. Aliquam erat volutpat.</p>
+          <p>Nunc congue diam ac nibh feugiat, eget hendrerit ipsum auctor. In elementum dui sed laoreet laoreet. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In vitae tellus tortor. Nunc imperdiet sem vel turpis fermentum, non iaculis dui dapibus. Curabitur ultrices, diam fermentum vestibulum rhoncus, tellus mi condimentum enim, in convallis massa erat quis felis. Donec id libero vehicula, rutrum dui pulvinar, sollicitudin ligula. Curabitur elementum lorem nec nibh malesuada hendrerit.</p>
         </div>
-        <div class="cell"><p>Estoy de acuerdo con las Bases del Concurso</p></div>
-      </div>
-      <input type="submit" ng-click="submitted = true" class="confirmar" value="Confirmar" />
-      <p ng-show="!form.$valid && submitted">Debes aceptar las Bases del Concurso</p>
-    </form>
+      </div>      
+    </div>
+    <div class="cerrar"><a href="">cerrar</a></div>
   </div>
 </div>

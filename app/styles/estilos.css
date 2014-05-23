@@ -553,11 +553,41 @@ ul{
   left: 50%;
   margin: -200px 0 0 -200px;
 }
+.overlay .lightbox .square{
+  width: 340px;
+  height: 330px;
+  overflow: hidden;
+}
 .overlay .lightbox .term-cond{
-  height: 220px;
   overflow: auto;
   font: 13px 'geogrotesque_ullgultralight';
   text-align: justify;
+  position: relative;
+  height: 360px;
+  margin: 0;
+  padding: 0;
+  top: 0;
+}
+.overlay .lightbox .cerrar{
+  position: absolute;
+  width: 29px;
+  height: 29px;
+  overflow: hidden;
+  top: 0;
+  right: -2px;
+}
+.overlay .lightbox .cerrar a{
+  display: block;
+  overflow: hidden;
+  text-indent: -999px;
+  width: 29px;
+  height: 29px;
+  background: url("../images/cerrar-lb-white.png") no-repeat 0 0;
+}
+.overlay .lightbox .term-cond .ng-scope{
+  height: 100%;
+  display: table;
+  width: 100%;
 }
 .overlay .lightbox .term-cond h2{
   margin: 0;
@@ -566,7 +596,7 @@ ul{
   text-transform: uppercase;
 }
 .overlay .lightbox .term-cond p{
-  margin: 15px 15px 15px 0;
+  margin: 15px 0;
   line-height: 1.5em;
 }
 
@@ -993,7 +1023,7 @@ background: url("../images/icon-twitter.png") no-repeat 0 0;
   margin: 0 2px -5px 0;
 }
 #right div.lista-posiciones .listar .cell.pic{
-  width: 90px;
+  width: 50px;
   padding: 15px;
 }
 #right div.lista-posiciones .listar .cell .cell{
@@ -1014,7 +1044,7 @@ background: url("../images/icon-twitter.png") no-repeat 0 0;
   text-transform: uppercase;
 } 
 #tablaposiciones #right div.lista-posiciones .listar .cell.pic{
-  width: 60px;
+  width: 40px;
 }
 #right div.lista-posiciones .listar .cell.pic img{
   width: 100%;
@@ -1304,6 +1334,9 @@ background: url("../images/icon-twitter.png") no-repeat 0 0;
   overflow: hidden;
   transition: 0s all;
   margin: 0 4px 0 0;
+}
+.overlay .ngsb-wrap .ngsb-container{
+  margin: 0 9px 0 0;
 }
 .ngsb-wrap:hover .ngsb-scrollbar {
   opacity: 1;
