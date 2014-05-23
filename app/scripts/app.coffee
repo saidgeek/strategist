@@ -4,7 +4,8 @@ angular.module('strategistApp', [
   'ngCookies',
   'ngResource',
   'ngSanitize',
-  'ui.router'
+  'ui.router',
+  'ngScrollbar'
 ])
   .config ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) ->
     $httpProvider.interceptors.push 'noCacheInterceptor'
@@ -63,6 +64,11 @@ angular.module('strategistApp', [
     # Redirect to login if route requires auth and you're not logged in
     $rootScope.$on '$stateChangeStart', (event, toState, toParams, fromParams) ->
       angular.element("#loader").show();
+      if ['home', 'strategy', 'wins'].indexOf(toState.name) > -1
+        angular.element("body").removeClass 'interior'
+      else
+        angular.element("body").addClass 'interior'
+
       # if toState.authenticate and not Auth.isLoggedIn()
       #   $state.transitionTo 'home'
       #   event.preventDefault()
