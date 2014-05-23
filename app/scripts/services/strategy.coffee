@@ -6,7 +6,7 @@ angular.module("strategistApp")
       index:
         method: 'GET'
         params: {}
-        url: '/api/startegies'
+        url: '/api/strategies'
         isArray: true
 
       create:
@@ -14,6 +14,15 @@ angular.module("strategistApp")
         params:
           strategy: '@strategy'
         url: '/api/strategies'
+
+      _index = (cb) ->
+        resource.index(
+          {}
+        , (strategies) ->
+          cb null, strategies
+        , (err) ->
+          cb err.data
+        ).$promise
 
       _create = (data, cb) ->
         resource.create(
@@ -25,6 +34,8 @@ angular.module("strategistApp")
         ).$promise
 
     return {
+      index: (cb) ->
+        _index(cb)
       create: (data, cb) ->
         _create(data, cb)
     }
