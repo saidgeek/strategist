@@ -29,11 +29,11 @@
                     <div class="txt">
                         <h1>¿Cuál es tu mejor táctica para que Chile triunfe?</h1>
                         <p>Escríbela aquí en 140 caracteres y consigue votos para obtener más posibilidades de ganar.</p>
-                        <form name="form" ng-submit="create(form, match._id)" novalidate>
+                        <form name="form" id="post" ng-submit="create(form, match._id)" novalidate>
                             <textarea name="elpost" id="elpost" placeholder="Escribe tu táctica aquí" ng-trim="false" maxlength="140" ng-model="strategy.content" data-sgk-disabled-enter required></textarea>
                             <span>{{ 140 - strategy.content.length || 140 }}</span>
                             <input type="submit" ng-click="submitted = true" value="Enviar" class="submit">
-                            <p ng-show="submitted && form.elpost.$error.required">Este campo es requerido</p>
+                            <p ng-show="submitted && form.elpost.$error.required" class="error">Este campo es requerido</p>
                         </form>
                         <span class="number">2</span>
                     </div>
