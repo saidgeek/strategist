@@ -1353,12 +1353,27 @@ background: url("../images/icon-twitter.png") no-repeat 0 0;
   box-shadow: 0 3px 0 0 #dadae0;
   border-radius: 3px;
 }
+.overlay .dialogos#moderacion{
+  padding: 0;
+  text-align: center;
+}
 .overlay .dialogos .cell{
   display: table-cell;
   vertical-align: middle;
 }
+.overlay .dialogos .cell.mod{
+  background: #f8bf00;
+  -webkit-border-radius: 2px 0 0 2px;
+  border-radius: 2px 0 0 2px;
+}
+.overlay .dialogos .cell.txt{
+  padding: 0 25px;
+}
 .overlay .dialogos .cell img{
   margin: 0 25px 0 0;
+}
+.overlay .dialogos#moderacion .cell img{
+  margin: 0 10px; 
 }
 .overlay .dialogos .cell form{
   margin: 0;
@@ -1410,11 +1425,19 @@ background: url("../images/icon-twitter.png") no-repeat 0 0;
   margin-top:0;
   float: right;
 }
+.overlay .dialogos#moderacion .cell .btn{
+  margin: 0 0 2px 0;
+  float: none;
+}
 .overlay .dialogos .cell .btn:active{
   margin-top: 2px;
   box-shadow: 0 1px 0 0 #cb213b;
   -webkit-box-shadow: 0 1px 0 0 #cb213b;
   -moz-box-shadow: 0 1px 0 0 #cb213b;
+}
+.overlay .dialogos#moderacion .cell .btn:active{
+  margin: 2px 0 0 0;
+  float: none;
 }
 .overlay .dialogos .cell #email::-webkit-input-placeholder {
   color: #adadad;
