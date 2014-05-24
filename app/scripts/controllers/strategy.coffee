@@ -5,13 +5,13 @@ angular.module('strategistApp')
     $scope.match = null
     $scope.strategy = null
     $scope.error = null
+    $scope.submitted = false
 
     Match.current (err, match) ->
       if !err
         $scope.match = match
 
     $scope.create = (form, match_id) ->
-      console.log match_id, $scope.strategy
       if form.$valid
         $scope.strategy.match = match_id
         $scope.strategy.user = $rootScope.currentUser.id
@@ -21,4 +21,5 @@ angular.module('strategistApp')
           $scope.strategy.content = ''
           $scope.strategy.match = null
           $scope.strategy.user = null
+          $scope.submitted = false
 
