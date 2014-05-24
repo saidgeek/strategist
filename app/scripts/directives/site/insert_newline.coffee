@@ -9,7 +9,7 @@ angular.module('strategistApp')
       length = $attrs.sgklength || 40
       new_text = ""
 
-      if /\s+/g.test(text)
+      if /\s{2,}/g.test(text)
         text_array = text.split(' ')
         for ta in text_array
           if ta.length > length
