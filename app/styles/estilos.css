@@ -1,68 +1,78 @@
 @font-face {
-    font-family: 'geogrotesque_rgregular';
-    src: url('../fonts/geogtq-rg.eot');
-    src: url('../fonts/geogtq-rg.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/geogtq-rg.woff') format('woff'),
-         url('../fonts/geogtq-rg.ttf') format('truetype'),
-         url('../fonts/geogtq-rg.svg#geogrotesque_rgregular') format('svg');
-    font-weight: normal;
-    font-style: normal;
+  font-family: 'geogrotesque_rgregular';
+  src: url('../fonts/geogtq-rg.eot');
+  src: url('../fonts/geogtq-rg.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/geogtq-rg.woff') format('woff'),
+       url('../fonts/geogtq-rg.ttf') format('truetype'),
+       url('../fonts/geogtq-rg.svg#geogrotesque_rgregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
 }
 @font-face {
-    font-family: 'geogrotesque_bdbold';
-    src: url('../fonts/geogtq-bd.eot');
-    src: url('../fonts/geogtq-bd.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/geogtq-bd.woff') format('woff'),
-         url('../fonts/geogtq-bd.ttf') format('truetype'),
-         url('../fonts/geogtq-bd.svg#geogrotesque_bdbold') format('svg');
-    font-weight: normal;
-    font-style: normal;
+  font-family: 'geogrotesque_bdbold';
+  src: url('../fonts/geogtq-bd.eot');
+  src: url('../fonts/geogtq-bd.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/geogtq-bd.woff') format('woff'),
+       url('../fonts/geogtq-bd.ttf') format('truetype'),
+       url('../fonts/geogtq-bd.svg#geogrotesque_bdbold') format('svg');
+  font-weight: normal;
+  font-style: normal;
 }
 @font-face {
-    font-family: 'geogrotesque_smbdsemibold';
-    src: url('../fonts/geogtq-sb.eot');
-    src: url('../fonts/geogtq-sb.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/geogtq-sb.woff') format('woff'),
-         url('../fonts/geogtq-sb.ttf') format('truetype'),
-         url('../fonts/geogtq-sb.svg#geogrotesque_smbdsemibold') format('svg');
-    font-weight: normal;
-    font-style: normal;
-
+  font-family: 'geogrotesque_smbdsemibold';
+  src: url('../fonts/geogtq-sb.eot');
+  src: url('../fonts/geogtq-sb.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/geogtq-sb.woff') format('woff'),
+       url('../fonts/geogtq-sb.ttf') format('truetype'),
+       url('../fonts/geogtq-sb.svg#geogrotesque_smbdsemibold') format('svg');
+  font-weight: normal;
+  font-style: normal;
 }
 @font-face {
-	font-family: 'geogrotesque_lglight';
-	src: url('../fonts/geogtq-lg.eot');
-	src: url('../fonts/geogtq-lg.eot?#iefix') format('embedded-opentype'),
-	     url('../fonts/geogtq-lg.woff') format('woff'),
-	     url('../fonts/geogtq-lg.ttf') format('truetype'),
-	     url('../fonts/geogtq-lg.svg#geogrotesque_lglight') format('svg');
-	font-weight: normal;
-	font-style: normal;
+  font-family: 'geogrotesque_lglight';
+  src: url('../fonts/geogtq-lg.eot');
+  src: url('../fonts/geogtq-lg.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/geogtq-lg.woff') format('woff'),
+       url('../fonts/geogtq-lg.ttf') format('truetype'),
+       url('../fonts/geogtq-lg.svg#geogrotesque_lglight') format('svg');
+  font-weight: normal;
+  font-style: normal;
 }
 @font-face {
-    font-family: 'geogrotesque_ullgultralight';
-    src: url('../fonts/geogtq-ul.eot');
-    src: url('../fonts/geogtq-ul.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/geogtq-ul.woff') format('woff'),
-         url('../fonts/geogtq-ul.ttf') format('truetype'),
-         url('../fonts/geogtq-ul.svg#geogrotesque_ullgultralight') format('svg');
-    font-weight: normal;
-    font-style: normal;
+  font-family: 'geogrotesque_ullgultralight';
+  src: url('../fonts/geogtq-ul.eot');
+  src: url('../fonts/geogtq-ul.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/geogtq-ul.woff') format('woff'),
+       url('../fonts/geogtq-ul.ttf') format('truetype'),
+       url('../fonts/geogtq-ul.svg#geogrotesque_ullgultralight') format('svg');
+  font-weight: normal;
+  font-style: normal;
 }
 body{
-      background: url("../images/background.jpg") no-repeat 50% 0 #26242c;
-      margin: 0;
-      padding: 80px 0 0 0;
-      font: normal 14px 'geogrotesque_rgregular';
-      color: #fff;
-      text-rendering: optimizeLegibility;
+  background: url("../images/background.jpg") no-repeat 50% 0 #26242c;
+  margin: 0;
+  padding: 80px 0 0 0;
+  font: normal 14px 'geogrotesque_rgregular';
+  color: #fff;
+  text-rendering: optimizeLegibility;
 }
 body.interior{
   background: url("../images/background-interior.jpg") no-repeat 50% 0 #26242c;
 }
 a, a:hover, a:focus, :focus{
-    text-decoration: none;
-    outline: none;
+  text-decoration: none;
+  outline: none;
+}
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill,
+input::-moz-autofill,
+textarea::-moz-autofill,
+select::-moz-autofill,
+input:-ms-autofill,
+textarea:-ms-autofill,
+select::-ms-autofill{
+  background-color: none;
 }
 ul{
   margin: 0;
@@ -70,17 +80,17 @@ ul{
   list-style: none;
 }
 .contenedor{
-	width: 960px;
-	margin: 0 auto;
+  width: 960px;
+  margin: 0 auto;
 }
 #menu{
-    position: absolute;
-    left: 0;
-    top: 0;
-    right: 0;
-    height: 80px;
-    background: rgba(0,0,0,0.5);
-    z-index: 100;
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  height: 80px;
+  background: rgba(0,0,0,0.5);
+  z-index: 100;
 }
 #menu ul{
   display: table;
@@ -102,67 +112,67 @@ ul{
   margin-left: 40px;
 }
 #menu ul li{
-    display: table-cell;
-    width: 20%;
-    text-align: center;
+  display: table-cell;
+  width: 20%;
+  text-align: center;
 }
 #menu ul li a{
-    color: #ee2642;
-    display: block;
-    padding: 18px 0 15px 0;
+  color: #ee2642;
+  display: block;
+  padding: 18px 0 15px 0;
 }
 #menu ul li span{
-    width: 21px;
-    height: 21px;
-    display: block;
-    margin: 0 auto 10px auto;
-    overflow: hidden;
-    text-align: center;
-    background: url("../images/bkg-li-menu.png") no-repeat 0 0;
-    line-height: 1.55em;
-    color: #000;
+  width: 21px;
+  height: 21px;
+  display: block;
+  margin: 0 auto 10px auto;
+  overflow: hidden;
+  text-align: center;
+  background: url("../images/bkg-li-menu.png") no-repeat 0 0;
+  line-height: 1.55em;
+  color: #000;
 }
 #menu ul.apps li.applg a span{
-    background: url("../images/icon-apps.png") no-repeat 100% 0;
+  background: url("../images/icon-apps.png") no-repeat 100% 0;
 }
 #menu ul.apps li.appecdf a span{
-    background: url("../images/icon-apps.png") no-repeat 0 0;
+  background: url("../images/icon-apps.png") no-repeat 0 0;
 }
 #menu ul li.active a, #menu ul li a:hover{
-    color: #fff;
+  color: #fff;
 }
 #menu ul li.active span, #menu ul li a:hover span{
-    background-position: 0 50%;
+  background-position: 0 50%;
 }
 #menu ul li.inactive a, #menu ul li.inactive a:hover{
-    color: #9b9b9b;
+  color: #9b9b9b;
 }
 #menu ul li.inactive span, #menu ul li.inactive a:hover span{
-    background-position: 0 100%;
+  background-position: 0 100%;
 }
 #menu ul.apps li.applg a:hover span{
-    background-position: 100% 100%;
+  background-position: 100% 100%;
 }
 #menu ul.apps li.appecdf a:hover span{
-    background-position: 0 100%;
+  background-position: 0 100%;
 }
 .relative{
-    position: relative;
-    z-index: 100;
+  position: relative;
+  z-index: 100;
 }
 .pattern{
-    position: fixed;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    background: url("../images/pattern.png") repeat 0 0;
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: url("../images/pattern.png") repeat 0 0;
 }
 .logos{
-    padding: 30px 0;
-    position: relative;
-    z-index: 10;
-    top: 0;
+  padding: 30px 0;
+  position: relative;
+  z-index: 10;
+  top: 0;
 }
 .logos a{
   color: #fff;
@@ -173,54 +183,48 @@ ul{
   text-transform: uppercase;
 }
 .logos a:hover p span{
-    text-decoration: underline;
+  text-decoration: underline;
 }
 .logos p{
-    font: 12px 'geogrotesque_ullgultralight';
-    line-height: 1.3em;
+  font: 12px 'geogrotesque_ullgultralight';
+  line-height: 1.3em;
 }
 .logos .mmt{
-    padding: 0 0 0 20px;
+  padding: 0 0 0 20px;
 }
 .logos .mmt img{
-    -moz-transform: scale(1) rotate(0deg) translateX(0px) translateY(0px) skewX(0deg) skewY(0deg);
-    -webkit-transform: scale(1) rotate(0deg) translateX(0px) translateY(0px) skewX(0deg) skewY(0deg);
-    -o-transform: scale(1) rotate(0deg) translateX(0px) translateY(0px) skewX(0deg) skewY(0deg);
-    -ms-transform: scale(1) rotate(0deg) translateX(0px) translateY(0px) skewX(0deg) skewY(0deg);
-    transform: scale(1) rotate(0deg) translateX(0px) translateY(0px) skewX(0deg) skewY(0deg);
+  -webkit-transform: scale(1) rotate(0deg) translateX(0px) translateY(0px) skewX(0deg) skewY(0deg);
+  transform: scale(1) rotate(0deg) translateX(0px) translateY(0px) skewX(0deg) skewY(0deg);
 }
 .logos .mmt img:hover{
-    -moz-transform: scale(1) rotate(-5deg) translateX(0px) translateY(0px) skewX(0deg) skewY(0deg);
-    -webkit-transform: scale(1) rotate(-5deg) translateX(0px) translateY(0px) skewX(0deg) skewY(0deg);
-    -o-transform: scale(1) rotate(-5deg) translateX(0px) translateY(0px) skewX(0deg) skewY(0deg);
-    -ms-transform: scale(1) rotate(-5deg) translateX(0px) translateY(0px) skewX(0deg) skewY(0deg);
-    transform: scale(1) rotate(-5deg) translateX(0px) translateY(0px) skewX(0deg) skewY(0deg);
+  -webkit-transform: scale(1) rotate(-5deg) translateX(0px) translateY(0px) skewX(0deg) skewY(0deg);
+  transform: scale(1) rotate(-5deg) translateX(0px) translateY(0px) skewX(0deg) skewY(0deg);
 }
 
 .logos .ecdf, .logos .elg{
-    position: absolute;
-    width: 230px;
-    top: 35px;
+  position: absolute;
+  width: 230px;
+  top: 35px;
 }
 .logos .elg{
-    right: 0;
+  right: 0;
 }
 .logos .ecdf{
-    right: 245px;
+  right: 245px;
 }
 .hinchas{
-    margin: -125px 0 0 0;
-    position: relative;
-    bottom: 0;
+  margin: -125px 0 0 0;
+  position: relative;
+  bottom: 0;
 }
 .forma{
-    width: 798px;
-    height: 244px;
-    background: url("../images/forma-roja.png") no-repeat 0 0;
-    margin: -78px auto 0 auto;
-    position: relative;
-    z-index: 10;
-    bottom: 0;
+  width: 798px;
+  height: 244px;
+  background: url("../images/forma-roja.png") no-repeat 0 0;
+  margin: -78px auto 0 auto;
+  position: relative;
+  z-index: 10;
+  bottom: 0;
 }
 .forma .number,
 .sup-posiciones .number{
@@ -247,147 +251,125 @@ ul{
   opacity: 0;
 }
 .forma .txt{
-    width: 480px;
-    margin: 0 0 0 60px;
-    padding: 35px 0 0 0;
+  width: 480px;
+  margin: 0 0 0 60px;
+  padding: 35px 0 0 0;
 }
 .forma .txt h1{
-    font: normal 18px 'geogrotesque_bdbold';
-    text-transform: uppercase;
-    margin: 0;
-    padding: 0;
-    text-align: center;
+  font: normal 18px 'geogrotesque_bdbold';
+  text-transform: uppercase;
+  margin: 0;
+  padding: 0;
+  text-align: center;
 }
 .forma .txt p{
-    font: 13px 'geogrotesque_ullgultralight';
-    text-transform: uppercase;
-    margin: 20px 0;
-    line-height: 1.6em;
-    padding: 0;
-    text-align: center;
+  font: 13px 'geogrotesque_ullgultralight';
+  text-transform: uppercase;
+  margin: 10px 0;
+  line-height: 1.6em;
+  padding: 0;
+  text-align: center;
+}
+.forma .txt p.acepto{
+  margin: 13px 0;
 }
 .forma .txt p strong{
-    font:normal 13px 'geogrotesque_smbdsemibold';
+  font:normal 13px 'geogrotesque_smbdsemibold';
 }
 .forma .txt p span{
-    display: block;
+  display: block;
 }
-.forma ul.logeo{
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    text-align: center;
+.forma ul.logeo, .overlay ul.logeo{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-align: center;
 }
-.forma ul.logeo li{
-    display: inline-block;
-    margin: 0 20px 0 0;
-    position: relative;
+.forma ul.logeo li, .overlay ul.logeo li{
+  display: inline-block;
+  margin: 0 20px 0 0;
+  position: relative;
 }
-.forma ul.logeo li a{
-    display: block;
-    padding: 8px 16px;
-    color: #fff;
-    font: normal 14px 'geogrotesque_bdbold';
-    text-transform: uppercase;
-    -webkit-border-radius: 3px;
-    border-radius: 3px;
-    line-height: 1.8em;
-    position: relative;
+.forma ul.logeo li a, .overlay ul.logeo li a{
+  display: block;
+  padding: 8px 16px;
+  color: #fff;
+  font: normal 14px 'geogrotesque_bdbold';
+  text-transform: uppercase;
+  border-radius: 3px;
+  line-height: 1.8em;
+  position: relative;
 }
-.forma ul.logeo li a span{
-    display: inline-block;
-    width: 19px;
-    height: 19px;
-    overflow: hidden;
-    text-indent: -999px;
-    margin: 0 0 -4px 12px;
+.forma ul.logeo li a span, .overlay ul.logeo li a span{
+  display: inline-block;
+  width: 19px;
+  height: 19px;
+  overflow: hidden;
+  text-indent: -999px;
+  margin: 0 0 -4px 12px;
 }
-.forma ul.logeo li.facebook a{
-    background: #405bbf;
-    -webkit-box-shadow: 0 3px 0 0 #374fa9;
-    box-shadow: 0 3px 0 0 #374fa9;
+.forma ul.logeo li.facebook a, .overlay ul.logeo li.facebook a{
+  background: #405bbf;
+  box-shadow: 0 3px 0 0 #374fa9;
 }
-.forma ul.logeo li.facebook a span{
-    background: url("../images/icon-facebook.png") no-repeat 0 0;
+.forma ul.logeo li.facebook a span, .overlay ul.logeo li.facebook a span{
+  background: url("../images/icon-facebook.png") no-repeat 0 0;
 }
-.forma ul.logeo li.twitter{
-    margin: 0;
+.forma ul.logeo li.twitter, .forma ul.logeo li.concursar, .overlay ul.logeo li.twitter{
+  margin: 0;
 }
-.forma ul.logeo li.twitter a{
-    background: #1caad2;
-    -webkit-box-shadow: 0 3px 0 0 #1994bd;
-    box-shadow: 0 3px 0 0 #1994bd;
+.forma ul.logeo li.twitter a, .overlay ul.logeo li.twitter a{
+  background: #1caad2;
+  box-shadow: 0 3px 0 0 #1994bd;
 }
-.forma ul.logeo li.twitter a span{
-    background: url("../images/icon-twitter.png") no-repeat 0 0;
+.forma ul.logeo li.twitter a span, .overlay ul.logeo li.twitter a span{
+  background: url("../images/icon-twitter.png") no-repeat 0 0;
 }
 .forma ul.logeo li.concursar a{
   background: #f1f1f1;
-  -webkit-box-shadow: 0 3px 0 0 #cacbd2;
   box-shadow: 0 3px 0 0 #cacbd2;
   color: rgb(38,36,44);
 }
 .forma ul.logeo li.concursar a:active{
   margin-top: 2px;
-  -webkit-box-shadow: 0 1px 0 0 #cacbd2;
   box-shadow: 0 1px 0 0 #cacbd2;
 }
 .forma ul.logeo li a span,
 #right div.lista-posiciones .listar .cell.buttons ul.impbuttons li.votar a span,
 #right .cell.buttons ul.impbuttons li.sharebtn a span{
-    -moz-transform: scale(1) rotate(0deg) translateX(0px) translateY(0px) skewX(0deg) skewY(0deg);
-    -webkit-transform: scale(1) rotate(0deg) translateX(0px) translateY(0px) skewX(0deg) skewY(0deg);
-    -o-transform: scale(1) rotate(0deg) translateX(0px) translateY(0px) skewX(0deg) skewY(0deg);
-    -ms-transform: scale(1) rotate(0deg) translateX(0px) translateY(0px) skewX(0deg) skewY(0deg);
-    transform: scale(1) rotate(0deg) translateX(0px) translateY(0px) skewX(0deg) skewY(0deg);
-    -webkit-transition: all 300ms ease;
-    -moz-transition: all 300ms ease;
-    -ms-transition: all 300ms ease;
-    -o-transition: all 300ms ease;
-    transition: all 300ms ease;
+  -webkit-transform: scale(1) rotate(0deg) translateX(0px) translateY(0px) skewX(0deg) skewY(0deg);
+  transform: scale(1) rotate(0deg) translateX(0px) translateY(0px) skewX(0deg) skewY(0deg);
+  -webkit-transition: all 300ms ease;
+  transition: all 300ms ease;
 }
 .forma ul.logeo li a:hover span,
 #right div.lista-posiciones .listar .cell.buttons ul.impbuttons li.votar a:hover span,
 #right .cell.buttons ul.impbuttons li.sharebtn a:hover span{
-    -moz-transform: scale(1) rotate(360deg) translateX(0px) translateY(0px) skewX(0deg) skewY(0deg);
-    -webkit-transform: scale(1) rotate(360deg) translateX(0px) translateY(0px) skewX(0deg) skewY(0deg);
-    -o-transform: scale(1) rotate(360deg) translateX(0px) translateY(0px) skewX(0deg) skewY(0deg);
-    -ms-transform: scale(1) rotate(360deg) translateX(0px) translateY(0px) skewX(0deg) skewY(0deg);
-    transform: scale(1) rotate(360deg) translateX(0px) translateY(0px) skewX(0deg) skewY(0deg);
-    -webkit-transition: all 300ms ease;
-    -moz-transition: all 300ms ease;
-    -ms-transition: all 300ms ease;
-    -o-transition: all 300ms ease;
-    transition: all 300ms ease;
+  -webkit-transform: scale(1) rotate(360deg) translateX(0px) translateY(0px) skewX(0deg) skewY(0deg);
+  transform: scale(1) rotate(360deg) translateX(0px) translateY(0px) skewX(0deg) skewY(0deg);
+  -webkit-transition: all 300ms ease;
+  transition: all 300ms ease;
 }
-.forma ul.logeo li.facebook>a:active {
-    top:2px;
-    -webkit-box-shadow: 0 1px 0 0 #374fa9;
-    box-shadow: 0 1px 0 0 #374fa9;
-    -webkit-transition: all 100ms ease;
-    -moz-transition: all 100ms ease;
-    -ms-transition: all 100ms ease;
-    -o-transition: all 100ms ease;
-    transition: all 100ms ease;
+.forma ul.logeo li.facebook>a:active, .overlay ul.logeo li.facebook a:active {
+  top:2px;
+  box-shadow: 0 1px 0 0 #374fa9;
+  -webkit-transition: all 100ms ease;
+  transition: all 100ms ease;
 }
-.forma ul.logeo li.twitter>a:active {
-    top:2px;
-    -webkit-box-shadow: 0 1px 0 0 #1994bd;
-    box-shadow: 0 1px 0 0 #1994bd;
-    -webkit-transition: all 100ms ease;
-    -moz-transition: all 100ms ease;
-    -ms-transition: all 100ms ease;
-    -o-transition: all 100ms ease;
-    transition: all 100ms ease;
+.forma ul.logeo li.twitter>a:active, .overlay ul.logeo li.twitter>a:active {
+  top:2px;
+  box-shadow: 0 1px 0 0 #1994bd;
+  -webkit-transition: all 100ms ease;
+  transition: all 100ms ease;
 }
 .forma .tv{
-    position: absolute;
-    right: 0;
-    top:-20px;
+  position: absolute;
+  right: 0;
+  top:-20px;
 }
 .last{
-    padding: 12px 0;
-    text-align: right;
+  padding: 12px 0;
+  text-align: right;
 }
 .last ul{
   float: left;
@@ -405,13 +387,13 @@ ul{
 }
 /* loader */
 #loader{
-    background:#2d303b;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 999;
+  background:#2d303b;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 999;
 }
 .loader {
   font-size: 4px;
@@ -425,10 +407,7 @@ ul{
   height: 11em;
   border-radius: 50%;
   background: #ffffff;
-  background: -moz-linear-gradient(left, #ee2642 10%, rgba(238, 38, 66, 0) 42%);
   background: -webkit-linear-gradient(left, #ee2642 10%, rgba(238, 38, 66, 0) 42%);
-  background: -o-linear-gradient(left, #ee2642 10%, rgba(238, 38, 66, 0) 42%);
-  background: -ms-linear-gradient(left, #ee2642 10%, rgba(238, 38, 66, 0) 42%);
   background: linear-gradient(to right, #ee2642 10%, rgba(238, 38, 66, 0) 42%);
   -webkit-animation: load3 0.6s infinite linear;
   animation: load3 0.6s infinite linear;
@@ -476,22 +455,21 @@ ul{
     transform: rotate(360deg);
   }
 }
-
 /* fin loader */
 
 /* animacion de home */
 #menu.animate{
-    top:-80px;
+  top:-80px;
 }
 .logos.animate{
-    position: relative;
-    top: -60px;
-    opacity: 0;
+  position: relative;
+  top: -60px;
+  opacity: 0;
 }
 .hinchas.animate, .forma.animate, .contador.animate{
-    position: relative;
-    bottom: -60px;
-    opacity: 0;
+  position: relative;
+  bottom: -60px;
+  opacity: 0;
 }
 .hinchas.animate, .forma.animate, #menu.animate, .logos.animate,
 #menu ul li a, #menu ul li a:hover, #menu ul li a span,
@@ -499,40 +477,26 @@ ul{
 #right div.lista-posiciones .listar .cell.buttons ul.impbuttons li.votar a span,
 #right div.lista-posiciones .listar .cell.buttons ul.impbuttons li.votar a:hover span,
 #right .cell.buttons ul.impbuttons li.sharebtn a span,
-#right .cell.buttons ul.impbuttons li.sharebtn a:hover span  {
-    -webkit-transition: all 300ms ease;
-    -moz-transition: all 300ms ease;
-    -ms-transition: all 300ms ease;
-    -o-transition: all 300ms ease;
-    transition: all 300ms ease;
-}
-#menu, .logos{
-    -webkit-transition: all 300ms ease;
-    -moz-transition: all 300ms ease;
-    -ms-transition: all 300ms ease;
-    -o-transition: all 300ms ease;
-    transition: all 300ms ease;
+#right .cell.buttons ul.impbuttons li.sharebtn a:hover span,
+#menu, .logos  {
+  -webkit-transition: all 300ms ease;
+  transition: all 300ms ease;
 }
 .hinchas, .forma, .contador.animate, .contador,
 #ganadores img.hincha-ganador.animate, #ganadores img.hincha-ganador,
 #ganadores img.televisor.animate, #ganadores img.televisor{
-    -webkit-transition: all 500ms ease;
-    -moz-transition: all 500ms ease;
-    -ms-transition: all 500ms ease;
-    -o-transition: all 500ms ease;
-    transition: all 500ms ease;  
+  -webkit-transition: all 500ms ease;
+  transition: all 500ms ease;  
 }
 #ganadores img.hincha-ganador.animate{
-    top: 100px;
-    opacity: 0;
+  top: 100px;
+  opacity: 0;
 }
 #ganadores img.televisor.animate{
-    top: -60px;
-    opacity: 0;
+  top: -60px;
+  opacity: 0;
  }
 /* fin animacion de home */
-
-
 .overlay{
   position: fixed;
   left: 0;
@@ -542,7 +506,6 @@ ul{
   background: rgba(0,0,0,0.7);
   z-index: 990;
 }
-
 .overlay .lightbox{
   width: 340px;
   height: 340px;
@@ -599,7 +562,6 @@ ul{
   margin: 15px 0;
   line-height: 1.5em;
 }
-
 .overlay .lightbox .form{
   display: table;
   padding: 20px 0 0 0;
@@ -630,11 +592,9 @@ ul{
   color: #ee2642;
   font: normal 14px 'geogrotesque_bdbold';
   text-transform: uppercase;
-  -webkit-border-radius: 3px;
   border-radius: 3px;
   line-height: 1.8em;
   position: relative;
-  -webkit-box-shadow: 0 3px 0 0 #cacbd2;
   box-shadow: 0 3px 0 0 #cacbd2;
   border: none;
   outline: none;
@@ -642,11 +602,9 @@ ul{
 }
 .overlay .lightbox input.confirmar:active{
   margin: 17px auto 0 auto;
-  -webkit-box-shadow: 0 1px 0 0 #cacbd2;
   box-shadow: 0 1px 0 0 #cacbd2;
 }
 /*----// PASO 2//----*/
-
 #tactica .hinchas{
   margin: 0;
 }
@@ -708,7 +666,6 @@ form#post span.ng-binding{
   background: rgba(38,36,44,0.7);
   display: table;
   margin: 0 auto;
-  -webkit-border-radius: 3px;
   border-radius: 3px;
 }
 #defaultCountdown .countdown-section{
@@ -744,8 +701,7 @@ form textarea{
   height: 80px;
   resize: none;
   color: #fff;
-  font: 14px 'geogrotesque_lglight'; 
-  -webkit-box-sizing: border-box;
+  font: 14px 'geogrotesque_lglight';
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
@@ -755,15 +711,12 @@ form textarea:focus{
 ::-webkit-input-placeholder {
   color: #fa657a;
 }
-
-:-moz-placeholder { /* Firefox 18- */
+:-moz-placeholder {
   color: #fa657a;
 }
-
-::-moz-placeholder {  /* Firefox 19+ */
+::-moz-placeholder {
   color: #fa657a;
 }
-
 :-ms-input-placeholder {  
   color: #fa657a;
 }
@@ -807,9 +760,6 @@ form#post input.submit:active{
 #listatacticas #left .appdetail.animate,
 #tablaposiciones #left .appdetail.animate{
   -webkit-transition: all 300ms ease;
-  -moz-transition: all 300ms ease;
-  -ms-transition: all 300ms ease;
-  -o-transition: all 300ms ease;
   transition: all 300ms ease;
 }
 #listatacticas #left, #tablaposiciones #left{
@@ -868,10 +818,10 @@ form#post input.submit:active{
 #right .sup-posiciones .table form #searchbox{
   height: 30px;
   padding: 0 30px 0 15px;
-  -webkit-border-radius: 15px;
   border-radius: 15px;
   border:1px solid #3a454f;
   width: 100%;
+  -moz-box-sizing: border-box;
   box-sizing: border-box;
   background: url("../images/search.png") no-repeat 96% 50% #1d1d21;
   font: normal 14px 'geogrotesque_ullgultralight';
@@ -899,7 +849,7 @@ form#post input.submit:active{
 #right div.lista-posiciones{
   overflow: auto;
   width: 100%;
-  height: 650px;
+  max-height: 650px;
   background: rgba(38,36,44,0.85);
   margin: 0;
   padding: 0;
@@ -940,6 +890,10 @@ form#post input.submit:active{
 #right div.lista-posiciones .listar .cell.center{
   padding: 15px 0;
 }
+#right div.lista-posiciones .listar .cell.center p{
+  font-family: 'geogrotesque_ullgultralight';
+}
+
 #right div.lista-posiciones .listar .cell.center .username{
   padding: 0 0 5px 0;
 }
@@ -1050,7 +1004,7 @@ background: url("../images/icon-twitter.png") no-repeat 0 0;
 }
 #right div.lista-posiciones .listar .cell .cell.votos span{
   display: block;
-  margin: 0 0 -3px 10px;
+  margin: 0 0 -3px 0;
   font: normal 10px 'geogrotesque_ullgultralight';
   text-transform: uppercase;
 } 
@@ -1061,7 +1015,6 @@ background: url("../images/icon-twitter.png") no-repeat 0 0;
   width: 100%;
   height: auto;
   overflow: hidden;
-  -webkit-border-radius: 50%;
   border-radius: 50%;
 }
 #listatacticas #left .appdetail, #tablaposiciones #left .appdetail{
@@ -1100,13 +1053,12 @@ background: url("../images/icon-twitter.png") no-repeat 0 0;
 #listatacticas #left .appdetail a,
 #tablaposiciones #left .appdetail a{
   display: inline-block;
-  margin: 0 auto;
+  margin: 0 auto 2px auto;
   background: #ee2642;
   padding: 8px 21px;
   color: #fff;
   font: normal 14px 'geogrotesque_bdbold';
   text-transform: uppercase;
-  -webkit-border-radius: 3px;
   border-radius: 3px;
   line-height: 1.8em;
   position: relative;
@@ -1114,7 +1066,7 @@ background: url("../images/icon-twitter.png") no-repeat 0 0;
 }
 #listatacticas #left .appdetail a:active,
 #tablaposiciones #left .appdetail a:active{
-  margin: 32px auto 0 auto;
+  margin: 2px auto 0 auto;
   box-shadow: 0 1px 0 0 #b81d2f;
 }
 .table:after, .table:before{
@@ -1176,23 +1128,17 @@ background: url("../images/icon-twitter.png") no-repeat 0 0;
   padding: 6px 16px 4px;
   color: #ee2642;
   font: normal 14px 'geogrotesque_bdbold';
-  -webkit-border-radius: 3px;
   border-radius: 3px;
   line-height: 1.8em;
   position: relative;
   background: #fff;
-  -webkit-box-shadow: 0 3px 0 0 #cccdd3;
   box-shadow: 0 3px 0 0 #cccdd3;
   margin-top: 10px;
 }
 #ganadores a.blanco:active {
   top: 2px;
-  -webkit-box-shadow: 0 1px 0 0 #cccdd3;
   box-shadow: 0 1px 0 0 #cccdd3;
   -webkit-transition: all 100ms ease;
-  -moz-transition: all 100ms ease;
-  -ms-transition: all 100ms ease;
-  -o-transition: all 100ms ease;
   transition: all 100ms ease;
 }
 #ganadores .info-ganador {
@@ -1277,7 +1223,6 @@ background: url("../images/icon-twitter.png") no-repeat 0 0;
   width: 66px;
   color: #fff;
   font: normal 12px 'geogrotesque_lglight';
-  -webkit-border-radius: 3px;
   border-radius: 3px;
   line-height: 1.8em;
   position: relative;
@@ -1291,7 +1236,6 @@ background: url("../images/icon-twitter.png") no-repeat 0 0;
 }
 #ganadores .info-ganador ul.comparte li.facebook a {
   background: #405bbf;
-  -webkit-box-shadow: 0 3px 0 0 #374fa9;
   box-shadow: 0 3px 0 0 #374fa9;
 }
 #ganadores .info-ganador ul.comparte li.twitter {
@@ -1299,27 +1243,18 @@ background: url("../images/icon-twitter.png") no-repeat 0 0;
 }
 #ganadores .info-ganador ul.comparte li.twitter a {
   background: #1caad2;
-  -webkit-box-shadow: 0 3px 0 0 #1994bd;
   box-shadow: 0 3px 0 0 #1994bd;
 }
 #ganadores .info-ganador ul.comparte li.twitter >a:active {
   top: 2px;
-  -webkit-box-shadow: 0 1px 0 0 #1994bd;
   box-shadow: 0 1px 0 0 #1994bd;
   -webkit-transition: all 100ms ease;
-  -moz-transition: all 100ms ease;
-  -ms-transition: all 100ms ease;
-  -o-transition: all 100ms ease;
   transition: all 100ms ease;
 }
 #ganadores .info-ganador ul.comparte li.facebook >a:active {
   top: 2px;
-  -webkit-box-shadow: 0 1px 0 0 #374fa9;
   box-shadow: 0 1px 0 0 #374fa9;
   -webkit-transition: all 100ms ease;
-  -moz-transition: all 100ms ease;
-  -ms-transition: all 100ms ease;
-  -o-transition: all 100ms ease;
   transition: all 100ms ease;
 }
 #ganadores img.hincha-ganador {
@@ -1343,6 +1278,7 @@ background: url("../images/icon-twitter.png") no-repeat 0 0;
 .ngsb-wrap .ngsb-container {
   width: auto;
   overflow: hidden;
+  -webkit-transition: 0s all;
   transition: 0s all;
   margin: 0 4px 0 0;
 }
@@ -1383,6 +1319,7 @@ background: url("../images/icon-twitter.png") no-repeat 0 0;
   height: 30px;
 }
 .ngsb-wrap .ngsb-scrollbar .ngsb-thumb-pos .ngsb-thumb {
+  -webkit-transition: 0.3s all;
   transition: 0.3s all;
   width: 4px;
   height: 100%;
@@ -1399,4 +1336,143 @@ background: url("../images/icon-twitter.png") no-repeat 0 0;
   -ms-filter: "alpha(opacity=100)";
 }
 /*----// FIN SCROLL //----*/
+
+/*----// LIGHTBOX DIALOGOS (PEDIR MAIL, MODRACIÓN, FELICIDADES) //----*/
+.overlay .dialogos{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 470px;
+  height: 160px;
+  padding: 25px;
+  -moz-box-sizing:border-box;
+  box-sizing:border-box;
+  background: white;
+  margin: -80px 0 0 -235px;
+  display: table;
+  box-shadow: 0 3px 0 0 #dadae0;
+  border-radius: 3px;
+}
+.overlay .dialogos#moderacion{
+  padding: 0;
+  text-align: center;
+}
+.overlay .dialogos .cell{
+  display: table-cell;
+  vertical-align: middle;
+}
+.overlay .dialogos .cell.mod{
+  background: #f8bf00;
+  -webkit-border-radius: 2px 0 0 2px;
+  border-radius: 2px 0 0 2px;
+}
+.overlay .dialogos .cell.txt{
+  padding: 0 25px;
+}
+.overlay .dialogos .cell img{
+  margin: 0 25px 0 0;
+}
+.overlay .dialogos#moderacion .cell img{
+  margin: 0 10px; 
+}
+.overlay .dialogos .cell form{
+  margin: 0;
+  padding: 0;
+}
+.overlay .dialogos .cell h3{
+  margin: 0;
+  padding: 0;
+  color: #eb2038;
+  font: normal 16px 'geogrotesque_bdbold';
+  text-transform: uppercase;
+}
+.overlay .dialogos .cell p{
+  font-size: 13px;
+  color: #253c4e;
+  margin: 7px 0 13px 0; 
+  text-transform: uppercase;
+}
+.overlay .dialogos .cell #email{
+  width: 60%;
+  margin: 0 3% 2px 0;
+  padding:0 15px;
+  -moz-box-sizing:border-box;
+  box-sizing:border-box;
+  background: #e4e4e4;
+  border-radius:3px;
+  -moz-border-radius:3px;
+  -webkit-border-radius:3px;
+  height: 30px;
+  border: 1px solid #b9b9b9;
+  color: #253c4e;
+  font-size: 14px;
+  float: left;
+}
+.overlay .dialogos .cell .btn{
+  border: none;
+  height: 30px;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  width: 36%;
+  background: #ee2643;
+  font: normal 14px 'geogrotesque_bdbold';
+  text-transform: uppercase;
+  color: white;
+  box-shadow: 0 3px 0 0 #cb213b;
+  -webkit-box-shadow: 0 3px 0 0 #cb213b;
+  -moz-box-shadow: 0 3px 0 0 #cb213b;
+  margin-top:0;
+  float: right;
+}
+.overlay .dialogos#moderacion .cell .btn{
+  margin: 0 0 2px 0;
+  float: none;
+}
+.overlay .dialogos .cell .btn:active{
+  margin-top: 2px;
+  box-shadow: 0 1px 0 0 #cb213b;
+  -webkit-box-shadow: 0 1px 0 0 #cb213b;
+  -moz-box-shadow: 0 1px 0 0 #cb213b;
+}
+.overlay .dialogos#moderacion .cell .btn:active{
+  margin: 2px 0 0 0;
+  float: none;
+}
+.overlay .dialogos .cell #email::-webkit-input-placeholder {
+  color: #adadad;
+  text-overflow: ellipsis;
+}
+.overlay .dialogos .cell #email::-moz-placeholder {
+  color: #adadad;
+}
+.overlay .dialogos .cell #email:-moz-placeholder {
+  color: #adadad;
+  text-overflow: ellipsis;
+}
+.overlay .dialogos .cell #email:-ms-input-placeholder {
+  color: #adadad;
+  text-overflow: ellipsis;
+}
+.overlay .dialogos .cerrar{
+  position: absolute;
+  width: 29px;
+  height: 29px;
+  -webkit-border-radius:50%;
+  border-radius:50%;
+  -webkit-box-shadow: 0 0 5px 0 rgba(0,0,0,0.5);
+  box-shadow: 0 0 5px 0 rgba(0,0,0,0.5);
+  overflow: hidden;
+  top: -14px;
+  right: -14px;
+}
+.overlay .dialogos .cerrar a{
+  display: block;
+  overflow: hidden;
+  text-indent: -999px;
+  width: 29px;
+  height: 29px;
+  background: url("../images/cerrar-lb-red.png") no-repeat 0 0;
+}
+/*----// FIN LIGHTBOX DIALOGOS (PEDIR MAIL, MODRACIÓN, FELICIDADES) //----*/
 
