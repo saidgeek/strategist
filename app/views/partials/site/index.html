@@ -28,7 +28,7 @@
           <div class="forma animate">
             <div class="txt">
               <h1>¡Arma tu mejor táctica y sale a ganar!</h1>
-              <p>Comparte tu táctica ideal para la Selección en 140 caracteres para ganar y participa por un <strong>Smart TV LG  + X meses de Estadio CDF</strong>. <span>Mientras más votos obtengan tus tácticas, ¡más posibilidades tienes de ganar!</span></p>
+              <p>Comparte tu mejor táctica para este encuentro en 140 caracteres y participa por un <strong>Smart TV LG  + X meses de Estadio CDF</strong>. <span>Mientras más participes y más votos obtengas, más posibilidades tienes de ganar.</span></p>
               <span class="number">1</span>
               <ul class="logeo animate" ng-if="!currentUser">
                 <li class="facebook"><a href="/auth/facebook" target="_self">Ingresa vía <span>Facebook</span></a></li>
@@ -95,13 +95,13 @@
 <!--// FIN LIGHTBOX CORREO FACEBOOK //-->
 
 <!--// LIGHTBOX MODERACIÓN //-->
-<div class="overlay">
+<div class="overlay" style="display:none;">
   <div class="dialogos" id="moderacion">
     <div class="cell mod">
       <img src="images/alert-mod.png" alt="">
     </div>
     <div class="cell txt">
-        <h3>Hey, campeón!</h3>
+        <h3>Prrr! Foul!</h3>
         <p>Hemos detectado que tu táctica contiene palabras que no están admitidas. Será revisada antes de ser publicada. </p>
         <input type="submit" class="btn" value="Continuar">
     </div>
@@ -109,3 +109,27 @@
   </div>
 </div>
 <!--// FIN LIGHTBOX MODERACIÓN //-->
+
+<!--// LIGHTBOX ACCIONES SIN LOGIN //-->
+<div class="overlay" style="display:none;">
+  <div class="dialogos" id="moderacion">
+    <div class="cell mod">
+      <img src="images/alert-mod.png" alt="">
+    </div>
+    <div class="cell txt">
+        <h3>Off side!</h3>
+        <p>Para participar en <strong>#MiMejorTáctica</strong> debes registrarte</p>
+        <ul class="logeo animate" ng-if="!currentUser">
+          <li class="facebook"><a href="/auth/facebook" target="_self">Ingresa vía <span>Facebook</span></a></li>
+          <li class="twitter"><a href="/auth/twitter" target="_self">Ingresa vía <span>Twitter</span></a></a></li>
+        </ul>
+    </div>
+    <div class="cerrar"><a href="">Cerrar</a></div>
+  </div>
+</div>
+<!--// FIN LIGHTBOX ACCIONES SIN LOGIN //-->
+
+
+
+
+

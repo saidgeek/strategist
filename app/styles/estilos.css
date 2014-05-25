@@ -265,7 +265,7 @@ ul{
 .forma .txt p{
   font: 13px 'geogrotesque_ullgultralight';
   text-transform: uppercase;
-  margin: 20px 0;
+  margin: 10px 0;
   line-height: 1.6em;
   padding: 0;
   text-align: center;
@@ -279,18 +279,18 @@ ul{
 .forma .txt p span{
   display: block;
 }
-.forma ul.logeo{
+.forma ul.logeo, .overlay ul.logeo{
   margin: 0;
   padding: 0;
   list-style: none;
   text-align: center;
 }
-.forma ul.logeo li{
+.forma ul.logeo li, .overlay ul.logeo li{
   display: inline-block;
   margin: 0 20px 0 0;
   position: relative;
 }
-.forma ul.logeo li a{
+.forma ul.logeo li a, .overlay ul.logeo li a{
   display: block;
   padding: 8px 16px;
   color: #fff;
@@ -300,7 +300,7 @@ ul{
   line-height: 1.8em;
   position: relative;
 }
-.forma ul.logeo li a span{
+.forma ul.logeo li a span, .overlay ul.logeo li a span{
   display: inline-block;
   width: 19px;
   height: 19px;
@@ -308,21 +308,21 @@ ul{
   text-indent: -999px;
   margin: 0 0 -4px 12px;
 }
-.forma ul.logeo li.facebook a{
+.forma ul.logeo li.facebook a, .overlay ul.logeo li.facebook a{
   background: #405bbf;
   box-shadow: 0 3px 0 0 #374fa9;
 }
-.forma ul.logeo li.facebook a span{
+.forma ul.logeo li.facebook a span, .overlay ul.logeo li.facebook a span{
   background: url("../images/icon-facebook.png") no-repeat 0 0;
 }
-.forma ul.logeo li.twitter{
+.forma ul.logeo li.twitter, .forma ul.logeo li.concursar, .overlay ul.logeo li.twitter{
   margin: 0;
 }
-.forma ul.logeo li.twitter a{
+.forma ul.logeo li.twitter a, .overlay ul.logeo li.twitter a{
   background: #1caad2;
   box-shadow: 0 3px 0 0 #1994bd;
 }
-.forma ul.logeo li.twitter a span{
+.forma ul.logeo li.twitter a span, .overlay ul.logeo li.twitter a span{
   background: url("../images/icon-twitter.png") no-repeat 0 0;
 }
 .forma ul.logeo li.concursar a{
@@ -350,13 +350,13 @@ ul{
   -webkit-transition: all 300ms ease;
   transition: all 300ms ease;
 }
-.forma ul.logeo li.facebook>a:active {
+.forma ul.logeo li.facebook>a:active, .overlay ul.logeo li.facebook a:active {
   top:2px;
   box-shadow: 0 1px 0 0 #374fa9;
   -webkit-transition: all 100ms ease;
   transition: all 100ms ease;
 }
-.forma ul.logeo li.twitter>a:active {
+.forma ul.logeo li.twitter>a:active, .overlay ul.logeo li.twitter>a:active {
   top:2px;
   box-shadow: 0 1px 0 0 #1994bd;
   -webkit-transition: all 100ms ease;
