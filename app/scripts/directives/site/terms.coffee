@@ -1,35 +1,21 @@
 'use strict'
 
 angular.module('strategistApp')
-  .directive 'sgkTerms', ($rootScope, $timeout, User) ->
+  .directive 'sgkTerms', ($rootScope, $timeout, $http) ->
     restrict: 'A'
-    templateUrl: 'directives/site/terms'
-    controller: ($scope) ->
-      $scope.user = {}
-
-      $scope.terms = (form) =>
-        if form.$valid and $scope.user.accept_terms
-          User.accept_terms $rootScope.currentUser.id, $scope.user, (err, userInfo) ->
-            if !err
-              $rootScope.currentUser = userInfo
-        else
-          form.$valid = false
-
+    scope: {}
     link: ($scope, $element, $attrs) =>
-      if !$rootScope.currentUser
-        angular.element('[data-sgk-terms]').remove()
-
-      if $rootScope.currentUser?.terms
-        angular.element('[data-sgk-terms]').remove()
-
-      $element.on 'click', '.check', (e) =>
-        $el = angular.element(e.target)
-        $el.toggleClass('checked');
-        $element.find("#aceptar-term-cond").trigger 'click'
-
-      $rootScope.$watch 'currentUser', (user) =>
-        if user?.terms
-          angular.element('[data-sgk-terms]').remove()
       
+      $element.on 'click', (e) ->
+        $http.get("directives/site/terms").success (data) =>
+          $el = angular.element(data)
+
+          $el.on 'click', '.lightbox .cerrar a', (e) ->
+            console.log 'cerrar'
+            $el = angular.element(e.target).parents('.overlay')
+            $el.remove()
+
+          angular.element('body').append $el
+
 
 
