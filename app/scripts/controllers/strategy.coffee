@@ -1,7 +1,7 @@
 'use strict'
 
 angular.module('strategistApp')
-  .controller 'StrategyCtrl', ($scope, $rootScope, Match, Strategy) ->
+  .controller 'StrategyCtrl', ($scope, $rootScope, $state, Match, Strategy) ->
     $scope.match = null
     $scope.strategy = null
     $scope.error = null
@@ -13,7 +13,8 @@ angular.module('strategistApp')
 
     $scope.create = (form, match_id) ->
       if form.$valid
-        $scope.strategy.match = match_id
+        $state.transitionTo 'votes'
+        $scope.strategy.match = $scope.match._id
         $scope.strategy.user = $rootScope.currentUser.id
         Strategy.create $scope.strategy, (err) ->
           if err

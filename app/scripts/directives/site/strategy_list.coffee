@@ -1,7 +1,7 @@
 'use strict'
 
 angular.module('strategistApp')
-  .directive 'sgkStrategyList', ($timeout) ->
+  .directive 'sgkStrategyList', ($rootScope, $timeout, IO, Strategy) ->
     restrict: 'A'
     scope: {}
     templateUrl: 'directives/site/votes'
@@ -13,6 +13,16 @@ angular.module('strategistApp')
           $scope.strategies = strategies
 
     link: ($scope, $element, $attrs) ->
+
+      plapElement = document.createElement 'audio'
+      plapElement.setAttribute 'src', 'images/plap.mp3'
+
+      IO.on 'new.strategy', (id) ->
+        Strategy.show id, (err, strategy) ->
+          if !err
+            if !$rootScope.currentUser? or ($rootScope.currentUser? and $rootScope.currentUser.id is not strategy.user._id)
+              plapElement.play()
+              $scope.strategies.unshift strategy
 
       specialChars = [
         {val:"a",let:"áàãâä"}

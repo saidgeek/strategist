@@ -5,7 +5,9 @@ var express = require('express'),
     fs = require('fs'),
     mongoose = require('mongoose'),
     kue = require('kue'),
-    mandrill = require('mandrill-api/mandrill');
+    mandrill = require('mandrill-api/mandrill'),
+    io = require('socket.io');
+
 
 /**
  * Main application file
@@ -40,8 +42,12 @@ require('./lib/config/dummydata');
 // Passport Configuration
 var passport = require('./lib/config/passport');
 
+var app = express(),
+    http = require('http'),
+    server = http.createServer(app);
+// socket.io
+require('./lib/config/socket.io')(io, server);
 // Setup Express
-var app = express();
 require('./lib/config/express')(app);
 require('./lib/routes')(app, passport);
 
@@ -51,7 +57,7 @@ require('./lib/config/mandrill')(mandrill, config.mandrill);
 require('./lib/config/kue')(app, kue, jobs);
 
 // Start server
-app.listen(config.port, config.ip, function () {
+server.listen(config.port, config.ip, function () {
   console.log('Express server listening on %s:%d, in %s mode', config.ip, config.port, app.get('env'));
 });
 

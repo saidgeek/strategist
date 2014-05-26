@@ -5,7 +5,8 @@ angular.module('strategistApp', [
   'ngResource',
   'ngSanitize',
   'ui.router',
-  'ngScrollbar'
+  'ngScrollbar',
+  'btford.socket-io'
 ])
   .config ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) ->
     $httpProvider.interceptors.push 'noCacheInterceptor'
@@ -59,7 +60,12 @@ angular.module('strategistApp', [
         config.url = config.url+separator+'noCache=' + new Date().getTime()
       return config;
 
-  .run ($rootScope, $state, Auth, $timeout) ->
+  .factory 'IO', (socketFactory) ->
+    return socketFactory()
+
+  .run ($rootScope, $state, Auth, $timeout, IO) ->
+
+    IO.emit 'register.site.strategy.globals', {}
     
     # Redirect to login if route requires auth and you're not logged in
     $rootScope.$on '$stateChangeStart', (event, toState, toParams, fromParams) ->

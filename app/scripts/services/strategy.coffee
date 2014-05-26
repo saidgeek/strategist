@@ -9,6 +9,12 @@ angular.module("strategistApp")
         url: '/api/strategies'
         isArray: true
 
+      show:
+        method: 'GET'
+        params:
+          id: '@id'
+        url: '/api/strategies/:id'
+
       create:
         method: 'POST'
         params:
@@ -20,6 +26,15 @@ angular.module("strategistApp")
           {}
         , (strategies) ->
           cb null, strategies
+        , (err) ->
+          cb err.data
+        ).$promise
+
+      _show = (id, cb) ->
+        resource.show(
+          id: id
+        , (strategy) ->
+          cb null, strategy
         , (err) ->
           cb err.data
         ).$promise
@@ -36,6 +51,8 @@ angular.module("strategistApp")
     return {
       index: (cb) ->
         _index(cb)
+      show: (id, cb) ->
+        _show(id, cb)
       create: (data, cb) ->
         _create(data, cb)
     }
