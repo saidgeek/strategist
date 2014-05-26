@@ -18,6 +18,14 @@ angular.module('strategistApp', [
         url: '/'
         templateUrl: 'partials/site/index'
         authenticate: false
+      .state 'home.facebook',
+        url: '/facebbok/:id'
+        templateUrl: 'partials/site/index'
+        authenticate: false
+      .state 'home.twitter',
+        url: '/twitter/:id'
+        templateUrl: 'partials/site/index'
+        authenticate: false
       .state 'strategy',
         url: '/mi-mejor-tactica/'
         controller: 'StrategyCtrl'
@@ -63,7 +71,7 @@ angular.module('strategistApp', [
   .factory 'IO', (socketFactory) ->
     return socketFactory()
 
-  .run ($rootScope, $state, Auth, $timeout, IO) ->
+  .run ($rootScope, $state, Auth, $timeout, IO, $compile, User, $http) ->
 
     IO.emit 'register.site.strategy.globals', {}
     
@@ -74,6 +82,28 @@ angular.module('strategistApp', [
         angular.element("body").removeClass 'interior'
       else
         angular.element("body").addClass 'interior'
+
+      if $rootScope.currentUser? and !$rootScope.currentUser?.email?
+        $el = null
+        User.show $rootScope.currentUser.id, (err, user) ->
+          $rootScope.user = user
+          template = 'twitter'
+          $rootScope.user._provider = 'TWITTER'
+          if !user.email? and user.facebook.email?
+            template = 'facebook'
+            $rootScope.user.email = user.facebook.email
+            $rootScope.user._provider = 'FACEBOOK'
+          $http.get("directives/site/#{template}_email").success (data) =>
+            $el = angular.element(data)
+            angular.element('body').append $el
+            $compile($el.contents())($rootScope)
+
+      $rootScope.user_update = (form) ->
+        if form.$valid
+          User.update $rootScope.user._id, $rootScope.user, (err, user) ->
+            if !err
+              $rootScope.currentUser = user
+              $el.remove()
 
       # if toState.authenticate and not Auth.isLoggedIn()
       #   $state.transitionTo 'home'

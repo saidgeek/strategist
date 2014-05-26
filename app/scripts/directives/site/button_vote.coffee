@@ -1,7 +1,7 @@
 'use strict'
 
 angular.module('strategistApp')
-  .directive 'sgkButtonVote', ($timeout) ->
+  .directive 'sgkButtonVote', ($rootScope, $http, $timeout) ->
     restrict: 'A'
     template: """
       <a href="javascript:{}" ng-click="addVote(user_id, strategy_id, match_id)"><span>Me Gusta</span>Votar</a>
@@ -11,12 +11,24 @@ angular.module('strategistApp')
     controller: ($scope, $rootScope, Vote) ->
       
       $scope.addVote = (user_id, strategy_id, match_id) ->
-        console.log user_id, strategy_id, match_id
-        Vote user_id, match_id, strategy_id, (err) ->
-          if !err
-            console.log 'ya voto'
+        if $rootScope.currentUser?
+          Vote user_id, match_id, strategy_id, (err) ->
+            if !err
+              console.log 'ya voto'
 
     link: ($scope, $element, $attrs) ->
       $scope.user_id = $attrs.sgkUserId
       $scope.strategy_id = $attrs.sgkStrategyId
       $scope.match_id = $attrs.sgkMatchId
+
+      $element.on 'click', (e) ->
+        if !$rootScope.currentUser?
+            e.stopPropagation()
+            e.preventDefault()
+            $http.get("directives/site/login").success (data) =>
+              $el = angular.element(data)
+              $el.on 'click', '.cerrar', (e) ->
+                $el.remove()
+              
+              angular.element('body').append $el
+            return false

@@ -33,7 +33,7 @@
                             <textarea name="elpost" id="elpost" wrap="off" placeholder="Escribe tu táctica aquí" ng-trim="false" 
                             minlength="10" maxlength="140" ng-model="strategy.content" data-sgk-disabled-enter required></textarea>
                             <span>{{ 140 - strategy.content.length || 140 }}</span>
-                            <input type="submit" ng-click="submitted = true" value="Enviar" class="submit">
+                            <input type="submit" ng-click="submitted = true" value="Enviar" data-sgk-login class="submit">
                             <p ng-show="form.elpost.$error.required && submitted" class="error">Este campo es requerido</p>
                         </form>
                         <span class="number">2</span>
