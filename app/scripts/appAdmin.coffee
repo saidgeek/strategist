@@ -7,6 +7,7 @@ angular.module('strategistApp', [
   'ui.bootstrap.datetimepicker'
 ])
   .config ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) ->
+    $httpProvider.defaults.headers.common['token-auth'] = uuid.v4()
     $httpProvider.interceptors.push 'noCacheInterceptor'
 
     $urlRouterProvider.otherwise '/admin/moderar/'

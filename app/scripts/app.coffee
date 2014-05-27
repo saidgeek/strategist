@@ -62,7 +62,6 @@ angular.module('strategistApp', [
     ]
   .factory 'noCacheInterceptor', () =>
     request: (config) ->
-      console.log config
       if config.method is 'GET' and config.url.indexOf('partials/') is -1 and config.url.indexOf('directives/')
         separator = '&'
         if config.url.indexOf('?') is -1
@@ -74,8 +73,6 @@ angular.module('strategistApp', [
     return socketFactory()
 
   .run ($rootScope, $state, Auth, $timeout, IO, $compile, User, $http) ->
-
-    console.log 'init angular'
 
     IO.emit 'register.site.strategy.globals', {}
     
