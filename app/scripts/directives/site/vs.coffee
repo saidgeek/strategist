@@ -17,5 +17,5 @@ angular.module('strategistApp')
       
       $scope.$watch 'match', (match) =>
         if match
-          $scope.local = match.team_one
-          $scope.visit = match.team_two
+          $scope.local = match.team_one.toLowerCase()
+          $scope.visit = match.team_two.toLowerCase()

@@ -20,7 +20,9 @@ angular.module('strategistApp')
       IO.on 'new.strategy', (id) ->
         Strategy.show id, (err, strategy) ->
           if !err
-            if !$rootScope.currentUser? or ($rootScope.currentUser? and $rootScope.currentUser.id is not strategy.user._id)
+            _query = "#strategy_#{strategy._id}"
+            _length = angular.element(_query).length
+            if _length <= 0
               plapElement.play()
               $scope.strategies.unshift strategy
 
@@ -62,3 +64,6 @@ angular.module('strategistApp')
               angular.element(item).slideDown(600)
             else
               angular.element(item).slideUp(600)
+
+      $scope.$watch 'strategies', (v) ->
+        $scope.$broadcast('rebuild:me')
