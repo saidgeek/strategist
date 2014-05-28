@@ -12,7 +12,6 @@
   <table class="table">
     <colgroup>
       <col width="10%"/>
-      <col width="10%"/>
       <col />
       <col width="50"/>
     </colgroup>
@@ -20,7 +19,6 @@
       <tr>
         <th>Local</th>
         <th>Visita</th>
-        <th>Fecha</th>
         <th></th>
       </tr>
     </thead>
@@ -35,7 +33,6 @@
       <tr ng-show="match" ng-repeat="m in match">
         <td>{{ m.team_one }}</td>
         <td>{{ m.team_two }}</td>
-        <td>{{ m.match_at }}</td>
         <td>
           <a href="#" class="btn btn-danger btn-xs">Borrar</a>
         </td>

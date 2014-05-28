@@ -6,16 +6,17 @@ angular.module('strategistApp')
     scope: {}
     templateUrl: 'directives/site/vs'
     replace: true
-    controller: ($scope, Match) ->
-      $scope.match = null
+    controller: ($scope, Sweepstake) ->
+      $scope.sweepstake = null
       
-      Match.current (err, match) ->
+      Sweepstake.current (err, sweepstake) ->
         if !err
-          $scope.match = match
+          $scope.sweepstake = sweepstake
 
     link: ($scope, $element, $attrs) ->
       
-      $scope.$watch 'match', (match) =>
-        if match
-          $scope.local = match.team_one.toLowerCase()
-          $scope.visit = match.team_two.toLowerCase()
+      $scope.$watch 'sweepstake', (sweepstake) =>
+        if sweepstake
+          teams = sweepstake.match.split '_'
+          $scope.local = teams[0].toLowerCase()
+          $scope.visit = teams[1].toLowerCase()

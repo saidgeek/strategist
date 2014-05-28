@@ -6,18 +6,18 @@ angular.module('strategistApp')
     scope: {}
     templateUrl: 'directives/site/countdown'
     replace: true
-    controller: ($scope, Match) ->
-      $scope.match = null
+    controller: ($scope, Sweepstake) ->
+      $scope.sweepstake = null
       
-      Match.current (err, match) ->
+      Sweepstake.current (err, sweepstake) ->
         if !err
-          $scope.match = match
+          $scope.sweepstake = sweepstake
 
     link: ($scope, $element, $attrs) ->
       endDate = null
-      $scope.$watch 'match', (match) =>
-        if match
-          endDate = moment(match.match_at).format("MMM D, YYYY HH:mm:ss")
+      $scope.$watch 'sweepstake', (sweepstake) =>
+        if sweepstake
+          endDate = moment(sweepstake.init_at).format("MMM D, YYYY HH:mm:ss")
 
           $element.find('#defaultCountdown').countdown
             date: endDate
