@@ -72,10 +72,29 @@ angular.module('strategistApp', [
   .factory 'IO', (socketFactory) ->
     return socketFactory()
 
-  .run ($rootScope, $state, Auth, $timeout, IO, $compile, User, $http) ->
+  .run ($rootScope, $state, Auth, $timeout, IO, $compile, User, $http, $sce) ->
 
     IO.emit 'register.site.strategy.globals', {}
+
+    $rootScope.$watch 'currentUser', (user) ->
+      if user?.id?
+        IO.emit 'register.site.strategy.moderate', id: $rootScope.currentUser.id
     
+    IO.on 'strategy.moderate', () ->
+      $http.get("directives/site/moderate").success (data) =>
+        console.log $sce.trustAsHtml(data)
+        $el = angular.element(data)
+
+        $el.on 'click', '.cerrar, input[type="submit"]', (e) ->
+          $el.remove()
+
+        angular.element('body').append $el
+        $compile($el.contents())($rootScope)
+
+    IO.on 'new.strategy', (id) ->
+      $state.transitionTo 'votes'
+
+
     # Redirect to login if route requires auth and you're not logged in
     $rootScope.$on '$stateChangeStart', (event, toState, toParams, fromParams) ->
       angular.element("#loader").show();

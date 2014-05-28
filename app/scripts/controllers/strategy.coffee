@@ -13,7 +13,6 @@ angular.module('strategistApp')
 
     $scope.create = (form, match_id) ->
       if form.$valid
-        $state.transitionTo 'votes'
         $scope.strategy.sweepstake = $scope.sweepstake._id
         $scope.strategy.user = $rootScope.currentUser.id
         Strategy.create $scope.strategy, (err) ->
