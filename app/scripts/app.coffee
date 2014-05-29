@@ -12,7 +12,7 @@ angular.module('strategistApp', [
     $httpProvider.defaults.headers.common['token-auth'] =  uuid.v4()
     $httpProvider.interceptors.push 'noCacheInterceptor'
 
-    $urlRouterProvider.otherwise '/'
+    $urlRouterProvider.otherwise '404'
 
     $stateProvider
       .state 'home',
@@ -55,6 +55,10 @@ angular.module('strategistApp', [
       .state 'estadio_cdf',
         url: '/estadiocdf/'
         templateUrl: 'partials/site/estadiocdf'
+        authenticate: false
+      .state '404',
+        url: '{path:.*}'
+        templateUrl: 'partials/site/404'
         authenticate: false
 
     $locationProvider.html5Mode true
