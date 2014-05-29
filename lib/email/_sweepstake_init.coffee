@@ -1,5 +1,7 @@
 'use strict'
 
+layout = require './layout'
+
 # Empiezan los 15 minutos que definen todo, ¡sólo habrá un vencedor!
 # <strong><%= user.name %></strong>
 # <strong><%= sweepstake.data %> hrs</strong>
@@ -7,6 +9,8 @@
 module.exports =
 
   html: """
+
+    #{ layout.header }
       
     <p align='left' class='article-title'><singleline label='Title'><%= title %></singleline></p>
     <div align='left' class='article-content'>
@@ -26,6 +30,8 @@ module.exports =
 
       <a href="<%= link.sweepstake %>">Ir al sorteo</a>
     </div>
+
+    #{ layout.footer }
 
   """
 

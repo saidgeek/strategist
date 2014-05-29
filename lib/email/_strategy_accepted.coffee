@@ -1,11 +1,15 @@
 'use strict'
 
+layout = require './layout'
+
 # No hay falta, ¡el juego sigue!
 
 module.exports =
 
   html: """
-      
+    
+    #{ layout.header }
+
     <p align='left' class='article-title'><singleline label='Title'><%= title %></singleline></p>
     <div align='left' class='article-content'>
       <multiline label='Description'>
@@ -21,6 +25,8 @@ module.exports =
 
       <a href="<%= link.votes %>">Ir listado de tácticas</a>
     </div>
+
+    #{ layout.footer }
 
   """
 
