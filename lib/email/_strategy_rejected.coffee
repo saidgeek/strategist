@@ -1,5 +1,7 @@
 'use strict'
 
+layout = require './layout'
+
 # Falta, ¡prueba otra táctica!
 # <strong><%= user.name %></strong>
 # <strong><%= sweepstake.data %> hrs</strong>
@@ -7,6 +9,8 @@
 module.exports =
 
   html: """
+
+    #{ layout.header }
       
     <p align='left' class='article-title'><singleline label='Title'><%= title %></singleline></p>
     <div align='left' class='article-content'>
@@ -22,6 +26,8 @@ module.exports =
 
       <a href="<%= link.strategy %>">Publica una nueva táctica</a>
     </div>
+
+    #{ layout.footer }
 
   """
 
