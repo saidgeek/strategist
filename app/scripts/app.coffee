@@ -9,6 +9,7 @@ angular.module('strategistApp', [
   'btford.socket-io'
 ])
   .config ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) ->
+    $httpProvider.defaults.headers.common['token-auth'] = uuid.v4()
     $httpProvider.interceptors.push 'noCacheInterceptor'
 
     $urlRouterProvider.otherwise '/'
@@ -16,6 +17,14 @@ angular.module('strategistApp', [
     $stateProvider
       .state 'home',
         url: '/'
+        templateUrl: 'partials/site/index'
+        authenticate: false
+      .state 'home.facebook',
+        url: '/facebbok/:id'
+        templateUrl: 'partials/site/index'
+        authenticate: false
+      .state 'home.twitter',
+        url: '/twitter/:id'
         templateUrl: 'partials/site/index'
         authenticate: false
       .state 'strategy',
@@ -37,7 +46,15 @@ angular.module('strategistApp', [
         authenticate: false
       .state 'awards',
         url: '/premios/'
-        templateUrl: 'partials/site/awards'
+        templateUrl: 'partials/site/awords'
+        authenticate: false   
+      .state 'estadio_lg',
+        url: '/estadiolg/'
+        templateUrl: 'partials/site/estadiolg'
+        authenticate: false
+      .state 'estadio_cdf',
+        url: '/estadiocdf/'
+        templateUrl: 'partials/site/estadiocdf'
         authenticate: false
 
     $locationProvider.html5Mode true
@@ -63,10 +80,29 @@ angular.module('strategistApp', [
   .factory 'IO', (socketFactory) ->
     return socketFactory()
 
-  .run ($rootScope, $state, Auth, $timeout, IO) ->
+  .run ($rootScope, $state, Auth, $timeout, IO, $compile, User, $http, $sce) ->
 
     IO.emit 'register.site.strategy.globals', {}
+
+    $rootScope.$watch 'currentUser', (user) ->
+      if user?.id?
+        IO.emit 'register.site.strategy.moderate', id: $rootScope.currentUser.id
     
+    IO.on 'strategy.moderate', () ->
+      $http.get("directives/site/moderate").success (data) =>
+        console.log $sce.trustAsHtml(data)
+        $el = angular.element(data)
+
+        $el.on 'click', '.cerrar, input[type="submit"]', (e) ->
+          $el.remove()
+
+        angular.element('body').append $el
+        $compile($el.contents())($rootScope)
+
+    IO.on 'new.strategy', (id) ->
+      $state.transitionTo 'votes'
+
+
     # Redirect to login if route requires auth and you're not logged in
     $rootScope.$on '$stateChangeStart', (event, toState, toParams, fromParams) ->
       angular.element("#loader").show();
@@ -74,6 +110,28 @@ angular.module('strategistApp', [
         angular.element("body").removeClass 'interior'
       else
         angular.element("body").addClass 'interior'
+
+      if $rootScope.currentUser? and !$rootScope.currentUser?.email?
+        $el = null
+        User.show $rootScope.currentUser.id, (err, user) ->
+          $rootScope.user = user
+          template = 'twitter'
+          $rootScope.user._provider = 'TWITTER'
+          if !user.email? and user.facebook.email?
+            template = 'facebook'
+            $rootScope.user.email = user.facebook.email
+            $rootScope.user._provider = 'FACEBOOK'
+          $http.get("directives/site/#{template}_email").success (data) =>
+            $el = angular.element(data)
+            angular.element('body').append $el
+            $compile($el.contents())($rootScope)
+
+      $rootScope.user_update = (form) ->
+        if form.$valid
+          User.update $rootScope.user._id, $rootScope.user, (err, user) ->
+            if !err
+              $rootScope.currentUser = user
+              $el.remove()
 
       # if toState.authenticate and not Auth.isLoggedIn()
       #   $state.transitionTo 'home'

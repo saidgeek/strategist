@@ -285,6 +285,17 @@ ul{
   list-style: none;
   text-align: center;
 }
+.overlay form{
+  position: relative;
+}
+.overlay .dialogos .cell p.error{
+  position: absolute;
+  left: 0;
+  top: 180%;
+  color: red;
+  margin: 0;
+  font-size: 12px;
+}
 .forma ul.logeo li, .overlay ul.logeo li{
   display: inline-block;
   margin: 0 20px 0 0;
@@ -466,7 +477,7 @@ ul{
   top: -60px;
   opacity: 0;
 }
-.hinchas.animate, .forma.animate, .contador.animate{
+.hinchas.animate, .forma.animate, #tactica .forma.animate, .contador.animate{
   position: relative;
   bottom: -60px;
   opacity: 0;
@@ -482,7 +493,7 @@ ul{
   -webkit-transition: all 300ms ease;
   transition: all 300ms ease;
 }
-.hinchas, .forma, .contador.animate, .contador,
+.hinchas, #tactica .forma, .forma, .contador.animate, .contador,
 #ganadores img.hincha-ganador.animate, #ganadores img.hincha-ganador,
 #ganadores img.televisor.animate, #ganadores img.televisor{
   -webkit-transition: all 500ms ease;
@@ -625,6 +636,8 @@ ul{
   background: url("../images/forma-2.png") no-repeat 50% 0;
   margin: -80px auto 0 auto;
   height: 215px;
+  position: relative;
+  bottom: 0;
 }
 #tactica .forma .txt{
   margin: 0 auto;
@@ -858,6 +871,9 @@ form#post input.submit:active{
   top: 0;
   opacity: 1;
 }
+#right div.lista-posiciones.me{
+  margin: 10px 0;
+}
 #right div.lista-posiciones .listar{
   display: table;
   width: 100%;
@@ -1077,7 +1093,7 @@ background: url("../images/icon-twitter.png") no-repeat 0 0;
 /*----// FIN PASO 3 y 4 //----*/
 
 /*----// PASO 5 //----*/
-#ganadores .hinchas {
+#ganadores .hinchas, #awards .hinchas {
   background: url("../images/bkg-ganadores.png") 0 0 no-repeat;
   height: 440px;
   width:849px;
@@ -1475,4 +1491,346 @@ background: url("../images/icon-twitter.png") no-repeat 0 0;
   background: url("../images/cerrar-lb-red.png") no-repeat 0 0;
 }
 /*----// FIN LIGHTBOX DIALOGOS (PEDIR MAIL, MODRACIÓN, FELICIDADES) //----*/
+
+/*---// APPS //---*/
+#estadios #main.animate, #estadios #main,
+#estadios #main .coll, #estadios #main .coll.animate,
+#estadios #main .colr, #estadios #main .colr.animate{
+  -webkit-transition: all 300ms ease;
+  -moz-transition: all 300ms ease;
+  -ms-transition: all 300ms ease;
+  -o-transition: all 300ms ease;
+  transition: all 300ms ease;
+}
+#estadios #left {
+  float: left;
+  width: 100%;
+}
+#estadios #main {
+  background: url("../images/estadios-bg.png") no-repeat center center;
+  width: 763px;
+  height: 391px;
+  margin: -30px auto 0 auto;
+  position: relative;
+  bottom:0;
+  opacity: 1;
+  padding: 70px 50px;
+}
+#estadios #main.animate{
+  position: relative;
+  bottom: -60px;
+  opacity: 0;
+}
+
+#estadios #main .estadios-app {
+  display: block;
+  position: absolute;
+  top: -5px;
+  right: -6px;
+}
+/* columna izquierda */
+#estadios #main .coll {
+  width: 379px;
+  margin-left: 20px;
+  float: left;
+  position: relative;
+  bottom: 0;
+  opacity: 1;
+}
+#estadios #main .coll.animate, #estadios #main .colr.animate{
+  position: relative;
+  bottom: -60px;
+  opacity: 0;
+}
+#estadios #main .coll h1{
+  font: normal 24px'geogrotesque_bdbold';
+  text-transform: uppercase;
+  margin: 0 0 16px 0;
+  padding: 0;
+  color: #ee2642;
+}
+#estadios #main .coll h1 span{
+  color: #fff;
+}
+#estadios #main .coll .tv{
+  display: block;
+  background: url("../images/estadios-tv.png") no-repeat 0 0;
+  width: 375px;
+  height: 244px;
+  padding: 2px;   
+}
+#estadios #main .coll ul{
+  width: 379px;
+  float: left;
+  padding: 0;
+  margin-top: 22px;
+}
+#estadios #main .coll ul li{
+  list-style: none;
+  float: left;
+  margin: 0 7px;
+}
+#estadios #main .coll ul li a{
+  position: relative;
+  width: 111px;
+  height: 63px;
+  display: block;
+}
+#estadios #main .coll ul li a span{
+  position: absolute;
+  width: 111px;
+  height: 63px;
+  top: 0;
+  right: 0;
+}
+/* columna derecha */
+#estadios #main .colr {
+  width: 310px;
+  float: right;
+  margin-top: 20px;
+  position: relative;
+  bottom: 0;
+  opacity: 1;
+}
+#estadios #main .colr h2 {
+  font: normal 16px'geogrotesque_bdbold';
+  text-transform: uppercase;
+  margin: 20px 0 0 0;
+  padding: 0;
+}
+#estadios #main .colr p {
+  font: 13px'geogrotesque_ullgultralight';
+  line-height: 1.6em;
+  margin:15px 4px 15px 0;
+}
+#estadios #main .colr p.bold{
+  font-family: 'geogrotesque_smbdsemibold';
+}
+#estadios #main .colr a.participar {
+  display: inline-block;
+  margin: 30px 0 0 0;
+  background: #ee2642;
+  padding: 8px 42px;
+  color: #fff;
+  font: normal 12px'geogrotesque_bdbold';
+  text-transform: uppercase;
+  border-radius: 3px;
+  line-height: 1.8em;
+  box-shadow: 0 3px 0 0 #b81d2f;
+  position: relative;
+}
+#estadios #main .colr a.participar:active {
+  top: 2px;
+  -webkit-box-shadow: 0 1px 0 0 #b81d2f;
+  box-shadow: 0 1px 0 0 #b81d2f;
+}
+#estadios #main .colr a.revisa {
+  display: inline-block;
+  font: normal 12px'geogrotesque_bdbold';
+  text-transform: uppercase;
+  border-radius: 3px;
+  line-height: 1.8em;    
+  color: #000;
+  box-shadow: 0 3px 0 0 #cacbd2;
+  margin: 30px 0 0 12px;
+  padding: 8px 92px 8px 21px;
+  background: #f1f1f1 url("../images/revisa-cdf.png") no-repeat 65px 10px; 
+  position: relative;
+}
+#estadios #main .colr a.revisa.lg{
+  background: #f1f1f1 url("../images/revisa-lg.png") no-repeat 65px 10px; 
+}
+#estadios #main .colr a.revisa:active {
+ top: 2px;
+  -webkit-box-shadow: 0 1px 0 0 #cacbd2;
+  box-shadow: 0 1px 0 0 #cacbd2;
+}
+.scroll{
+  height: 170px;
+  overflow: hidden;
+}
+.scroll .altura{
+  height: 246px;
+  margin: 0;
+  padding: 0;
+  display: block;
+}
+.scroll.cdf .altura{
+  height: 226px;
+}
+/*---// FIN PASO 5 //---*/
+
+/*----// ERROR 404 //----*/
+#error404 .hinchas{
+  text-align: center;
+  height: auto;
+  margin: 20px 0 170px 0;
+}
+/*----// FIN ERROR 404 //----*/
+
+/*----// IE //----*/
+#ie .hinchas{
+  background: url("../images/bkg-ganadores.png") 0 0 no-repeat;
+  height: 440px;
+  width: 849px;
+  margin: -30px auto 0 auto;
+  position: relative;
+  padding: 90px 0 0 40px;
+}
+.browsers{
+  margin-top: 60px;
+}
+.browsers h2{
+  font: normal 35px 'geogrotesque_bdbold';
+  text-transform: uppercase;
+  text-align: center;
+}
+.browsers p{
+  text-align: center;
+  font-size: 15px;
+  width: 63%;
+  margin: 0 auto;
+}
+.browsers ul.menu-browser{
+  margin: 35px auto 0 auto;;
+  display: table;
+  padding: 0;
+  list-style: none;
+}
+.browsers ul.menu-browser li{
+  display: table-cell;
+  padding: 0 7px;
+}
+.browsers ul.menu-browser li a{
+  padding: 10px 26px;
+  display: block;
+  border-radius: 3px;
+  font: normal 14px 'geogrotesque_bdbold';
+  text-transform: uppercase;
+  color: #fff;
+  position: relative;
+  top: 0;
+}
+.browsers ul.menu-browser li a span{
+  width: 19px;
+  height: 17px;
+  display: inline-block;
+  margin: 0 0 0 10px;
+}
+.browsers ul.menu-browser li a span img{
+  margin-bottom: -3px;
+}
+.browsers ul.menu-browser li.firefox a{
+  background: #e79427;
+  box-shadow: 0 3px 0 0 #c88023;
+}
+.browsers ul.menu-browser li.explorer a{
+  background: #3cb7e0;
+  box-shadow: 0 3px 0 0 #34a1ca;
+}
+.browsers ul.menu-browser li.chrome a{
+  background: #4fae4a;
+  box-shadow: 0 3px 0 0 #449542;
+}
+.browsers ul.menu-browser li.firefox a:active,
+.browsers ul.menu-browser li.explorer a:active,
+.browsers ul.menu-browser li.chrome a:active{
+  top: 2px;
+}
+.browsers ul.menu-browser li.firefox a:active{
+  box-shadow: 0 1px 0 0 #c88023; 
+}
+.browsers ul.menu-browser li.explorer a:active{
+  box-shadow: 0 1px 0 0 #34a1ca;
+}
+.browsers ul.menu-browser li.chrome a:active{
+  box-shadow: 0 1px 0 0 #449542;
+}
+/*----// FIN IE //----*/
+
+/*----// PREMIOS //----*/
+#awards .hinchas{
+  padding: 60px 45px 0 40px;
+  width: 804px;
+  margin-top: -40px;
+}
+#awards .hinchas .cell{
+  display: table-cell;
+  vertical-align: top;
+  padding: 0 15px;
+  position: relative;
+  opacity: 1;
+  bottom: 0;
+}
+#awards .hinchas .cell img{
+  position: relative;
+  z-index: 100;
+  opacity: 1;
+  bottom: 0;
+}
+#awards .hinchas .cell .bloque{
+  position: relative;
+  left: 0;
+  opacity: 1;
+}
+#awards .hinchas .cell .cell{
+  padding: 15px 0;
+}
+#awards .hinchas .cell .cell.app{
+  padding-right: 10px;
+}
+#awards .hinchas .cell.border{
+  border-right:1px solid rgba(255,255,255,0.25);
+}
+#awards .hinchas h2{
+  font: normal 24px 'geogrotesque_bdbold';
+  color: #ee2642;
+  text-transform: uppercase;
+}
+#awards .hinchas .cell ul li{
+  margin: 8px 0;
+  padding: 0 0 0 20px;
+  background: url("../images/dot-list.png") no-repeat 0 50%;
+  font: normal 12px 'geogrotesque_ullgultralight';
+  text-transform: uppercase;
+}
+#awards .hinchas .info-premio{
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(255,255,255,0.25);
+}
+#awards .hinchas .cell p a{
+  color: #eb2038;
+}
+#awards .hinchas .cell p a:hover{
+  text-decoration: underline;
+}
+#awards .hinchas, #awards .hinchas.animate,
+#awards .hinchas .cell img, #awards .hinchas .cell img.animate,
+#awards .hinchas .cell .bloque, #awards .hinchas .cell .bloque.animate,
+#awards .hinchas .cell.border, #awards .hinchas .cell.border.animate,
+#awards .hinchas .cell, #awards .hinchas .cell.animate{
+  -webkit-transition: all 300ms ease;
+  -moz-transition: all 300ms ease;
+  -ms-transition: all 300ms ease;
+  -o-transition: all 300ms ease;
+  transition: all 300ms ease;
+}
+#awards .hinchas.animate, #awards .hinchas .cell img.animate,
+#awards .hinchas .cell.border.animate,
+#awards .hinchas .cell.animate{
+  position: relative;
+  bottom: -60px;
+  opacity: 0;
+}
+#awards .hinchas .cell .bloque.animate{
+  position: relative;
+  left: -100%;
+  opacity: 0;
+}
+/*----// FIN PREMIOS //----*/
+
+
+
+
+
 

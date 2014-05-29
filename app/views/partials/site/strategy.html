@@ -8,15 +8,15 @@
                         </a>
                     </div>
                     <div class="ecdf">
-                        <a href="">
+                        <a ui-sref="estadio_cdf">
                             <span><img src="images/estadio-cdf-logo.png" alt="Estadio CDF"></span>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. <span>ver más</span>.</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. <span>Ver más</span></p>
                         </a>
                     </div>
                     <div class="elg">
-                        <a href="">
+                        <a ui-sref="estadio_lg">
                             <span><img src="images/estadio-lg-logo.png" alt="Estadio LG"></span>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. <span>ver más</span>.</p>
+                            <p>No te pierdas los detalles de tus partidos y ligas favoritas, en tiempo real, con esta aplicación exclusiva para SmartTV LG. <span>Ver más</span></p>
                         </a>
                     </div>
                 </div><!--// .logos //-->
@@ -30,10 +30,10 @@
                         <h1>¿Cuál es tu mejor táctica para que Chile triunfe?</h1>
                         <p>Escríbela aquí en 140 caracteres y consigue votos para obtener más posibilidades de ganar.</p>
                         <form name="form" id="post" ng-submit="create(form, match._id)" novalidate>
-                            <textarea name="elpost" id="elpost" wrap="off" placeholder="Escribe tu táctica aquí" ng-trim="false" 
+                            <textarea name="elpost" id="elpost" placeholder="Escribe tu táctica aquí" ng-trim="false" 
                             minlength="10" maxlength="140" ng-model="strategy.content" data-sgk-disabled-enter required></textarea>
                             <span>{{ 140 - strategy.content.length || 140 }}</span>
-                            <input type="submit" ng-click="submitted = true" value="Enviar" class="submit">
+                            <input type="submit" ng-click="submitted = true" value="Enviar" data-sgk-login class="submit">
                             <p ng-show="form.elpost.$error.required && submitted" class="error">Este campo es requerido</p>
                         </form>
                         <span class="number">2</span>

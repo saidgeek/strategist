@@ -333,9 +333,19 @@ module.exports = function (grunt) {
           src: '**/*.jade'
         }, {
           expand: true,
-          cwd: '.tmp/images',
+          cwd: '<%= yeoman.app %>/images',
           dest: '<%= yeoman.dist %>/public/images',
-          src: ['generated/*']
+          src: ['*']
+        }, {
+          expand: true,
+          cwd: '.tmp/styles',
+          dest: '<%= yeoman.dist %>/public/styles',
+          src: ['*']
+        }, {
+          expand: true,
+          cwd: '.tmp/scripts',
+          dest: '<%= yeoman.dist %>/public/scripts',
+          src: ['**/**/*']
         }, {
           expand: true,
           dest: '<%= yeoman.dist %>',
@@ -506,13 +516,13 @@ module.exports = function (grunt) {
     'useminPrepare',
     'concurrent:dist',
     'autoprefixer',
-    'concat',
+    // 'concat',
     'ngmin',
     'copy:dist',
-    'cdnify',
-    'cssmin',
-    'uglify',
-    'rev',
+    // 'cdnify',
+    // 'cssmin',
+    // 'uglify',
+    // 'rev',
     'usemin'
   ]);
 
