@@ -137,8 +137,6 @@ angular.module('strategistApp', [
               $rootScope.currentUser = user
               $el.remove()
 
-      console.log toState, toParams, fromParams
-
       if toParams?.terms? and toParams.terms is 'terms'
         $http.get("directives/site/terms").success (data) =>
           $el = angular.element(data)
