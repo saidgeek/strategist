@@ -16,7 +16,7 @@ angular.module('strategistApp', [
 
     $stateProvider
       .state 'home',
-        url: '/'
+        url: '/:terms'
         templateUrl: 'partials/site/index'
         authenticate: false
       .state 'home.facebook',
@@ -28,7 +28,7 @@ angular.module('strategistApp', [
         templateUrl: 'partials/site/index'
         authenticate: false
       .state 'strategy',
-        url: '/mi-mejor-tactica/'
+        url: '/mi-mejor-tactica/:terms'
         controller: 'StrategyCtrl'
         templateUrl: 'partials/site/strategy'
         authenticate: false
@@ -136,6 +136,19 @@ angular.module('strategistApp', [
             if !err
               $rootScope.currentUser = user
               $el.remove()
+
+      console.log toState, toParams, fromParams
+
+      if toParams?.terms? and toParams.terms is 'terms'
+        $http.get("directives/site/terms").success (data) =>
+          $el = angular.element(data)
+
+          $el.on 'click', '.lightbox .cerrar a', (e) ->
+            console.log 'cerrar'
+            $el = angular.element(e.target).parents('.overlay')
+            $el.remove()
+
+          angular.element('body').append $el
 
       # if toState.authenticate and not Auth.isLoggedIn()
       #   $state.transitionTo 'home'
