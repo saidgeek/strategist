@@ -9,7 +9,7 @@ angular.module('strategistApp', [
   'btford.socket-io'
 ])
   .config ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) ->
-    $httpProvider.defaults.headers.common['token-auth'] = uuid.v4()
+    $httpProvider.defaults.headers.common['token-auth'] =  uuid.v4()
     $httpProvider.interceptors.push 'noCacheInterceptor'
 
     $urlRouterProvider.otherwise '/'
@@ -82,7 +82,7 @@ angular.module('strategistApp', [
 
   .run ($rootScope, $state, Auth, $timeout, IO, $compile, User, $http, $sce) ->
 
-    IO.emit 'register.strategy.globals', {}
+    IO.emit 'register.strategy.globals', { user_id: ($rootScope.currentUser?.id || null) }
 
     $rootScope.$watch 'currentUser', (user) ->
       if user?.id?

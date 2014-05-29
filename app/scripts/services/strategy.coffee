@@ -9,6 +9,18 @@ angular.module("strategistApp")
         url: '/api/strategies'
         isArray: true
 
+      last_published:
+        method: 'GET'
+        params:
+          user_id: '@user_id'
+        url: '/api/strategies/last/published/:user_id'
+
+      more_votes:
+        method: 'GET'
+        params:
+          user_id: '@user_id'
+        url: '/api/strategies/votes/:user_id'
+
       moderate:
         method: 'GET'
         params: {}
@@ -46,6 +58,24 @@ angular.module("strategistApp")
           {}
         , (strategies) ->
           cb null, strategies
+        , (err) ->
+          cb err.data
+        ).$promise
+
+      _last_published = (user_id, cb) ->
+        resource.last_published(
+          user_id: user_id
+        , (strategy) ->
+          cb null, strategy
+        , (err) ->
+          cb err.data
+        ).$promise
+
+      _more_votes = (user_id, cb) ->
+        resource.more_votes(
+          user_id: user_id
+        , (strategy) ->
+          cb null, strategy
         , (err) ->
           cb err.data
         ).$promise
@@ -98,6 +128,10 @@ angular.module("strategistApp")
     return {
       index: (cb) ->
         _index(cb)
+      last_published: (user_id, cb) ->
+        _last_published(user_id, cb)
+      more_votes: (user_id, cb) ->
+        _more_votes(user_id, cb)
       moderate: (cb) ->
         _moderate(cb)
       approved: (id, cb) ->
