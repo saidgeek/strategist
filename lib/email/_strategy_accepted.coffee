@@ -1,5 +1,7 @@
 'use strict'
+
 layout = require './layout'
+
 # No hay falta, ¡el juego sigue!
 
 module.exports =

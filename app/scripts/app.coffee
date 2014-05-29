@@ -46,7 +46,15 @@ angular.module('strategistApp', [
         authenticate: false
       .state 'awards',
         url: '/premios/'
-        templateUrl: 'partials/site/awards'
+        templateUrl: 'partials/site/awords'
+        authenticate: false   
+      .state 'estadio_lg',
+        url: '/estadiolg/'
+        templateUrl: 'partials/site/estadiolg'
+        authenticate: false
+      .state 'estadio_cdf',
+        url: '/estadiocdf/'
+        templateUrl: 'partials/site/estadiocdf'
         authenticate: false
 
     $locationProvider.html5Mode true
