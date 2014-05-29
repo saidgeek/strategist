@@ -1,7 +1,32 @@
 'use strict'
 
 angular.module('strategistApp')
-  # .controller 'ModerateCtrl', ($scope) ->
+  .controller 'ModerateCtrl', ($scope, Strategy, IO) ->
+    $scope.strategies = []
+
+    plapElement = document.createElement 'audio'
+    plapElement.setAttribute 'src', 'images/plap.mp3'
+
+    IO.on 'new.moderating.strategy', (id) ->
+      Strategy.show id, (err, strategy) ->
+        if !err
+          plapElement.play()
+          $scope.strategies.unshift strategy
+
+    Strategy.moderate (err, strategies) ->
+      if !err
+        $scope.strategies = strategies
+
+    $scope.approved = (id, index) ->
+      Strategy.approved id, (err, strategy) ->
+        if !err
+          $scope.strategies.splice index, 1
+
+    $scope.rejected = (id, index) ->
+      Strategy.rejected id, (err, strategy) ->
+        if !err
+          $scope.strategies.splice index, 1
+
 
   .controller 'LibraryModalCtrl', ($scope, Library, $modalInstance) ->
     $scope.libraries = []

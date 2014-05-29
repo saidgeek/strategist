@@ -74,7 +74,7 @@ angular.module('strategistApp', [
 
   .run ($rootScope, $state, Auth, $timeout, IO, $compile, User, $http, $sce) ->
 
-    IO.emit 'register.site.strategy.globals', {}
+    IO.emit 'register.strategy.globals', {}
 
     $rootScope.$watch 'currentUser', (user) ->
       if user?.id?

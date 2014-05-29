@@ -9,6 +9,26 @@ angular.module("strategistApp")
         url: '/api/strategies'
         isArray: true
 
+      moderate:
+        method: 'GET'
+        params: {}
+        url: '/api/strategies/moderate'
+        isArray: true
+
+      approved:
+        method: 'PUT'
+        params:
+          id: '@id'
+          decision: 'approved'
+        url: '/api/strategies/moderate/:id/:decision'
+
+      rejected:
+        method: 'PUT'
+        params:
+          id: '@id'
+          decision: 'rejected'
+        url: '/api/strategies/moderate/:id/:decision'
+
       show:
         method: 'GET'
         params:
@@ -26,6 +46,33 @@ angular.module("strategistApp")
           {}
         , (strategies) ->
           cb null, strategies
+        , (err) ->
+          cb err.data
+        ).$promise
+
+      _moderate = (cb) ->
+        resource.moderate(
+          {}
+        , (strategies) ->
+          cb null, strategies
+        , (err) ->
+          cb err.data
+        ).$promise
+
+      _approved = (id, cb) ->
+        resource.approved(
+          id: id
+        , (strategy) ->
+          cb null, strategy
+        , (err) ->
+          cb err.data
+        ).$promise
+
+      _rejected = (id, cb) ->
+        resource.rejected(
+          id: id
+        , (strategy) ->
+          cb null, strategy
         , (err) ->
           cb err.data
         ).$promise
@@ -51,6 +98,12 @@ angular.module("strategistApp")
     return {
       index: (cb) ->
         _index(cb)
+      moderate: (cb) ->
+        _moderate(cb)
+      approved: (id, cb) ->
+        _approved(id, cb)
+      rejected: (id, cb) ->
+        _rejected(id, cb)
       show: (id, cb) ->
         _show(id, cb)
       create: (data, cb) ->

@@ -5,9 +5,8 @@
       <a class="navbar-brand" href="#">Administración Stratega LG</a>
     </div>
 
-    <ul class="nav navbar-nav">
+    <ul class="nav navbar-nav" ng-if="currentUser.role === 'ADMIN'">
       <li ui-sref-active="active"><a ui-sref="admin.moderate">Moderar</a></li>
-      <li ui-sref-active="active"><a ui-sref="admin.match">Partidos</a></li>
       <li ui-sref-active="active"><a ui-sref="admin.sweepstake">Sorteos</a></li>
     </ul>
 

@@ -3,15 +3,18 @@
   <div class="pull-right" data-sgk-library-modal></div>
 </div>
 
-<div class="row item" ng-repeat="strategy in [1,2,3,5,6,7,8,9,10]">
+<div class="row item" ng-repeat="strategy in strategies">
   <div class="col-sm-12 well">
     <blockquote>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-      <footer>Someone famous in <cite title="Source Title">Source Title</cite></footer>
+      <p>{{ strategy.content | removePlus }}</p>
+      <footer>
+        {{ strategy.user.name }} 
+        <cite title="Source Title">{{ strategy.created_at | formatDate }}</cite>
+      </footer>
     </blockquote>
     <div class="pull-right">
-      <a href="javascript:{}" class="btn btn-success">Aceptar</a>
-      <a href="javascript:{}" class="btn btn-danger">Rechazar</a>
+      <a href="javascript:{}" class="btn btn-success" ng-click="approved(strategy._id, $index)">Aceptar</a>
+      <a href="javascript:{}" class="btn btn-danger" ng-click="rejected(strategy._id, $index)">Rechazar</a>
     </div>
   </div>
 </div>

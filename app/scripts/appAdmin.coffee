@@ -4,7 +4,8 @@ angular.module('strategistApp', [
   'ngSanitize',
   'ui.router',
   'ui.bootstrap',
-  'ui.bootstrap.datetimepicker'
+  'ui.bootstrap.datetimepicker',
+  'btford.socket-io'
 ])
   .config ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) ->
     $httpProvider.defaults.headers.common['token-auth'] = uuid.v4()
@@ -24,10 +25,10 @@ angular.module('strategistApp', [
         authenticate: true
       .state 'admin.moderate',
         url: '/admin/moderar/'
-        controller: 'ModerateCtrl'
         views:
           'layout':
             templateUrl: 'partials/admin/index'
+            controller: 'ModerateCtrl'
         authenticate: true
       .state 'admin.match',
         url: '/admin/partidos/'
@@ -65,10 +66,14 @@ angular.module('strategistApp', [
         config.url = config.url+separator+'noCache=' + new Date().getTime()
       return config;
 
-  .run ($rootScope, $state, Auth, $timeout) ->
+  .factory 'IO', (socketFactory) ->
+    return socketFactory()
+
+  .run ($rootScope, $state, Auth, $timeout, IO) ->
+
+    IO.emit 'register.strategy.globals', {}
     # Redirect to login if route requires auth and you're not logged in
     $rootScope.$on '$stateChangeStart', (event, toState, toParams, fromParams) ->
-      console.log 'toState.authenticate:', toState.authenticate
       if toState.authenticate and not Auth.isLoggedIn()
         $state.transitionTo 'login'
         event.preventDefault()
