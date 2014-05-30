@@ -82,6 +82,7 @@ ul{
 .contenedor{
   width: 960px;
   margin: 0 auto;
+  position: relative;
 }
 #menu{
   position: absolute;
@@ -1093,7 +1094,7 @@ background: url("../images/icon-twitter.png") no-repeat 0 0;
 /*----// FIN PASO 3 y 4 //----*/
 
 /*----// PASO 5 //----*/
-#ganadores .hinchas, #awards .hinchas {
+#awards .hinchas {
   background: url("../images/bkg-ganadores.png") 0 0 no-repeat;
   height: 440px;
   width:849px;
@@ -1101,7 +1102,37 @@ background: url("../images/icon-twitter.png") no-repeat 0 0;
   position: relative;
   padding: 90px 0 0 40px;
 }
-
+#ganadores .hinchas{
+  background: url("../images/bkg-tabs-ganadores.png") 0 0 no-repeat;
+  width: 782px;
+  height: 473px;
+  margin: 30px auto 0 auto;
+  padding: 0 50px;
+}
+#ganadores .hinchas .table{
+  display: table;
+  width: 100%;
+  padding: 30px 0 0 0;
+}
+#ganadores .hinchas .cell{
+  display: table-cell;
+  vertical-align: top;
+}
+#ganadores .hinchas .cell.sorteo{
+  text-align: center;
+}
+#ganadores .hinchas .cell .fechasorteo{
+  background: #27252d;
+  padding: 10px;
+  border: 1px solid #2c363e;
+  text-align: center;
+  margin: 10px 0 0 0;
+  font: normal 26px 'geogrotesque_bdbold';
+  color: #ee2743;
+}
+#ganadores .hinchas .cell .fechasorteo span{
+  color: #fff;
+}
 #ganadores span.number {
   display: block;
   width: 56px;
@@ -1111,8 +1142,8 @@ background: url("../images/icon-twitter.png") no-repeat 0 0;
   background: url("../images/bkg-numero.png") no-repeat 0 0;
   color: #ee2642;
   position: absolute;
-  right: 40px;
-  top: 20px;
+  top: -24px;
+  left: -22px;
   z-index: 3;
 }
 #ganadores h2 {
@@ -1159,13 +1190,62 @@ background: url("../images/icon-twitter.png") no-repeat 0 0;
 }
 #ganadores .info-ganador {
   background: #ee2743;
-  width: 739px;
-  height: 113px;
-  padding: 12px 0 0 18px;
-  margin: 30px 0 0 0;
+  padding: 22px;
+  margin: 0 -40px 0 -45px;
   display: block;
   position: relative;
   z-index: 2;
+}
+#ganadores .info-ganador:after, #ganadores .info-ganador:before{
+  display: table;
+  content: "";
+  clear: both;
+}
+#ganadores .info-ganador p.mensaje{
+  font: normal 13px 'geogrotesque_bdbold';
+  text-transform: uppercase;
+  width: 39%;
+}
+#ganadores .info-ganador .participa{
+  position: absolute;
+  top: 38px;
+  left: 45%;
+}
+#ganadores .info-ganador .participa a{
+  background: #f1f1f1;
+  display: block;
+  padding: 8px 21px;
+  color: #ee2642;
+  font: normal 14px 'geogrotesque_bdbold';
+  text-transform: uppercase;
+  border-radius: 3px;
+  line-height: 1.8em;
+  position: relative;
+  box-shadow: 0 3px 0 0 #cacbd2;
+  border: none;
+  outline: none;
+}
+#ganadores .info-ganador .participa a:active{
+  margin-top: 2px;
+  box-shadow: 0 1px 0 0 #cacbd2;
+}
+#ganadores .app{
+  text-align: center;
+  margin: 20px -17px 0 0;
+}
+#ganadores .tv-app{
+  width: 295px;
+  margin: -265px 0 0 0;
+  float: right;
+}
+#ganadores .tv-app ul{
+  margin: 15px 0 0 0;
+  display: table;
+  width: 100%;
+}
+#ganadores .tv-app ul li{
+ display: table-cell;
+ text-align: center;
 }
 #ganadores .info-ganador span.avatar {
   display: inline-block;
@@ -1274,10 +1354,17 @@ background: url("../images/icon-twitter.png") no-repeat 0 0;
   transition: all 100ms ease;
 }
 #ganadores img.hincha-ganador {
-  position: absolute;
-  top: 32px;
-  right: -62px;
+  position: relative;
+  top: 0;
+  margin: 0 -7px 0 0;
   z-index: 0;
+  display: block;
+}
+#ganadores .hinchas h2{
+  margin: 0;
+}
+#ganadores .hinchas h2 span{
+  display: inline;
 }
 #ganadores img.televisor {
   position: absolute;
@@ -1827,6 +1914,43 @@ background: url("../images/icon-twitter.png") no-repeat 0 0;
   left: -100%;
   opacity: 0;
 }
+ul.tabs{
+  position: absolute;
+  right: 60px;
+  top: 145px;
+  z-index: 100;
+}
+ul.tabs li{
+  float: left;
+  margin:0 -40px;
+  position: relative;
+  border-bottom: 1px solid rgba(0,0,0,0.5);
+  -moz-transform: scale(1) rotate(-60deg);
+  -webkit-transform: scale(1) rotate(-60deg);
+  -o-transform: scale(1) rotate(-60deg);
+  -ms-transform: scale(1) rotate(-60deg);
+  transform: scale(1) rotate(-60deg);
+}
+ul.tabs li img{
+  position: absolute;
+  bottom: -11px;
+  left: -15px;
+}
+ul.tabs li a{
+  color: #fff;
+}
+ul.tabs li span{
+  display: inline-block;
+  background: rgba(0,0,0,0.5);
+  padding: 5px 10px;
+  margin: 0 0 0 60px;
+  -moz-transform: scale(1) skewX(30deg);
+  -webkit-transform: scale(1) skewX(30deg);
+  -o-transform: scale(1) skewX(30deg);
+  -ms-transform: scale(1) skewX(30deg);
+  transform: scale(1) skewX(30deg);
+}
+
 /*----// FIN PREMIOS //----*/
 
 
