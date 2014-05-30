@@ -31,106 +31,18 @@ más cerca estarás del SmartTV.</p>
                                     <p><span>¿No estás aún entre ellas?</span> Comparte la tuya, obtén votos y gana.</p>
                                 </div>
                                 <form action="" id="search" name="search">
-                                    <input type="search" id="searchbox" class="searchbox" placeholder="Busca a tu amigo y vota por él">
+                                    <input type="search" data-role="search" id="searchbox" class="searchbox" placeholder="Busca a tu amigo y vota por él">
                                 </form>                                
                             </div>
                             <span class="number">4</span>
                         </div><!--// .sup-posiciones //-->
-                        <div class="lista-posiciones animate" ng-scrollbar data-sgk-animate="300">
 
-                            <div class="listar first">
-                                <div class="cell number">999</div>
-                                <div class="cell pic">
-                                    <img src="images/img-user-01.jpg">
-                                </div>
-                                <div class="cell center">
-                                    <div class="cell">
-                                        <div class="username">Pato Castro <span>@patocastro</span></div>
-                                        <div class="usertactics">
-                                            <div class="mmt"><span>#</span>mimejor<span>táctica</span></div>
-                                        </div>
-                                    </div>
-                                    <div class="cell votos"><span>Votos</span> 1593</div>
-                                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-                                </div>
-                                <div class="cell buttons">
-                                    <ul class="impbuttons">
-                                        <li class="votar"><a href=""><span>Me Gusta</span>Votar</a></li>
-                                        <li class="sharebtn facebook"><a href=""><span>Facebook</span> Comparte</a></li>
-                                        <li class="sharebtn twitter"><a href=""><span>Twitter</span> Tuitea</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="listar">
-                                <div class="cell number">999</div>
-                                <div class="cell pic">
-                                    <img src="images/img-user-01.jpg">
-                                </div>
-                                <div class="cell center">
-                                    <div class="cell">
-                                        <div class="username">Pato Castro <span>@patocastro</span></div>
-                                        <div class="usertactics">
-                                            <div class="mmt"><span>#</span>mimejor<span>táctica</span></div>
-                                        </div>
-                                    </div>
-                                    <div class="cell votos"><span>Votos</span> 1593</div>
-                                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-                                </div>
-                                <div class="cell buttons">
-                                    <ul class="impbuttons">
-                                        <li class="votar"><a href=""><span>Me Gusta</span>Votar</a></li>
-                                        <li class="sharebtn facebook"><a href=""><span>Facebook</span> Comparte</a></li>
-                                        <li class="sharebtn twitter"><a href=""><span>Twitter</span> Tuitea</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="listar">
-                                <div class="cell number">999</div>
-                                <div class="cell pic">
-                                    <img src="images/img-user-01.jpg">
-                                </div>
-                                <div class="cell center">
-                                    <div class="cell">
-                                        <div class="username">Pato Castro <span>@patocastro</span></div>
-                                        <div class="usertactics">
-                                            <div class="mmt"><span>#</span>mimejor<span>táctica</span></div>
-                                        </div>
-                                    </div>
-                                    <div class="cell votos"><span>Votos</span> 1593</div>
-                                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-                                </div>
-                                <div class="cell buttons">
-                                    <ul class="impbuttons">
-                                        <li class="votar"><a href=""><span>Me Gusta</span>Votar</a></li>
-                                        <li class="sharebtn facebook"><a href=""><span>Facebook</span> Comparte</a></li>
-                                        <li class="sharebtn twitter"><a href=""><span>Twitter</span> Tuitea</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="listar">
-                                <div class="cell number">999</div>
-                                <div class="cell pic">
-                                    <img src="images/img-user-01.jpg">
-                                </div>
-                                <div class="cell center">
-                                    <div class="cell">
-                                        <div class="username">Pato Castro <span>@patocastro</span></div>
-                                        <div class="usertactics">
-                                            <div class="mmt"><span>#</span>mimejor<span>táctica</span></div>
-                                        </div>
-                                    </div>
-                                    <div class="cell votos"><span>Votos</span> 1593</div>
-                                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-                                </div>
-                                <div class="cell buttons">
-                                    <ul class="impbuttons">
-                                        <li class="votar"><a href=""><span>Me Gusta</span>Votar</a></li>
-                                        <li class="sharebtn facebook"><a href=""><span>Facebook</span> Comparte</a></li>
-                                        <li class="sharebtn twitter"><a href=""><span>Twitter</span> Tuitea</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                                                                                  
+                        <div class="lista-posiciones animate me" data-sgk-animate="400">
+                            <div data-sgk-position-list-me ng-if="currentUser"></div>                            
+                        </div>
+
+                        <div class="lista-posiciones animate" ng-scrollbar data-sgk-animate="300">
+                          <div data-sgk-position-list></div>
                         </div><!--// .lista-posiciones //-->
 
                     </div><!--// #right //-->                    

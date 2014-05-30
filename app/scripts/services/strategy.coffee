@@ -9,6 +9,13 @@ angular.module("strategistApp")
         url: '/api/strategies'
         isArray: true
 
+      sort:
+        method: 'GET'
+        params:
+          sort_by: '@sort'
+        url: '/api/strategies/sort/:sort_by'
+        isArray: true
+
       last_published:
         method: 'GET'
         params:
@@ -56,6 +63,15 @@ angular.module("strategistApp")
       _index = (cb) ->
         resource.index(
           {}
+        , (strategies) ->
+          cb null, strategies
+        , (err) ->
+          cb err.data
+        ).$promise
+
+      _sort = (sort, cb) ->
+        resource.sort(
+          sort_by: sort
         , (strategies) ->
           cb null, strategies
         , (err) ->
@@ -128,6 +144,8 @@ angular.module("strategistApp")
     return {
       index: (cb) ->
         _index(cb)
+      sort: (sort, cb) ->
+        _sort(sort, cb)
       last_published: (user_id, cb) ->
         _last_published(user_id, cb)
       more_votes: (user_id, cb) ->
