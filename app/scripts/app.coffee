@@ -107,7 +107,6 @@ angular.module('strategistApp', [
     FB = $window.FB
 
     Config.conf (config) ->
-      console.log config
 
       FB.init({
         appId      : config.facebook.id,
@@ -129,7 +128,6 @@ angular.module('strategistApp', [
     
     IO.on 'strategy.moderate', () ->
       $http.get("directives/site/moderate").success (data) =>
-        console.log $sce.trustAsHtml(data)
         $el = angular.element(data)
 
         $el.on 'click', '.cerrar, input[type="submit"]', (e) ->
@@ -177,7 +175,6 @@ angular.module('strategistApp', [
           $el = angular.element(data)
 
           $el.on 'click', '.lightbox .cerrar a', (e) ->
-            console.log 'cerrar'
             $el = angular.element(e.target).parents('.overlay')
             $el.remove()
 
