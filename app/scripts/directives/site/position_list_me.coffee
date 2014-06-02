@@ -24,7 +24,6 @@ angular.module('strategistApp')
 
       $scope.$watch 'strategy', (strategy) ->
         if strategy
-          console.log strategy
           $timeout () =>
             $el = angular.element("#strategy_#{strategy._id}")
             position = $el.find('.cell.number').html()

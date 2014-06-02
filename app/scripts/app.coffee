@@ -84,7 +84,42 @@ angular.module('strategistApp', [
   .factory 'IO', (socketFactory) ->
     return socketFactory()
 
-  .run ($rootScope, $state, Auth, $timeout, IO, $compile, User, $http, $sce) ->
+  .factory 'Config', ($resource) ->
+    resource = $resource "", {},
+      config:
+        method: 'GET'
+        params: {}
+        url: '/api/config'
+
+    _conf = (cb) =>
+      resource.config(
+        {}
+      , (config) ->
+        cb config
+      ).$promise
+
+    return {
+      conf: (cb) ->
+        _conf(cb)
+    }
+
+  .factory 'Facebook', (Config, $window) ->
+    FB = $window.FB
+
+    Config.conf (config) ->
+      console.log config
+
+      FB.init({
+        appId      : config.facebook.id,
+        status     : true,
+        xfbml      : true
+      });
+
+    return {
+      FB: FB
+    }
+
+  .run ($rootScope, $state, Auth, $timeout, IO, $compile, User, $http, $sce, $window) ->
 
     IO.emit 'register.strategy.globals', { user_id: ($rootScope.currentUser?.id || null) }
 

@@ -16,8 +16,11 @@
       <li class="votar">
         <div data-sgk-button-vote data-sgk-user-id="{{ strategy.user._id }}" data-sgk-strategy-id="{{ strategy._id }}" data-sgk-match-id="{{ strategy.match._id }}"></div>
       </li>
-      <li class="sharebtn facebook"><a href=""><span>Facebook</span> Comparte</a></li>
-      <li class="sharebtn twitter"><a href=""><span>Twitter</span> Tuitea</a></li>
+      <li class="sharebtn facebook">
+        <a href="javascript:{}" data-sgk-facebook-share="{{ strategy._id }}">
+        <span>Facebook</span> Comparte</a>
+      </li>
+      <li class="sharebtn twitter"><a href="javascript:{}"><span>Twitter</span> Tuitea</a></li>
     </ul>
   </div>
 </div>
