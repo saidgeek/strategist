@@ -338,6 +338,11 @@ module.exports = function (grunt) {
           src: ['*']
         }, {
           expand: true,
+          cwd: '<%= yeoman.app %>/videos',
+          dest: '<%= yeoman.dist %>/public/videos',
+          src: ['*']
+        }, {
+          expand: true,
           cwd: '.tmp/styles',
           dest: '<%= yeoman.dist %>/public/styles',
           src: ['*']
