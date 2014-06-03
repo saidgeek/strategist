@@ -148,6 +148,11 @@ angular.module('strategistApp', [
       else
         angular.element("body").addClass 'interior'
 
+      if toState.name is 'home'
+        angular.element("body").find('div.mivideo').css 'display', 'block'
+      else
+        angular.element("body").find('div.mivideo').css 'display', 'none'
+
       if $rootScope.currentUser? and !$rootScope.currentUser?.email?
         $el = null
         User.show $rootScope.currentUser.id, (err, user) ->
