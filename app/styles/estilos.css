@@ -83,6 +83,7 @@ ul{
   width: 960px;
   margin: 0 auto;
   position: relative;
+  z-index: 10;
 }
 #menu{
   position: absolute;
