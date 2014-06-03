@@ -167,6 +167,7 @@ ul{
   top: 0;
   right: 0;
   bottom: 0;
+  z-index: 1;
   background: url("../images/pattern.png") repeat 0 0;
 }
 .logos{
@@ -1953,8 +1954,26 @@ ul.tabs li span{
 
 /*----// FIN PREMIOS //----*/
 
-
-
+/*----// VIDEOS //----*/
+.mivideo{
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  height: 860px;
+  overflow: hidden;
+}
+video#bkg{
+  position: absolute;
+  top: 0;
+  left:50%;
+  margin: 0 0 0 -700px;
+  width: 1400px;
+  height: 860px;
+}
+video{
+  display: block;
+}
 
 
 
