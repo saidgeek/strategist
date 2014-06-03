@@ -6,7 +6,7 @@ angular.module('strategistApp')
     scope: {}
     link: ($scope, $element, $attrs) ->
 
-      isLogin = () =>
+      $element.on 'click', (e) ->
         if !$rootScope.currentUser?
           e.stopPropagation()
           e.preventDefault()
@@ -17,9 +17,6 @@ angular.module('strategistApp')
             
             angular.element('body').append $el
           return false
-
-      $element.on 'click', (e) ->
-        isLogin()
 
         Strategy.show $attrs.sgkTwitterShare, (err, strategy) ->
           if !err
