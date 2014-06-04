@@ -1,4 +1,4 @@
-<div class="listar first">
+<div class="listar first" ng-if="strategy">
   <div class="cell pic">
     <img src="{{ strategy.user.avatar }}">
   </div>
@@ -14,7 +14,7 @@
   <div class="cell buttons">
     <ul class="impbuttons">
       <li class="votar">
-        <div data-sgk-button-vote data-sgk-user-id="{{ strategy.user._id }}" data-sgk-strategy-id="{{ strategy._id }}" data-sgk-match-id="{{ strategy.match._id }}"></div>
+        <div data-sgk-button-vote data-sgk-user-id="{{ strategy.user._id }}" data-sgk-strategy-id="{{ strategy._id }}" data-sgk-sweepstake-id="{{ strategy.sweepstake._id }}"></div>
       </li>
       <li class="sharebtn facebook">
         <a href="javascript:{}" data-sgk-facebook-share="{{ strategy._id }}">
