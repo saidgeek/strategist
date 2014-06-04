@@ -43,6 +43,7 @@ angular.module('strategistApp', [
       .state 'wins',
         url: '/ganadores/'
         templateUrl: 'partials/site/wins'
+        controller: 'WinCtrl'
         authenticate: false
       .state 'awards',
         url: '/premios/'

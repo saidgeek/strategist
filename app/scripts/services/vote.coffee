@@ -16,8 +16,8 @@ angular.module("strategistApp")
         user_id: user_id
         sweepstake_id: sweepstake_id
         strategy_id: strategy_id
-      , ->
-        cb null
+      , (voted) ->
+        cb null, voted
       , (err) ->
         cb err.data
       ).$promise
