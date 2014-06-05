@@ -96,6 +96,7 @@ ul {
   width: 960px;
   margin: 0 auto;
   position: relative;
+  z-index: 10;
 }
 
 #menu {
@@ -1512,17 +1513,24 @@ form#post input.submit:active {
 
 #ganadores .app {
   text-align: center;
-  margin: 20px -17px 0 0;
+  margin: 60px 0 0 0;
+  width: 295px;
 }
 
 #ganadores .tv-app {
   width: 295px;
-  margin: -265px 0 0 0;
+  margin: -205px 0 0 0;
   float: right;
+  text-align: center;
 }
+<<<<<<< HEAD
+#ganadores .tv-app ul{
+  margin: 115px 0 0 0;
+=======
 
 #ganadores .tv-app ul {
   margin: 15px 0 0 0;
+>>>>>>> FETCH_HEAD
   display: table;
   width: 100%;
 }
@@ -2381,7 +2389,41 @@ video#bkg {
   width: 1400px;
   height: 860px;
 }
-
-video {
+video{
   display: block;
+}
+.overlay#videolb, .overlay.imagenes{
+  background: url("../images/pattern.png") repeat 0 0 rgba(0,0,0,0.7);
+}
+.overlay#videolb .centrar, .overlay.imagenes .centrar{
+  width: 660px;
+  height: 371px;
+  position: absolute;
+  padding: 6px;
+  left: 50%;
+  top: 50%;
+  margin: -188px 0 0 -333px;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  background: #ee2642;
+}
+.overlay#videolb .centrar .cerrar, .overlay.imagenes .centrar .cerrar {
+  position: absolute;
+  width: 29px;
+  height: 29px;
+  border-radius: 50%;
+  box-shadow: 0 0 5px 0 rgba(0,0,0,0.5);
+  overflow: hidden;
+  top: -14px;
+  right: -14px;
+}
+.overlay#videolb .centrar .cerrar button, .overlay.imagenes .centrar .cerrar a {
+  border:none;
+  display: block;
+  overflow: hidden;
+  text-indent: -999px;
+  width: 29px;
+  height: 29px;
+  background: url("../images/cerrar-lb-red.png") no-repeat 0 0;
 }
