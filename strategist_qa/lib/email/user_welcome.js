@@ -1,0 +1,7 @@
+'user strict';
+var layout = require('./layout');
+
+module.exports = {
+  html: "" + layout.header + "\n  \n  <p align='left' class='article-title'>\n    <singleline label='Title'><%= title %></singleline>\n  </p>\n  <div align='left' class='article-content'>\n    <multiline label='Description'>\n      <p>\n        <strong><%= user.name %></strong>, hemos recibido tu mejor táctica y ya estás participando en el sorteo \n        del <strong><%= sweepstake.date %> hrs</strong>. Invita a tus amigos a votar por ella y tendrás \n        más posibilidades de ganar. \n      </p>\n    </multiline>\n\n    <multiline label='Description'>\n      <p>\n        El tiempo reglamentario está corriendo, puedes revisar la tabla de posiciones \n        y vee si la comunidad futbolera piensa que tienes pasta de estratega en la cancha. \n      </p>\n    </multiline>\n    \n    <a href=\"<%= link.positions %>\"><strong>Tabla de posiciones</strong></a>\n\n  </div>\n\n" + layout.footer,
+  text: "¡Comienza tu participación en el deporte más lindo del mundo!\n\n<%= user.name %>, hemos recibido tu mejor táctica y ya estás participando en el sorteo del <%= sweepstake.date %> hrs. Invita a tus amigos a votar por ella y tendrás más posibilidades de ganar.\n\nEl tiempo reglamentario está corriendo, puedes revisar la tabla de posiciones y vee si la comunidad futbolera piensa que tienes pasta de estratega en la cancha.\n\nTabla de posiciones: <%= link.positions %>"
+};

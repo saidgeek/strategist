@@ -1,0 +1,43 @@
+<div class="row">
+  <div class="pull-right">
+    <a href="javascript:{}" class="btn btn-link" ng-click="open()">
+      <i class="glyphicon glyphicon-plus"></i>
+      Crear partido
+    </a>
+  </div>
+</div>
+
+<div class="row">
+  
+  <table class="table">
+    <colgroup>
+      <col width="10%">
+      <col>
+      <col width="50">
+    </colgroup>
+    <thead>
+      <tr>
+        <th>Local</th>
+        <th>Visita</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-show="!match">
+        <td colspan="4">
+          <div class="alert alert-warning">
+            No existen partidos creados, has click <a href="javascript:{}" class="btn btn-link btn-xs" ng-click="open()">aquí</a> para crear el primero.
+          </div>
+        </td>
+      </tr>
+      <tr ng-show="match" ng-repeat="m in match">
+        <td>{{ m.team_one }}</td>
+        <td>{{ m.team_two }}</td>
+        <td>
+          <a href="#" class="btn btn-danger btn-xs">Borrar</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>

@@ -1,0 +1,123 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+  <meta charset="utf-8">
+  <title>Mi Mejor Táctica. LG</title>
+  <base href="/">
+  <meta name="description" content="Arma tu mejor táctica y sale a ganar. Por cada partido de la Selección en el Mundial, comparte tu táctica ganadora en 140 caracteres. Vota y gánate la Smart TV que mereces.">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="NOMBRE USUARIO está partcipando en #mimejortáctica">
+  <meta name="twitter:description" content="VARIABLE CONTENIDO ESTRATEGIA">
+  <meta name="twitter:creator" content="@EstrategaLG">
+  <meta name="twitter:image:src" content="PATH DOMINIO/images/mme-social.jpg">
+  <meta name="twitter:domain" content="PATH DOMINIO">
+  <meta name="author" content="grupoingenia.cl">
+  <link rel="stylesheet" href="styles/normalize.css">
+  <link rel="stylesheet" href="styles/estilos.css">
+</head>
+
+  <body ng-app="strategistApp">
+
+    <div id="loader"><div class="loader"></div></div>  
+    <div id="menu" class="animate">
+      <div data-sgk-menu=""></div>
+    </div>
+
+    <!-- Add your site or application content here -->
+    <div class="container" ui-view=""></div>
+    <div class="pattern"></div><!--// .pattern //-->
+
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-XXXXX-X');
+      ga('send', 'pageview');
+    </script>
+
+    <!--[if lt IE 9]>
+    <script src="bower_components/es5-shim/es5-shim.js"></script>
+    <script src="bower_components/json3/lib/json3.min.js"></script>
+    <![endif]-->
+
+    <div id="fb-root"></div>
+    <script>
+        (function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) return;
+          js = d.createElement(s); js.id = id;
+          js.src = "//connect.facebook.net/es_LA/all.js";
+          fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+
+    <script src="/socket.io/socket.io.js"></script>
+
+    <script src="bower_components/modernizr/modernizr.js"></script>
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="bower_components/ng-scrollbar/dist/ng-scrollbar.js"></script>
+    <script src="bower_components/moment/moment.js"></script>
+    <script src="bower_components/moment/lang/es.js"></script>
+    <script src="bower_components/angular-bootstrap-datetimepicker/src/js/datetimepicker.js"></script>
+    <script src="bower_components/angular-socket-io/socket.js"></script>
+    <script src="bower_components/node-uuid/uuid.js"></script>
+
+    <script src="bower_components/countdown/jquery.countdown.js"></script>
+
+    <script src="scripts/app.js"></script>
+    <script src="scripts/controllers/main.js"></script>
+    <script src="scripts/controllers/navbar.js"></script>
+    <script src="scripts/controllers/login.js"></script>
+    <script src="scripts/controllers/signup.js"></script>
+    <script src="scripts/controllers/settings.js"></script>
+    <script src="scripts/controllers/strategy.js"></script>
+    <script src="scripts/controllers/win.js"></script>
+    <script src="scripts/services/auth.js"></script>
+    <script src="scripts/services/session.js"></script>
+    <script src="scripts/services/filters.js"></script>
+    <script src="scripts/services/user.js"></script>
+    <script src="scripts/services/match.js"></script>
+    <script src="scripts/services/strategy.js"></script>
+    <script src="scripts/services/vote.js"></script>
+    <script src="scripts/services/sweepstake.js"></script>
+    <script src="scripts/directives/facebook.js"></script>
+    <script src="scripts/directives/twitter.js"></script>
+    <script src="scripts/directives/mongooseError.js"></script>
+    <script src="scripts/directives/site/menu.js"></script>
+    <script src="scripts/directives/site/animate.js"></script>
+    <script src="scripts/directives/site/disabled_enter.js"></script>
+    <script src="scripts/directives/site/terms.js"></script>
+    <script src="scripts/directives/site/countdown.js"></script>
+    <script src="scripts/directives/site/vs.js"></script>
+    <script src="scripts/directives/site/vote_list.js"></script>
+    <script src="scripts/directives/site/vote_list_me.js"></script>
+    <script src="scripts/directives/site/position_list.js"></script>
+    <script src="scripts/directives/site/position_list_me.js"></script>
+    <script src="scripts/directives/site/render_content.js"></script>
+    <script src="scripts/directives/site/button_vote.js"></script>
+    <script src="scripts/directives/site/login.js"></script>
+
+    <div class="mivideo">
+      <video autoplay="" loop="" id="bkg">
+        <source src="videos/home.mp4" type="video/mp4">
+      </source></video>   
+    </div><!--// .video //-->
+
+</body>
+</html>
