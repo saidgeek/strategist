@@ -1523,14 +1523,8 @@ form#post input.submit:active {
   float: right;
   text-align: center;
 }
-<<<<<<< HEAD
 #ganadores .tv-app ul{
   margin: 115px 0 0 0;
-=======
-
-#ganadores .tv-app ul {
-  margin: 15px 0 0 0;
->>>>>>> FETCH_HEAD
   display: table;
   width: 100%;
 }
