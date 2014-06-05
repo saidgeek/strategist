@@ -112,7 +112,9 @@ module.exports = function (grunt) {
             '.tmp',
             '<%= yeoman.dist %>/*',
             '!<%= yeoman.dist %>/.git*',
-            '!<%= yeoman.dist %>/Procfile'
+            '!<%= yeoman.dist %>/Procfile',
+            '!<%= yeoman.dist %>/logs.log',
+            '!<%= yeoman.dist %>/run.sh'
           ]
         }]
       },
@@ -335,6 +337,11 @@ module.exports = function (grunt) {
           expand: true,
           cwd: '<%= yeoman.app %>/images',
           dest: '<%= yeoman.dist %>/public/images',
+          src: ['*']
+        }, {
+          expand: true,
+          cwd: '<%= yeoman.app %>/videos',
+          dest: '<%= yeoman.dist %>/public/videos',
           src: ['*']
         }, {
           expand: true,

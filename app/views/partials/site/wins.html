@@ -10,48 +10,19 @@
                 </div><!--// .logos //-->
                 
                 <ul class="tabs">
-                    <li><a href="#tab_01"><img src="images/dot-tab.png"><span>13-06-14</span></a></li>
-                    <li><a href="#;"><img src="images/dot-tab.png"><span>13-06-14</span></a></li>
-                    <li><a href="#;"><img src="images/dot-tab.png"><span>13-06-14</span></a></li>
-                    <li><a href="#;"><img src="images/dot-tab.png"><span>13-06-14</span></a></li>
-                    <li><a href="#;"><img src="images/dot-tab.png"><span>13-06-14</span></a></li>
-                    <li><a href="#;"><img src="images/dot-tab.png"><span>13-06-14</span></a></li>
-                    <li><a href="#;"><img src="images/dot-tab.png"><span>13-06-14</span></a></li>
+                    <li ng-repeat="s in sweepstakes" id="sweepstake_{{ s._id }}">
+                        <a href="javascript:{}" ng-click="tab(s)" ng-class="{winner: s.winner, active: s.is_active}">
+                            <span>dot</span>
+                            <div>{{ s.init_at | Date}}</div>
+                        </a>
+                    </li>
                 </ul>
                 
                 <ul class="content_tab">
                     <li id="tab_01">
                         <div class="hinchas">
-                            <span class="number">5</span>
-                            <div class="table">
-                                <div class="cell sorteo">
-                                    <div class="cell">
-                                        <h2>Próximo <span>Sorteo</span></h2>
-                                        <div class="fechasorteo"><span>14</span> Junio</div>
-                                        <p>Si tu táctica futbolera para este sorteo se convierte en la ganadora, disfrutarás 6 meses gratis de los mejores partidos del fútbol nacional y los partidos chilenos en las distintas ligas donde participan, vía streaming, a través de Estadio CDF, aplicación exclusiva para Smart TV.</p>
-                                    </div>
-                                    <div class="cell">
-                                        <img src="images/hincha-ganador.png" alt="Hincha" class="hincha-ganador animate" data-sgk-animate="1000">                                
-                                    </div>
-                                </div>
-
-                                <div class="cell">
-                                    <div class="app"><img src="images/estadiocdf.png" alt="Estadio CDF"></div>
-                                </div>
-                            </div><!-- .table -->
-
-                            <div class="info-ganador">
-                                <p class="mensaje">Tú puedes ser el próximo ganador, comparte tus tácticas para la próxima fecha de la Selección en 140 caracteres, obtén votos para ellas y participa</p>
-                                <div class="participa"><a href="">Participa</a></div>
-                                <div class="tv-app">
-                                    <img src="images/smart_tv.png" alt="Estadio CDF">
-                                    <ul>
-                                        <li><a href=""><img src="images/thumb-app-ecdf-01.jpg" alt=""></a></li>
-                                        <li><a href=""><img src="images/thumb-app-ecdf-02.jpg" alt=""></a></li>
-                                        <li><a id="play-button" href="#videolb"><img src="images/thumb-app-ecdf-03.jpg" alt=""></a></li>
-                                    </ul>
-                                </div>
-                            </div>
+                            
+                            
                         </div><!--// .hinchas //-->
                     </li>
                 </ul>

@@ -6,7 +6,7 @@
     <div class="cell">
       <form id="mailtwitter" name="form" ng-submit="user_update(form)" novalidate>
         <h3>Ingresa tu correo</h3>
-        <p>Para continuar necesitas ingresar tu correo electrónico.</p>
+        <p>Para continuar necesitas ingresar tu correo electrónico, donde te avisaremos si resultas ganador del sorteo</p>
         <input type="text" name="email" id="email" placeholder="este.es@micorreo.cl" ng-model="user.email" required>
         <input type="submit" ng-click="submitted = true" class="btn" value="Continuar">
         <p ng-show="submitted && form.email.$error.required" class="error">Campo requerido</p>

@@ -8,3 +8,7 @@ angular.module('strategistApp')
   .filter 'formatDate', ->
     return (date) ->
       return moment(date).format('D/M/YYYY HH:mm')
+
+.filter 'Date', ->
+    return (date) ->
+      return moment(date).format('D/M/YYYY')
