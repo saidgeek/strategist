@@ -150,8 +150,10 @@ angular.module('strategistApp', [
         angular.element("body").addClass 'interior'
 
       if toState.name is 'home'
+        angular.element('body').css 'background-color', '#0F0E0E'
         angular.element("body").find('div.mivideo').css 'display', 'block'
       else
+        angular.element('body').css 'background-color', '#26242c'
         angular.element("body").find('div.mivideo').css 'display', 'none'
 
       if $rootScope.currentUser? and !$rootScope.currentUser?.email?
