@@ -661,10 +661,12 @@ ul {
   font: 13px 'geogrotesque_ullgultralight';
   text-align: justify;
   position: relative;
-  height: 360px;
+  height: 317px;
   margin: 0;
   padding: 0;
   top: 0;
+  padding: 5px;
+  border: 1px solid #EB1E1E;
 }
 
 .overlay .lightbox .cerrar {
@@ -1197,7 +1199,7 @@ form#post input.submit:active {
 
 #right .cell.buttons ul.impbuttons li.sharebtn a {
   display: block;
-  padding: 6px 7px;
+  padding: 6px 4px;
   color: #fff;
   font: normal 12px 'geogrotesque_lglight';
   border-radius: 3px;

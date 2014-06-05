@@ -12,7 +12,7 @@ angular.module('strategistApp')
       
       $scope.addVote = (user_id, strategy_id, sweepstake_id) ->
         if $rootScope.currentUser?
-          Vote user_id, sweepstake_id, strategy_id, (err, voted) ->
+          Vote user_id, sweepstake_id, strategy_id, $rootScope.currentUser.id, (err, voted) ->
             if !err
               console.log 'voted:', voted
               if voted
@@ -38,15 +38,16 @@ angular.module('strategistApp')
         $_el.after $el
         $_el.remove()
 
-      Strategy.show $scope.strategy_id, (err, strategy) ->
-        if !err
-          for r in strategy.votes.ref
-            if r.user.toString() is $scope.user_id.toString()
-              now = moment(Date.now()).format 'DD-MM-YYYY'
-              date = moment(r.created_at).format 'DD-MM-YYYY'
-              if now is date
-                $scope.render($scope.strategy_id)
-                break
+      if $rootScope.currentUser?
+        Strategy.show $scope.strategy_id, (err, strategy) ->
+          if !err
+            for r in strategy.votes.ref
+              if $rootScope.currentUser.id.toString() is r.voted_by.toString()
+                now = moment(Date.now()).format 'DD-MM-YYYY'
+                date = moment(r.created_at).format 'DD-MM-YYYY'
+                if now is date
+                  $scope.render($scope.strategy_id)
+                  break
 
       $element.on 'click', (e) ->
         if !$rootScope.currentUser?
