@@ -28,7 +28,7 @@
                                     <div class="cell">
                                         <h2>Próximo <span>Sorteo</span></h2>
                                         <div class="fechasorteo"><span>14</span> Junio</div>
-                                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
+                                        <p>Si tu táctica futbolera para este sorteo se convierte en la ganadora, disfrutarás 6 meses gratis de los mejores partidos del fútbol nacional y los partidos chilenos en las distintas ligas donde participan, vía streaming, a través de Estadio CDF, aplicación exclusiva para Smart TV.</p>
                                     </div>
                                     <div class="cell">
                                         <img src="images/hincha-ganador.png" alt="Hincha" class="hincha-ganador animate" data-sgk-animate="1000">                                
@@ -36,7 +36,7 @@
                                 </div>
 
                                 <div class="cell">
-                                    <div class="app"><img src="images/ecdf-logo-winners.png" alt="Estadio CDF"></div>
+                                    <div class="app"><img src="images/estadiocdf.png" alt="Estadio CDF"></div>
                                 </div>
                             </div><!-- .table -->
 
@@ -44,11 +44,11 @@
                                 <p class="mensaje">Tú puedes ser el próximo ganador, comparte tus tácticas para la próxima fecha de la Selección en 140 caracteres, obtén votos para ellas y participa</p>
                                 <div class="participa"><a href="">Participa</a></div>
                                 <div class="tv-app">
-                                    <img src="images/tv-app-ecdf.png" alt="Estadio CDF">
+                                    <img src="images/smart_tv.png" alt="Estadio CDF">
                                     <ul>
                                         <li><a href=""><img src="images/thumb-app-ecdf-01.jpg" alt=""></a></li>
                                         <li><a href=""><img src="images/thumb-app-ecdf-02.jpg" alt=""></a></li>
-                                        <li><a href=""><img src="images/thumb-app-ecdf-03.jpg" alt=""></a></li>
+                                        <li><a id="play-button" href="#videolb"><img src="images/thumb-app-ecdf-03.jpg" alt=""></a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -67,3 +67,26 @@
 
             </div><!--// .contenedor //-->
         </div><!--// .relative //-->
+
+
+        <!--// LIGHTBOXS ECDF //-->
+        <div class="overlay" id="videolb">
+            <div class="centrar">
+                <div class="cerrar"><button>Pause</button></div>
+                <iframe id="player1" src="//player.vimeo.com/video/97451378?api=1&amp;player_id=player1&amp;color=ff9200&amp;title=0&amp;portrait=0&amp;byline=0&amp;badge=0" width="660" height="371" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+            </div>
+        </div>
+      
+        <div class="overlay imagenes" id="imagen1">
+            <div class="centrar">
+                <div class="cerrar"><a href="#;">cerrar</a></div>
+                <img src="images/lb-ecdf-01.jpg" alt="">
+            </div>
+        </div>
+        <div class="overlay imagenes" id="imagen2">
+            <div class="centrar">
+                <div class="cerrar"><a href="#;">cerrar</a></div>
+                <img src="images/lb-ecdf-02.jpg" alt="">
+            </div>
+        </div> 
+        <!--// FIN LIGHTBOXS ECDF //-->
