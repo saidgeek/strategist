@@ -9,3 +9,11 @@ angular.module('strategistApp')
       $element.mCustomScrollbar
         scrollButtons:
               enable: false
+
+      $timeout () =>
+        $timeout () =>
+
+          $element.mCustomScrollbar 'update'
+
+        , 0
+      , 0
