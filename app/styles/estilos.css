@@ -1491,13 +1491,18 @@ form#post input.submit:active {
   text-transform: uppercase;
   width: 79%;
 }
-
+#ganadores .info-ganador.less p.mensaje{
+  width: 39%;
+}
 #ganadores .info-ganador .participa {
   position: absolute;
   top: 30px;
   left: 85%;
 }
-
+#ganadores .info-ganador.less .participa{
+  top: 38px;
+  left: 48%;
+}
 #ganadores .info-ganador .participa a {
   background: #f1f1f1;
   display: block;
@@ -1523,6 +1528,24 @@ form#post input.submit:active {
   margin: 60px 0 0 0;
   width: 295px;
 }
+#ganadores .app.less{
+  padding: 0 0 0 30px;
+  text-align: left;
+  margin: 20px 0 0 0;
+}
+#ganadores .app.less p{
+  margin: 7px 0;
+  font-size: 12px;
+}
+#ganadores .app h3{
+  font: normal 14px 'geogrotesque_bdbold';
+  text-transform: uppercase;
+  margin: 0 0 10px 0;
+}
+#ganadores .app h3 span{
+  display: block;
+  color: #eb2038;
+}
 #ganadores .app .margin{
   margin: 0 0 30px 0;
 }
@@ -1531,6 +1554,14 @@ form#post input.submit:active {
   margin: -205px 0 0 0;
   float: right;
   text-align: center;
+}
+#ganadores .less .tv-app{
+  margin: -165px 0 -60px 0;
+}
+#ganadores .less .tv-app img{
+  width: 70%;
+  height: auto;
+  margin: 0 -20px 0 0;
 }
 #ganadores .tv-app ul{
   margin: 115px 0 0 0;
@@ -2267,14 +2298,16 @@ form#post input.submit:active {
   text-transform: uppercase;
 }
 
-#awards .hinchas .cell ul li {
+#awards .hinchas .cell ul li, #ganadores ul.lista li {
   margin: 8px 0;
   padding: 0 0 0 20px;
   background: url("../images/dot-list.png") no-repeat 0 50%;
   font: normal 12px 'geogrotesque_ullgultralight';
   text-transform: uppercase;
 }
-
+#ganadores ul.lista li{
+  margin: 5px 0;
+}
 #awards .hinchas .info-premio {
   padding-bottom: 20px;
   border-bottom: 1px solid rgba(255,255,255,0.25);
