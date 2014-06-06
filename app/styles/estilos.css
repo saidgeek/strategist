@@ -331,6 +331,13 @@ ul {
   margin: 13px 0;
 }
 
+.forma .txt p.acepto a {
+  color: #fff;
+  font: 11px 'geogrotesque_ullgultralight';
+  text-transform: uppercase;
+  text-decoration: underline;
+}
+
 .forma .txt p strong {
   font: normal 13px 'geogrotesque_smbdsemibold';
 }
