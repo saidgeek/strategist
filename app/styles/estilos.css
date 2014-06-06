@@ -2131,14 +2131,14 @@ form#post input.submit:active {
 }
 
 .scroll .altura {
-  height: 246px;
+  height: 170px;
   margin: 0;
   padding: 0;
   display: block;
 }
 
 .scroll.cdf .altura {
-  height: 226px;
+  height: 170px;
 }
 
 /*---// FIN PASO 5 //---*/
@@ -2462,4 +2462,9 @@ video{
   width: 29px;
   height: 29px;
   background: url("../images/cerrar-lb-red.png") no-repeat 0 0;
+}
+
+/*-- SCROLLBAR--*/
+#estadios .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar, #listatacticas .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar{
+  background-color: rgba(233,32,64,0.75);
 }
