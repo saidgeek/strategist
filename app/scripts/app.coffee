@@ -119,8 +119,9 @@ angular.module('strategistApp', [
       FB: FB
     }
 
-  .run ($rootScope, $state, Auth, $timeout, IO, $compile, User, $http, $sce, $window) ->
+  .run ($rootScope, $state, Auth, $timeout, IO, $compile, User, $http, $sce, $window, $location) ->
 
+    $rootScope.domain = "#{ $location.$$protocol }://#{ $location.$$host }"
     IO.emit 'register.strategy.globals', { user_id: ($rootScope.currentUser?.id || null) }
 
     $rootScope.$watch 'currentUser', (user) ->

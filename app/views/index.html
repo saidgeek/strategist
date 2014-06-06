@@ -1,9 +1,9 @@
 <!doctype html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" ng-app="strategistApp"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" ng-app="strategistApp"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" ng-app="strategistApp"> <![endif]-->
 <!--[if gt IE 8]><!-->
-<html class="no-js">
+<html class="no-js" ng-app="strategistApp">
 <!--<![endif]-->
 
 <head>
@@ -12,17 +12,17 @@
   <base href="/">
   <meta name="description" content="Arma tu mejor táctica y sale a ganar. Por cada partido de la Selección en el Mundial, comparte tu táctica ganadora en 140 caracteres. Vota y gánate la Smart TV que mereces.">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="NOMBRE USUARIO está partcipando en #mimejortáctica">
-  <meta name="twitter:description" content="VARIABLE CONTENIDO ESTRATEGIA">
+  <meta name="twitter:title" content="Mi Mejor Táctica. LG">
+  <meta name="twitter:description" content="Arma tu mejor táctica y sale a ganar. Por cada partido de la Selección en el Mundial, comparte tu táctica ganadora en 140 caracteres. Vota y gánate la Smart TV que mereces.">
   <meta name="twitter:creator" content="@EstrategaLG">
-  <meta name="twitter:image:src" content="PATH DOMINIO/images/mme-social.jpg">
-  <meta name="twitter:domain" content="PATH DOMINIO">
+  <meta name="twitter:image:src" content="{{ domain }}/images/mme-social.jpg">
+  <meta name="twitter:domain" content="{{ domain }}">
   <meta name="author" content="grupoingenia.cl">
   <link rel="stylesheet" href="styles/normalize.css">
   <link rel="stylesheet" href="styles/estilos.css">
 </head>
 
-  <body ng-app="strategistApp">
+  <body>
 
     <div id="loader"><div class="loader"></div></div>  
     <div id="menu" class="animate">
