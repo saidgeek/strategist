@@ -17,7 +17,7 @@ angular.module('strategistApp')
       if type is 'video'
         $content = """
           <iframe id="player1" 
-          src="//player.vimeo.com/video/#{ file }?api=1&amp;player_id=player1&amp;color=ff9200&amp;title=0&amp;portrait=0&amp;byline=0&amp;badge=0&amp;autoplay=1" 
+          src="//player.vimeo.com/video/#{ file }?api=1&amp;player_id=player1&amp;color=ee2642&amp;title=0&amp;portrait=0&amp;byline=0&amp;badge=0&amp;autoplay=1" 
           width="660" height="371" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>  
         """
       
