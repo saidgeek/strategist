@@ -33,11 +33,11 @@ angular.module('strategistApp', [
         templateUrl: 'partials/site/strategy'
         authenticate: false
       .state 'votes',
-        url: '/tacticas/:user_id'
+        url: '/tacticas/:strategy_id'
         templateUrl: 'partials/site/votes'
         authenticate: false
       .state 'positions',
-        url: '/tabla-de-posiciones/:user_id'
+        url: '/tabla-de-posiciones/:strategy_id'
         templateUrl: 'partials/site/positions'
         authenticate: false
       .state 'wins',
