@@ -1,7 +1,7 @@
 'use strict'
 
 angular.module('strategistApp')
-  .directive 'sgkPositionList', ($rootScope, $timeout, IO, Strategy) ->
+  .directive 'sgkPositionList', ($rootScope, $timeout, IO, Strategy, $state) ->
     restrict: 'A'
     scope: {}
     templateUrl: 'directives/site/positions'
@@ -86,5 +86,24 @@ angular.module('strategistApp')
             else
               angular.element(item).slideUp(600)
 
+      $_add_scroll = ($el) ->
+        if $el.find('.mCustomScrollBox').length is 0
+          $el.mCustomScrollbar
+            scrollButtons:
+              enable: false
+
       $scope.$watch 'strategies', (v) ->
-        $scope.$broadcast('rebuild:me')
+        $timeout () =>
+          $timeout () =>
+            $el_parent = $element.parents('.lista-posiciones')
+            $_add_scroll $el_parent
+
+            $el_parent.mCustomScrollbar 'update'
+
+            if $state.params.strategy_id?
+              query = "div#strategy_#{$state.params.strategy_id}"
+              $element.find(query).addClass 'first'
+              $el_parent.mCustomScrollbar "scrollTo", query
+
+          , 0
+        , 0

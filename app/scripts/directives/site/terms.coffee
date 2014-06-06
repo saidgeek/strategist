@@ -17,5 +17,14 @@ angular.module('strategistApp')
 
           angular.element('body').append $el
 
+          $timeout () =>
+            $timeout () =>
 
-
+              $scroll_el = $el.find('.term-cond')
+              $scroll_el.mCustomScrollbar
+                scrollButtons:
+                  enable: false
+              $scroll_el.mCustomScrollbar 'update'
+              
+            , 0
+          , 0
