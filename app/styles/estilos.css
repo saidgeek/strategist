@@ -2516,7 +2516,9 @@ video{
   text-transform: uppercase;
 }
 
-
+.mCSB_inside > .mCSB_container {
+  margin-right: 5px;
+}
 
 
 
