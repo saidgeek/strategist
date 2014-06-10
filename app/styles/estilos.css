@@ -2520,6 +2520,16 @@ video{
   margin-right: 5px;
 }
 
+.mCSB_scrollTools{
+ position: absolute;
+ width: 5px;
+ height: auto;
+ left: auto;
+ top: 0;
+ right: 0;
+ bottom: 0;
+}
+
 
 
 
