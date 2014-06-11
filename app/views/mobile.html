@@ -52,11 +52,7 @@
 		<div class="header">
 		    <div class="container">
 		        <div class="row">
-		            <div class="col-md-6 col-xs-6">
-		                <a href="#" class="vermenu">
-		                    <img src="images/imagen-menu.png">
-		                </a>
-		            </div>
+		            <div data-sgk-menu></div>
 		            <div class="col-md-6 col-xs-6 lg-logo">
 		                <img src="images/logo-LG-SMARTTV.png" alt="LG SMART TV">
 		            </div>
@@ -166,7 +162,8 @@
     <script src="bower_components/node-uuid/uuid.js"></script>  
     <script src="bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
     <script src="bower_components/countdown/jquery.countdown.js"></script>
-    <script src="scripts/app.js"></script>
+
+    <script src="scripts/appMobile.js"></script>
     <script src="scripts/controllers/main.js"></script>
     <script src="scripts/controllers/navbar.js"></script>
     <script src="scripts/controllers/login.js"></script>
@@ -174,6 +171,7 @@
     <script src="scripts/controllers/settings.js"></script>
     <script src="scripts/controllers/strategy.js"></script>
     <script src="scripts/controllers/win.js"></script>
+
     <script src="scripts/services/auth.js"></script>
     <script src="scripts/services/session.js"></script>
     <script src="scripts/services/filters.js"></script>
@@ -182,33 +180,12 @@
     <script src="scripts/services/strategy.js"></script>
     <script src="scripts/services/vote.js"></script>
     <script src="scripts/services/sweepstake.js"></script>
+
     <script src="scripts/directives/facebook.js"></script>
     <script src="scripts/directives/twitter.js"></script>
     <script src="scripts/directives/mongooseError.js"></script>
     <script src="scripts/directives/custom_scroll.js"></script>
-    <script src="scripts/directives/site/menu.js"></script>
-    <script src="scripts/directives/site/animate.js"></script>
-    <script src="scripts/directives/site/disabled_enter.js"></script>
-    <script src="scripts/directives/site/terms.js"></script>
-    <script src="scripts/directives/site/countdown.js"></script>
-    <script src="scripts/directives/site/vs.js"></script>
-    <script src="scripts/directives/site/vote_list.js"></script>
-    <script src="scripts/directives/site/vote_list_me.js"></script>
-    <script src="scripts/directives/site/position_list.js"></script>
-    <script src="scripts/directives/site/position_list_me.js"></script>
-    <script src="scripts/directives/site/render_content.js"></script>
-    <script src="scripts/directives/site/button_vote.js"></script>
-    <script src="scripts/directives/site/login.js"></script>
-    <script src="scripts/directives/site/galery.js"></script>
-
-	<script>
-	$(document).ready(function(){
-
-		$("a.vermenu").click(function(){
-			$("#cont, #m-des, .menu").toggleClass("active");
-		});
-
-	});
-	</script>
+    <script src="scripts/directives/mobile/menu.js"></script>
+    
 </body>
 </html>

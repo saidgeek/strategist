@@ -5,6 +5,7 @@ angular.module('strategistApp')
     restrict: 'A'
     scope: {}
     templateUrl: 'directives/mobile/button_menu'
+    remplace: true
     link: ($scope, $element, $attrs) ->
 
       $element.find('a.vermenu').on 'click', (e) ->
