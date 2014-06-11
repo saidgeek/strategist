@@ -16,7 +16,7 @@ angular.module('strategistApp', [
 
     $stateProvider
       .state 'home',
-        url: '/mobile/:terms'
+        url: '/mobile'
         templateUrl: 'partials/mobile/index'
         authenticate: false
       .state 'home.facebook',
@@ -196,17 +196,20 @@ angular.module('strategistApp', [
       #   $state.transitionTo 'home'
       #   event.preventDefault()
 
-    # $rootScope.$on '$viewContentLoaded', (event, toState, toParams, fromParams) ->
-    #   angular.element("#loader").fadeOut("slow");
+    $rootScope.$on '$viewContentLoaded', (event, toState, toParams, fromParams) ->
+      angular.element("#loader").fadeOut("slow");
 
-    #   $timeout () =>
-    #     $('.hinchas').removeClass('animate');
-    #   , 600
+      angular.element("#cont, #m-des, .menu")
+        .toggleClass("active");
 
-    #   $timeout () =>
-    #     $('.forma').removeClass('animate');
-    #   , 350
+      # $timeout () =>
+      #   $('.hinchas').removeClass('animate');
+      # , 600
 
-    #   $timeout () =>
-    #     $('.contador').removeClass('animate');
-    #   , 850
+      # $timeout () =>
+      #   $('.forma').removeClass('animate');
+      # , 350
+
+      # $timeout () =>
+      #   $('.contador').removeClass('animate');
+      # , 850
