@@ -207,7 +207,7 @@ ul {
 }
 
 .logos {
-  padding: 30px 0;
+  padding: 15px 0 30px 0;
   position: relative;
   z-index: 10;
   top: 0;
@@ -250,28 +250,28 @@ ul {
 .logos .elg {
   position: absolute;
   width: 230px;
-  top: 35px;
+  top: 15px;
 }
 
 .logos .elg {
-  right: 0;
-}
-
-.logos .ecdf {
   right: 245px;
 }
 
+.logos .ecdf {
+  right: 0;
+}
+
 .hinchas {
-  margin: -125px 0 0 0;
+  margin: -175px 0 0 0;
   position: relative;
   bottom: 0;
 }
 
 .forma {
   width: 798px;
-  height: 244px;
+  height: 226px;
   background: url("../images/forma-roja.png") no-repeat 0 0;
-  margin: -78px auto 0 auto;
+  margin: -83px auto 0 auto;
   position: relative;
   z-index: 10;
   bottom: 0;
@@ -319,7 +319,7 @@ ul {
 }
 
 .forma .txt p {
-  font: 13px 'geogrotesque_ullgultralight';
+  font: 12px 'geogrotesque_ullgultralight';
   text-transform: uppercase;
   margin: 10px 0;
   line-height: 1.6em;
@@ -2480,13 +2480,14 @@ video{
 
 /*-- FOOTER --*/
 .footer{
-  position: fixed;
+  position: relative;
   left: 0;
   right: 0;
-  bottom: 0;
-  background: #303241;
+  bottom: -80px;
+  /*background: #303241;*/
   z-index: 300;
   padding: 5px;
+  border:1px solid rgba(255,255,255,0.5);
 }
 .footer:after, .footer:before, .footer .contenedor:after, .footer .contenedor:before{
   display: table;
@@ -2495,14 +2496,18 @@ video{
 }
 .footer .logo{
   float: left;
+  margin: 0 0 0 10px;
 }
 .footer .smarttv{
-  float: right;
-  margin: -19px 0 -5px 0;
+position: fixed;
+right: 13px;
+bottom: 3px;
+/*  float: right;
+  margin: -19px 0 -5px 0;*/
 }
 .footer .bases{
   position: absolute;
-  bottom: -5px;
+  bottom: 0;
   margin: 0 0 0 -87px;
   left: 50%;
 }
