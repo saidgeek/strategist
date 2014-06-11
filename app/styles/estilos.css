@@ -2487,7 +2487,7 @@ video{
   /*background: #303241;*/
   z-index: 300;
   padding: 5px;
-  border:1px solid rgba(255,255,255,0.5);
+  border-top:1px solid rgba(255,255,255,0.5);
 }
 .footer:after, .footer:before, .footer .contenedor:after, .footer .contenedor:before{
   display: table;
