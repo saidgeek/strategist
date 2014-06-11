@@ -23,7 +23,7 @@ angular.module('strategistApp')
             domain = "#{ $location.$$protocol }://#{ $location.$$host }"
             _url = "#{ domain }#{ $location.$$path }#{ strategy._id }"
             _text = """
-              
+              Vota por mi mejor tactica en
             """
             url = "https://twitter.com/share?text=#{ _text }&url=#{ _url }&hashtags=mimejortactica"
             $window.open url, '', "top=200, left=500, width=400, height=300"

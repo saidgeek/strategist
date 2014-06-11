@@ -119,7 +119,7 @@ angular.module('strategistApp', [
       FB: FB
     }
 
-  .run ($rootScope, $state, Auth, $timeout, IO, $compile, User, $http, $sce, $window, $location) ->
+  .run ($rootScope, $state, Auth, $timeout, IO, $compile, User, $http, $sce, $window, $location, Strategy) ->
 
     $rootScope.domain = "#{ $location.$$protocol }://#{ $location.$$host }"
     IO.emit 'register.strategy.globals', { user_id: ($rootScope.currentUser?.id || null) }
@@ -139,7 +139,10 @@ angular.module('strategistApp', [
         $compile($el.contents())($rootScope)
 
     IO.on 'new.strategy', (id) ->
-      $state.transitionTo 'votes'
+      Strategy.show id, (err, strategy) ->
+          if !err
+            if strategy.user._id is $rootScope.currentUser.id
+              $state.transitionTo 'votes'
 
 
     # Redirect to login if route requires auth and you're not logged in
