@@ -1,1 +1,214 @@
-mobile
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" ng-app="strategistApp"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" ng-app="strategistApp"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" ng-app="strategistApp"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" ng-app="strategistApp">
+<!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<title>Mi Mejor Tactica - Mobile</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+	<link href="styles/bootstrap.min.css" rel="stylesheet" type="text/css">
+	<link href="styles/mobile.css" rel="stylesheet" type="text/css">
+	<link href="styles/responsive.css" rel="stylesheet" type="text/css">
+	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	    <!--[if lt IE 9]>
+	      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+	      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+	<![endif]-->
+	<base href="/">
+  <meta name="description" content="Arma tu mejor táctica y sale a ganar. Por cada partido de la Selección en el Mundial, comparte tu táctica ganadora en 140 caracteres. Vota y gánate la Smart TV que mereces.">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Mi Mejor Táctica. LG">
+  <meta name="twitter:description" content="Arma tu mejor táctica y sale a ganar. Por cada partido de la Selección en el Mundial, comparte tu táctica ganadora en 140 caracteres. Vota y gánate la Smart TV que mereces.">
+  <meta name="twitter:creator" content="@EstrategaLG">
+  <meta name="twitter:image:src" content="{{ domain }}/images/mme-social.jpg">
+  <meta name="twitter:domain" content="{{ domain }}">
+  <meta name="author" content="grupoingenia.cl">
+</head>
+
+<body>
+<div id="General">
+	<div id="m-des">
+	    <div class="titulo">
+	        <span>#MIMEJORTACTICA</span>
+	    </div>
+	    <div class="menu">
+	        <ul>
+	            <li><a ui-sref-active="active" ui-sref="home" title="Home"><span class="numero">1</span>Home<span class="borde"></span></a>
+	            </li>
+	            <li><a ui-sref-active="active" ui-sref="strategy" title="Mi Mejor Táctica"><span class="numero">2</span>Mi Mejor Táctica<span class="borde"></span></a></li>
+	            <li><a ui-sref-active="active" ui-sref="votes" title="Tácticas"><span class="numero">3</span>Tácticas <span class="borde"></span></a></li>
+	            <li><a ui-sref-active="active" ui-sref="positions" title="Tabla de Posiciones"><span class="numero">4</span>Tabla de Posiciones<span class="borde"></span></a></li>
+	            <li><a ui-sref-active="active" ui-sref="wins" title="Ganadores"><span class="numero">5</span>Ganadores <span class="borde"></span></a></li>
+	            <li><a ui-sref-active="active" ui-sref="awards" title="Premios"><span class="numero"><img src="images/premio.png" alt="Premios"></span>Premios <span class="borde"></span></a></span></li>
+	        </ul>
+	    </div>
+	</div><!--Menu Desplegable-->
+	
+	<div id="cont">
+		<div class="header">
+		    <div class="container">
+		        <div class="row">
+		            <div class="col-md-6 col-xs-6">
+		                <a href="#" class="vermenu">
+		                    <img src="images/imagen-menu.png">
+		                </a>
+		            </div>
+		            <div class="col-md-6 col-xs-6 lg-logo">
+		                <img src="images/logo-LG-SMARTTV.png" alt="LG SMART TV">
+		            </div>
+		        </div>        
+		    </div>
+		</div>
+
+		<div class="slide">
+		    <div class="container">
+		        <div class="row">
+		            <div class="col-md-12 col-xs-12">    
+		                <img src="images/imagen-hincha2.png">
+		                <p class="titulo"><span>¡ARMA TU MEJOR TÁCTICA</span>Y SALE A GANAR!</p>
+		            </div>
+		        </div>       
+		    </div>
+		</div>
+		<div class="rojo">
+		    <div class="container">
+		        <div class="row">
+		            <div class="col-md-12 col-xs-12">
+		                <p>Comparte Tu Mejor Táctica en 140 caracteres para que tu equipo gane. Participa y podrás ganar <span>6 meses de Estadio CDF y un Smart TV LG</span> Mientras más participes y más votos obtengas, más posibilidades tienes de ganar!</p>
+		            </div>
+		        </div>
+		        <div class="row">
+		            <div class="col-md-6 col-xs-6">
+		                <a class="facebook" title="Ingresa por Facebook">INGRESA POR <img src="images/ico-facebook.png" alt="Facebook"></a>
+		            </div>
+		            <div class="col-md-6 col-xs-6">
+		                <a class="twitter" title="Ingresa por Twitter">INGRESA POR <img src="images/ico-twitter.png" alt="Twitter"> </a>
+		            </div>
+		        </div>
+		        <div class="row">
+		            <div class="col-md-12 col-xs-12">
+		                <p class="bases">Acepto <a href="#" title="Bases del concurso">Bases del concurso </a></p>
+		            </div>
+		        </div>
+		    </div>
+		</div>
+		<div class="logos">
+		    <div class="container">
+		        <div class="row">
+		            <div class="col-md-6 col-xs-6 borde">
+		                <a href="#" title="App Estadio CDF">
+		                    <img src="images/app-estadio.png">
+		                    <span>Ver más</span>
+		                </a>
+		            </div>
+		            <div class="col-md-6 col-xs-6">
+		                <a href="#" title="App Estadio LG">
+		                    <img src="images/app-estadio-LG.png">
+		                    <span>Ver más</span>
+		                </a>
+		            </div>
+		        </div>
+		    </div>
+		</div>
+	    
+		<div class="LG">
+		    <div class="container">
+		        <div class="row">
+		            <div class="col-md-6 col-xs-6 bases">
+		                <a href="#" title="Bases del Concurso">Bases del Concurso</a>
+		            </div>
+		            <div class="col-md-6 col-xs-6 logo">
+		                <a href="#" title="LG"><img src="images/LG.png" alt="LG"></a>
+		            </div>
+		        </div>
+		    </div>
+		</div>
+	</div><!--Cont-->
+
+</div><!--General-->
+<!--[if lt IE 9]>
+    <script src="bower_components/es5-shim/es5-shim.js"></script>
+    <script src="bower_components/json3/lib/json3.min.js"></script>
+    <![endif]-->
+
+    <div id="fb-root"></div>
+    <script>
+        (function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) return;
+          js = d.createElement(s); js.id = id;
+          js.src = "//connect.facebook.net/es_LA/all.js";
+          fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+
+    <script src="/socket.io/socket.io.js"></script>
+
+    <script src="bower_components/modernizr/modernizr.js"></script>
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="bower_components/ng-scrollbar/dist/ng-scrollbar.js"></script>
+    <script src="bower_components/moment/moment.js"></script>
+    <script src="bower_components/moment/lang/es.js"></script>
+    <script src="bower_components/angular-bootstrap-datetimepicker/src/js/datetimepicker.js"></script>
+    <script src="bower_components/angular-socket-io/socket.js"></script>
+    <script src="bower_components/node-uuid/uuid.js"></script>  
+    <script src="bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="bower_components/countdown/jquery.countdown.js"></script>
+    <script src="scripts/app.js"></script>
+    <script src="scripts/controllers/main.js"></script>
+    <script src="scripts/controllers/navbar.js"></script>
+    <script src="scripts/controllers/login.js"></script>
+    <script src="scripts/controllers/signup.js"></script>
+    <script src="scripts/controllers/settings.js"></script>
+    <script src="scripts/controllers/strategy.js"></script>
+    <script src="scripts/controllers/win.js"></script>
+    <script src="scripts/services/auth.js"></script>
+    <script src="scripts/services/session.js"></script>
+    <script src="scripts/services/filters.js"></script>
+    <script src="scripts/services/user.js"></script>
+    <script src="scripts/services/match.js"></script>
+    <script src="scripts/services/strategy.js"></script>
+    <script src="scripts/services/vote.js"></script>
+    <script src="scripts/services/sweepstake.js"></script>
+    <script src="scripts/directives/facebook.js"></script>
+    <script src="scripts/directives/twitter.js"></script>
+    <script src="scripts/directives/mongooseError.js"></script>
+    <script src="scripts/directives/custom_scroll.js"></script>
+    <script src="scripts/directives/site/menu.js"></script>
+    <script src="scripts/directives/site/animate.js"></script>
+    <script src="scripts/directives/site/disabled_enter.js"></script>
+    <script src="scripts/directives/site/terms.js"></script>
+    <script src="scripts/directives/site/countdown.js"></script>
+    <script src="scripts/directives/site/vs.js"></script>
+    <script src="scripts/directives/site/vote_list.js"></script>
+    <script src="scripts/directives/site/vote_list_me.js"></script>
+    <script src="scripts/directives/site/position_list.js"></script>
+    <script src="scripts/directives/site/position_list_me.js"></script>
+    <script src="scripts/directives/site/render_content.js"></script>
+    <script src="scripts/directives/site/button_vote.js"></script>
+    <script src="scripts/directives/site/login.js"></script>
+    <script src="scripts/directives/site/galery.js"></script>
+
+	<script>
+	$(document).ready(function(){
+
+		$("a.vermenu").click(function(){
+			$("#cont, #m-des, .menu").toggleClass("active");
+		});
+
+	});
+	</script>
+</body>
+</html>

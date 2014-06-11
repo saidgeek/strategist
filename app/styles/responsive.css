@@ -1,0 +1,59 @@
+@media screen and (max-width: 768px) {
+  .top p.nico {
+    line-height: 27px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .top {
+    background: url(../bg/bg-top-mobile.png) no-repeat -70px 109px #000000;
+  }
+  .top .bg-nico {
+    background: none;
+  }
+  .top p.nico {
+    background: none;
+    margin: 20px 0 0 0;
+    padding-left: 0;
+  }
+  .mid p {
+    min-height: 40px;
+    padding-bottom: 10px;
+  }
+  .btn {
+    margin-top: 0px;
+    margin-bottom: 20px;
+  }
+  .bot {
+    padding-bottom: 20px;
+    padding-top: 20px;
+  }
+  .mid p.subtitulo {
+    font-size: 30px;
+    color: #f5796f;
+    line-height: 45px;
+  }
+  .mid p.subtitulo span {
+    display: inline;
+  }
+  .barra {
+    margin-bottom: 20px;
+  }
+}
+@media screen and (max-width: 320px) {
+  .bot .idpass {
+    margin-bottom: 10px;
+  }
+  .top {
+    background: url(../bg/bg-top.png) no-repeat -200px 292px #000000;
+  }
+}
+@media (max-width: 768px) {
+  .container {
+    width: auto;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    width: 980px;
+  }
+}
