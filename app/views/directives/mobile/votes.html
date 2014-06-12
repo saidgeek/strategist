@@ -1,0 +1,23 @@
+<div class="row" id="strategy_{{ s._id }}" ng-repeat="s in strategies" data-search="{{ s.user.name }} {{ s.user.twitter_screen_name }}">
+    <div class="col-md-12 col-xs-12">
+        <div class="tactica">
+            <div class="container">
+                <div class="row">
+                  <div class="col-xs-2"><img src="{{ s.user.avatar }}" class="img-rounded"></div>    
+                  <div class="col-xs-10">
+                        <p class="nombre">{{ s.user.name }} <span ng-if="s.user.twitter_screen_name">{{ s.user.twitter_screen_name }}</span></p>
+                        <p class="tit-tac">#<span>mimejor</span> táctica</p>
+                        <p>{{ s.content | removePlus }}</p>
+                        <div class="row">
+                            <div class="col-xs-6"><a class="votar"><img src="images/mano-votar.png" alt="icono mano">Votar</a></div>
+                            <div class="col-xs-6">
+                                <a class="face-circle" href="javascript:{}" data-sgk-facebook-share="{{ s._id }}"><img src="images/ico-facebook.png" alt="Facebook"></a>
+                                <a class="twitter-circle" href="javascript:{}" data-sgk-twitter-share="{{ s._id }}"><img src="images/ico-twitter.png" alt="Twitter"></a>
+                            </div>
+                        </div>
+                    </div>  
+                </div>
+            </div>    
+        </div>
+    </div>
+</div>
