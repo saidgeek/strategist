@@ -1,0 +1,33 @@
+<div  class="row" id="strategy_{{ strategy._id }}">
+  <div class="col-md-12 col-xs-12">
+      <div class="tactica pad-esp">
+          <div class="container">
+              <div class="row">
+                <div class="col-xs-2 mTop">
+                    <img src="{{ strategy.user.avatar }}" class="img-rounded">
+                    <p class="num-rank">{{ $index + 1 }}</p>    
+                </div>    
+                <div class="col-xs-10 fondo-rojo">
+                    <div class="row">
+                         <div class="col-xs-7"> 
+                              <p class="nombre mTop">{{ strategy.user.name }} <span class="negro" ng-if="strategy.user.twitter_screen_name">{{ strategy.user.twitter_screen_name }}
+                              <p class="tit-tac-negro">#<span>mimejor</span> táctica</p>
+                          </div>  
+                          <div class="col-xs-5"> 
+                              <p class="votos mTop"><span>5895</span> Votos</p> 
+                          </div>
+                    </div>
+                      <p>{{ strategy.content | removePlus }}</p>
+                      <div class="row">
+                            <div class="col-xs-6"><a class="votar"><img src="images/mano-votar.png" alt="icono mano">Votar</a></div>
+                            <div class="col-xs-6">
+                                <a class="face-circle" href="javascript:{}" data-sgk-facebook-share="{{ strategy._id }}"><img src="images/ico-facebook.png" alt="Facebook"></a>
+                                <a class="twitter-circle" href="javascript:{}" data-sgk-twitter-share="{{ strategy._id }}"><img src="images/ico-twitter.png" alt="Twitter"></a>
+                            </div>
+                        </div>
+                  </div>  
+              </div>
+          </div>    
+      </div>
+  </div>
+</div>
