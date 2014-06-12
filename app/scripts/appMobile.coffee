@@ -28,7 +28,7 @@ angular.module('strategistApp', [
         templateUrl: 'partials/mobile/index'
         authenticate: false
       .state 'strategy',
-        url: '/mobile/mi-mejor-tactica/:terms'
+        url: '/mobile/mi-mejor-tactica/'
         controller: 'StrategyCtrl'
         templateUrl: 'partials/mobile/strategy'
         authenticate: false
@@ -200,7 +200,7 @@ angular.module('strategistApp', [
       angular.element("#loader").fadeOut("slow");
 
       angular.element("#cont, #m-des, .menu")
-        .toggleClass("active");
+        .removeClass("active");
 
       # $timeout () =>
       #   $('.hinchas').removeClass('animate');
