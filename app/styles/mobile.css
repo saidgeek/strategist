@@ -935,6 +935,17 @@ display: none;
   margin-right: 0.5em;
   max-width: 25%;
 }
+.slide .tactica a.votar span, .slide .tactica a.votar-negro span{
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 0.5em;
+  width: 23px;
+  height: 22px;
+  overflow: hidden;
+  background: url("../images/mano-votar.png");
+  background-size: cover;
+  text-indent: -999px;
+}
 .slide .tactica a.votar-negro {
   background: #26262e;
   -webkit-box-shadow: 0 3px 0 0 #000;
@@ -1154,7 +1165,9 @@ img.altura{
   padding: 1.5em 1em;
 }
 .slide .tactica .img-rounded {
-  border-radius: 40px;
+  margin: 0 -10px 0 0;
+  border-radius: 50%;
+  max-width: 180%;
 }
 .slide .tactica p {
   font-family: 'HelveticaNeueLight';
@@ -1176,9 +1189,8 @@ img.altura{
 .slide .tactica p.num-rank {
   color: #fff;
   text-align: center;
-  font-size: 3.6em;
+  font-size: 1.6em;
   font-family: 'geogrotesque_lglight';
-  margin-left: 0.1em;
 }
 .slide .tactica p.votos {
   font-size: 1em;
@@ -1398,8 +1410,198 @@ img.altura{
   max-width: 25%;
 }
 
+/* ----------------- PASO 6 ----------------- */
 
-
+#paso6.slide .container{
+  background: url("../images/fondo-pasos.jpg") no-repeat 50% 0;
+  padding: 5% 8% 5% 13%;
+}
+#paso6.slide select{
+  width: 100%;
+  border: 1px solid #2c363e;
+  background: #26242c;
+  border-radius: 0;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  height: 3.5em;
+  margin: 0 0 15px 0;
+  color: #fff;
+  font: 1.15em 'geogrotesque_lglight';
+  -webkit-box-shadow:inset 0 1px 2px 0 rgba(0,0,0,0.3);
+  box-shadow:inset 0 1px 2px 0 rgba(0,0,0,0.3);
+}
+#paso6.slide .fechasorteo {
+  background: #27252d;
+  padding: 10px;
+  border: 1px solid #2c363e;
+  text-align: center;
+  margin: 10px 0 0 0;
+  font: normal 26px 'geogrotesque_bdbold';
+  color: #ee2743;
+  text-transform: uppercase;
+}
+#paso6.slide span.ng-binding{
+  color: #fff;
+  display: inline-block;
+}
+#paso6.slide h2 {
+  font: normal 2em 'geogrotesque_bdbold';
+  margin: 0 0 0 10px;
+  line-height: 1em;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #fff;
+  text-align: center;
+}
+#paso6.slide h2 span {
+  color: #ee2743;
+}
+#paso6.slide p.titulo {
+  font-family: 'geogrotesque_smbdsemibold';
+  display: block;
+  font-size: 1.5em;
+  color: #fff;
+  text-align: left;
+  line-height: 1.3em;
+  position: absolute;
+  top: 25%;
+  left: 9%;
+  width: 80%;
+}
+#paso6.slide p.titulo.nombre {
+  display: block;
+  top: 40%;
+  color: #fff;
+}
+#paso6.slide p.titulo span {
+  color: #eb1f36;
+  display: inline;
+}
+#paso6.azul {
+  background: #27252d url("../images/pattern.png") repeat top left;
+  padding: 2em 0;
+  text-align: center;
+}
+#paso6.azul p {
+  padding: 0 0.2em 0 1.5em;
+  font-family: 'HelveticaNeueLight';
+  font-size: 1em;
+  text-align: left;
+  font-weight: normal;
+  line-height: 1.5em;
+  color: #fff;
+}
+#paso6.azul .boton {
+  display: block;
+  width: 100%;
+  background: #dedede;
+  padding: 1em 0;
+  color: #eb2038;
+  text-transform: uppercase;
+  -webkit-box-shadow: 0 3px 0 0 #bfc0c5;
+  box-shadow: 0 3px 0 0 #bfc0c5;
+  font-family: 'geogrotesque_bdbold';
+  font-size: 1.111em;
+  text-align: center;
+  cursor: pointer;
+  position: relative;
+  text-decoration: none;
+  margin: 0 auto;
+  -webkit-border-radius: 0.3em;
+  -moz-border-radius: 0.3em;
+  border-radius: 0.3em;
+}
+#paso6.azul .boton:active {
+  top: 2px;
+  box-shadow: 0 1px 0 0 #bfc0c5;
+}
+#paso6.rojo {
+  background: #eb1f36;
+  color: #fff;
+  padding: 1em 0;
+}
+#paso6.rojo .tactica .img-rounded {
+border-radius: 40px;
+}
+#paso6.rojo .tactica p {
+  font-family: 'HelveticaNeueLight';
+  color: #fff;
+  font-size: 1.22em;
+  text-align: left;
+  padding: 0;
+}
+#paso6.rojo .tactica p.nombre {
+  color: #fff;
+  font-size: 1.22em;
+  font-family: Arial;
+}
+#paso6.rojo .tactica p.nombre span {
+  color: #000;
+  display: inline-block;
+}
+#paso6.rojo .tactica p.tit-tac {
+  color: #000;
+  font-size: 1.556em;
+  font-family: 'geogrotesque_bdbold';
+  text-transform: uppercase;
+}
+#paso6.rojo .tactica p.tit-tac span {
+  color: #fff;
+  display: inline-block;
+}
+#paso6.rojo .tactica p.votos{
+  font-size: 1em;
+  color: #fff;
+  font-family: arial, sans-serif;
+}
+#paso6.rojo .tactica p.votos span{
+  color: #fff;
+  font-size: 1.556em;
+  font-family: 'geogrotesque_bdbold';
+  border-left: 1px solid #fff;
+  display: inline-block;
+  padding: 1em 0 1em 0.2em;
+  margin: 0;
+}
+#paso6.participa{
+  background: url("../images/pattern.png") repeat 0 0 #27252d;
+  border-top: 1px solid rgba(255,255,255,0.25);
+  border-bottom: 1px solid rgba(255,255,255,0.25);
+  padding: 0 0 0 15px;
+  text-align: center;
+}
+#paso6.participa p{
+  margin: 1.5em 0;
+}
+#paso6.participa h2{
+  font: normal 1.5em 'geogrotesque_bdbold';
+  margin:0.5em 0;
+  line-height: 1em;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #fff;
+  text-align: center;
+}
+#paso6.participa h2 span{
+  color: #ee2743;
+}
+.btn-participa a {
+  display: block;
+  width: 40%;
+  background: #dedede;
+  padding: 1em 0;
+  color: #eb2038;
+  text-transform: uppercase;
+  box-shadow: 0 3px 0 0 #bfc0c5;
+  font-family: 'geogrotesque_bdbold';
+  font-size: 1.111em;
+  text-align: center;
+  cursor: pointer;
+  position: relative;
+  text-decoration: none;
+  margin: 0 auto 2em auto;
+  border-radius: 0.3em;
+}
 /* ------------------ MEDIA -----------------------------------------------------------------------------------------*/
 @media (max-width: 1200px) {
   body {

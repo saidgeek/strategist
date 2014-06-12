@@ -9,7 +9,9 @@
                         <p class="tit-tac">#<span>mimejor</span> táctica</p>
                         <p>{{ s.content | removePlus }}</p>
                         <div class="row">
-                            <div class="col-xs-6"><a class="votar"><img src="images/mano-votar.png" alt="icono mano">Votar</a></div>
+                            <div class="col-xs-6">
+                                <div data-sgk-button-vote data-sgk-user-id="{{ s.user._id }}" data-sgk-strategy-id="{{ s._id }}" data-sgk-sweepstake-id="{{ s.sweepstake._id }}" class="votar"></div>
+                            </div>
                             <div class="col-xs-6">
                                 <a class="face-circle" href="javascript:{}" data-sgk-facebook-share="{{ s._id }}"><img src="images/ico-facebook.png" alt="Facebook"></a>
                                 <a class="twitter-circle" href="javascript:{}" data-sgk-twitter-share="{{ s._id }}"><img src="images/ico-twitter.png" alt="Twitter"></a>
