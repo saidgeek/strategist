@@ -1,0 +1,70 @@
+        <div class="slide">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-xs-12">    
+                        <img src="images/fondo-pasos.jpg">
+                        <p class="faltan"><span class="linea"></span><span>FALTAN</span><span class="linea"></span></p>
+                        <div id="defaultCountdown">
+                            <div class="countdown-section">
+                                <span class="countdown-amount">16</span> 
+                                <span class="countdown-period">Días</span>
+                            </div>
+                            <div class="countdown-section">
+                                <span class="countdown-amount">05</span> 
+                                <span class="countdown-period">hrs</span>
+                            </div>
+                            <div class="countdown-section">
+                                <span class="countdown-amount">56</span> 
+                                <span class="countdown-period">min</span>
+                            </div>
+                            <div class="countdown-section">
+                                <span class="countdown-amount">36</span> 
+                                <span class="countdown-period">sec</span>
+                            </div>
+                        </div>
+                        <p class="prox">PARA EL PRÓXIMO ENCUENTRO DE LA SELECCIÓN</p>
+                        <ul class="equipos">
+                            <li><img src="images/chile.png" class="b-izquierda" alt="Chile"></li>
+                            <li><img src="images/slash.png" class="slash"></li>
+                            <li><img src="images/holanda.png" class="b-derecha" alt="Holanda"></li>
+                        </ul>
+                        
+                    </div>
+                </div>       
+            </div>
+        </div>
+        <div class="rojo">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-xs-12">
+                        <p><span>¿Cuál es tu mejor táctica para que Chile triunfe?</span>Escríbela aquí en 140 caracteres y consigue votos para obtener más posibilidades de ganar.</p>
+                    </div>
+                </div>
+                <div class="row sinmargenleft">
+                    <form name="form" id="post" ng-submit="create(form, match._id)" novalidate>
+                        <textarea name="elpost" id="elpost" placeholder="Escribe tu táctica aquí" ng-trim="false" minlength="10" maxlength="140" ng-model="strategy.content" data-sgk-disabled-enter required></textarea>
+                        <span>{{ 140 - strategy.content.length || 140 }}</span>
+                        <input type="submit" ng-click="submitted = true" value="Enviar" data-sgk-login class="submit">
+                        <p ng-show="form.elpost.$error.required && submitted" class="error">Este campo es requerido</p>
+                    </form>                                
+                </div>        
+            </div>
+        </div>
+        <div class="logos">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-xs-6 borde">
+                        <a ui-sref="estadio_cdf" title="App Estadio CDF">
+                            <img src="images/app-estadio.png">
+                            <span>Ver más</span>
+                        </a>
+                    </div>
+                    <div class="col-md-6 col-xs-6">
+                        <a ui-sref="estadio_lg" title="App Estadio LG">
+                            <img src="images/app-estadio-LG.png">
+                            <span>Ver más</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
