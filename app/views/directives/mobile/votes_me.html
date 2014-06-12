@@ -1,1 +1,23 @@
-votes_me.html
+<div class="row" id="strategy_{{ strategy._id }}">
+    <div class="col-md-12 col-xs-12">
+        <div class="tactica fondo-rojo">
+            <div class="container">
+                <div class="row">
+                  <div class="col-xs-2"><img src="{{ strategy.user.avatar }}" class="img-rounded"></div>    
+                  <div class="col-xs-10">
+                        <p class="nombre">{{ strategy.user.name }} <span ng-if="strategy.user.twitter_screen_name">{{ strategy.user.twitter_screen_name }}</span></p>
+                        <p class="tit-tac-negro">#<span>mimejor</span> táctica</p>
+                        <p>{{ strategy.content | removePlus }}</p>
+                        <div class="row">
+                            <div class="col-xs-6"><a class="votar-negro"><img src="images/mano-votar.png" alt="icono mano">Votar</a></div>
+                            <div class="col-xs-6">
+                                <a class="face-circle" href="javascript:{}" data-sgk-facebook-share="{{ strategy._id }}"><img src="images/ico-facebook.png" alt="Facebook"></a>
+                                <a class="twitter-circle" href="javascript:{}" data-sgk-twitter-share="{{ strategy._id }}"><img src="images/ico-twitter.png" alt="Twitter"></a>
+                            </div>
+                        </div>
+                    </div>  
+                </div>
+            </div>    
+        </div>
+    </div>
+</div>

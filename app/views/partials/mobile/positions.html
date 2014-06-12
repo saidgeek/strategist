@@ -14,76 +14,9 @@
                 </div>    
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-12 col-xs-12">
-                <div class="tactica pad-esp">
-                    <div class="container">
-                        <div class="row">
-                          <div class="col-xs-2 mTop">
-                              <img src="images/pato.jpg" class="img-rounded">
-                              <p class="num-rank">1</p>    
-                          </div>    
-                          <div class="col-xs-10 fondo-rojo">
-                              <div class="row">
-                                   <div class="col-xs-7"> 
-                                        <p class="nombre mTop">Pato Castro <span class="negro">@patocastro</span></p>
-                                        <p class="tit-tac-negro">#<span>mimejor</span> táctica</p>
-                                    </div>  
-                                    <div class="col-xs-5"> 
-                                        <p class="votos mTop"><span>5895</span> Votos</p> 
-                                    </div>
-                              </div>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nec purus in ante pretium blandit. Aliquam erat volutpat. Nulla libero lectus.</p>
-                                <div class="row">
-                                    <div class="col-xs-6">
-                                        <div data-sgk-button-vote data-sgk-user-id="{{ s.user._id }}" data-sgk-strategy-id="{{ s._id }}" data-sgk-sweepstake-id="{{ s.sweepstake._id }}" class="votar-negro"></div>
-                                    </div>
-                                    <div class="col-xs-6">
-                                        <a class="face-circle"><img src="images/ico-facebook.png" alt="Facebook"></a>
-                                        <a class="twitter-circle"><img src="images/ico-twitter.png" alt="Twitter"></a>
-                                    </div>
-                                </div>
-                            </div>  
-                        </div>
-                    </div>    
-                </div>
-            </div>
-        </div> 
-        <div class="row">
-            <div class="col-md-12 col-xs-12">
-                <div class="tactica last-borde pad-esp">
-                    <div class="container">
-                        <div class="row fondo-rojo">
-                          <div class="col-xs-2 mTop">
-                              <img src="images/pato.jpg" class="img-rounded">
-                              <p class="num-rank">2</p>
-                            </div>    
-                          <div class="col-xs-10 fondo-negro">
-                              <div class="row">
-                                  <div class="col-xs-7">
-                                    <p class="nombre mTop">Pato Castro <span>@patocastro</span></p>
-                                    <p class="tit-tac">#<span>mimejor</span> táctica</p>
-                                  </div> 
-                                  <div class="col-xs-5"> 
-                                        <p class="votos mTop"><span>5895</span> Votos</p> 
-                                  </div>
-                              </div>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nec purus in ante pretium blandit. Aliquam erat volutpat. Nulla libero lectus.</p>
-                                <div class="row">
-                                    <div class="col-xs-6">
-                                        <div data-sgk-button-vote data-sgk-user-id="{{ s.user._id }}" data-sgk-strategy-id="{{ s._id }}" data-sgk-sweepstake-id="{{ s.sweepstake._id }}" class="votar"></div>
-                                    </div>
-                                    <div class="col-xs-6">
-                                        <a class="face-circle"><img src="images/ico-facebook.png" alt="Facebook"></a>
-                                        <a class="twitter-circle"><img src="images/ico-twitter.png" alt="Twitter"></a>
-                                    </div>
-                                </div>
-                            </div>  
-                        </div>
-                    </div>    
-                </div>
-            </div>
-        </div> 
+
+        <div data-sgk-position-list-me ng-if="currentUser"></div>
+        <div data-sgk-position-list></div>
     </div>
 </div>
     
