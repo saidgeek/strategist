@@ -4,7 +4,7 @@ angular.module('strategistApp')
   .directive 'sgkPositionListMe', ($rootScope, $timeout, IO, Strategy) ->
     restrict: 'A'
     scope: {}
-    templateUrl: 'directives/site/positions_me'
+    templateUrl: 'directives/mobile/positions_me'
     controller: ($scope, $rootScope, Strategy) ->
       $scope.strategy = null
 
@@ -25,7 +25,7 @@ angular.module('strategistApp')
       $scope.$watch 'strategy', (strategy) ->
         if strategy
           $timeout () =>
-            $el = angular.element("[data-sgk-position-list] #strategy_#{strategy._id}")
+            $el = angular.element("#strategy_#{strategy._id}")
             position = $el.find('.cell.number').html()
             $element.find('.cell.number').html position
           , 200
