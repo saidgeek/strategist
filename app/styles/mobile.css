@@ -174,7 +174,7 @@ img {
   color: #fff;
   text-align: center;
   position: absolute;
-  top: 9em;
+  top: 9.3em;
   width: 100%;
 }
 .slide ul.equipos {
@@ -183,6 +183,10 @@ img {
   display: table;
   width: 100%;
   padding: 0 3em;
+}
+.slide ul.equipos li img.slash{
+
+  margin: 0 10px 0 0;
 }
 .slide ul.equipos li {
   display: table-cell;
@@ -673,151 +677,7 @@ img {
 .apptv a img {
   vertical-align: middle;
 }
-/* ------------------ MEDIA -----------------------------------------------------------------------------------------*/
-@media (max-width: 1200px) {
-  body {
-    font-size: 18px;
-  }
-  .logo img {
-    max-width: 60%;
-  }
-  .LG a {
-    line-height: 50px;
-    height: 50px;
-  }
-  .slide p {
-    font-size: 1.8em;
-  }
-  .header .lg-logo img {
-    margin-top: 1%;
-  }
-}
-@media (max-width: 640px) {
-  .logo img {
-    max-height: 90%;
-  }
-  .LG a {
-    line-height: 50px;
-    height: 50px;
-  }
-}
-@media (max-width: 570px) {
-  body {
-    font-size: 16px;
-  }
-  .rojo form .btns-compartir .slideOne.slidet {
-    margin-right: 3.5em;
-  }
-}
-@media (max-width: 480px) {
-  body {
-    font-size: 13px;
-  }
-  .header .lg-logo img {
-    margin-top: 2%;
-  }
-  .rojo form .btns-compartir .slideOne label.twitter img,
-  .rojo form .btns-compartir .slideOne label.facebook img {
-    margin-left: -1em;
-    margin-top: -1em;
-  }
-}
-@media (max-width: 420px) {
-  .rojo a.facebook,
-  .rojo a.twitter {
-    font-size: 1.1em;
-  }
-  .slide ul.equipos {
-    padding: 0 4.6em;
-  }
-}
-@media (max-width: 400px) {
-  .slide div.contador {
-    top: 3em;
-    padding: 2.5em;
-  }
-  .rojo form input.submit {
-    max-width: 7em;
-    padding: 0.8em 1em;
-  }
-  .rojo form .btns-compartir .slideOne.slidet {
-    margin-right: 2.6em;
-  }
-  .slide div.contador {
-    top: 3em;
-    padding: 2.5em;
-  }
-  .slide form.buscador img {
-    top: 1.4em;
-  }
-  .slide p.gracias-bajada {
-    font-size: 1.1em;
-  }
-  .slide .tactica form img {
-    max-width: 30px;
-  }
-  .slide .tactica a.face-circle {
-    padding: 0.4em;
-  }
-  .slide .tactica a.twitter-circle {
-    padding: 0.4em;
-  }
-  .slide .tactica p.votos {
-    font-size: 0.8em;
-  }
-}
-@media (max-width: 370px) {
-  .cinema img.smarttv {
-    right: -7em;
-    top: 6em;
-  }
-}
-@media (max-width: 340px) {
-  body {
-    font-size: 12px;
-  }
-  .rojo form {
-    width: 100%;
-  }
-}
-@media (max-width: 320px) {
-  .logo img {
-    max-height: 90%;
-  }
-  .LG a {
-    line-height: 30px;
-    height: 30px;
-  }
-  .rojo p {
-    padding: 1em 1em;
-  }
-  .rojo a.facebook,
-  .rojo a.twitter {
-    font-size: 1em;
-  }
-  .rojo a.facebook img,
-  .rojo a.twitter img {
-    max-width: 20%;
-  }
-  #m-des ul li a span.numero img {
-    margin: 0.3em 0 0 0;
-  }
-  .slide form.buscador img {
-    top: 1.4em;
-  }
-  .slide .tactica form img {
-    max-width: 30px;
-  }
-  .slide .tactica a.face-circle {
-    padding: 0.3em;
-  }
-  .slide .tactica a.twitter-circle {
-    padding: 0.3em;
-  }
-  .slide .tactica p.votos {
-    font-size: 0.8em;
-  }
-}
+
 .sinmargenleft {
   margin-left: 0;
 }
@@ -917,9 +777,9 @@ display: none;
   color: #ee2642;
   text-align: center;
   top: 0.4em;
-  width: 100%;
+  width: 90%;
   text-transform: uppercase;
-  margin-top: 30px;
+  margin: 30px auto 0 auto;
 }
 .slide p.gracias-bajada {
   color: #fff;
@@ -930,6 +790,8 @@ display: none;
   color: #fff;
   text-align: center;
   font-size: 1em;
+  margin: 0 auto 10px auto;
+  width: 90%;
 }
 .slide form.buscador {
   position: relative;
@@ -1075,6 +937,12 @@ display: none;
 }
 .slide .tactica a.votar-negro {
   background: #26262e;
+  -webkit-box-shadow: 0 3px 0 0 #000;
+  box-shadow: 0 3px 0 0 #000;
+}
+.slide .tactica a.votar-negro:active {
+  top: 2px;
+  box-shadow: 0 1px 0 0 #000;
 }
 .slide .tactica a.face-circle {
   background: #405bbf;
@@ -1087,6 +955,8 @@ display: none;
 }
 .slide .tactica a.twitter-circle, .slide .tactica a.face-circle{
   position: relative;
+  display: inline-block;
+  cursor: pointer;
 }
 .slide .tactica a.face-circle:active {
   top: 2px;
@@ -1140,4 +1010,544 @@ display: none;
   vertical-align: top;
   margin-right: 0.5em;
   max-width: 25%;
+}
+img.altura{
+  width: 120%;
+  max-width: 120%;
+  margin: 0 0 0 -10%;
+}
+.slide .col-md-12,
+.slide .col-xs-12 {
+  padding: 0;
+}
+.slide .tope-esp {
+  padding: 0 12px;
+}
+.slide .mTop {
+  margin-top: 0.5em;
+}
+.slide p.titulo {
+  font-family: 'geogrotesque_lglight';
+  font-size: 1.5em;
+  color: #fff;
+  text-align: center;
+  line-height: 1.3em;
+  position: absolute;
+  top: 8%;
+  left: 0;
+  width: 100%;
+}
+.slide p.titulo span {
+  font-family: 'geogrotesque_smbdsemibold';
+  display: block;
+}
+.slide span.faltan {
+  display: block;
+  font-family: 'geogrotesque_bdbold';
+  font-size: 1.5em;
+  color: #fff;
+  text-align: center;
+  position: absolute;
+  top: 0.4em;
+  width: 100%;
+}
+.slide span.gracias {
+  display: block;
+  font-family: Arial;
+  font-size: 1.389em;
+  color: #ee2642;
+  text-align: center;
+  top: 0.4em;
+  width: 100%;
+  text-transform: uppercase;
+  margin-top: 30px;
+}
+.slide p.gracias-bajada {
+  color: #fff;
+  text-align: center;
+  font-size: 1.167em;
+}
+.slide p.tacticas-rank {
+  color: #fff;
+  text-align: center;
+  font-size: 1em;
+}
+.slide form.buscador {
+  position: relative;
+}
+.slide form.buscador input {
+  border-radius: 2em;
+  border: none;
+  background: #121215;
+  width: 100%;
+  margin: 1em 0;
+  padding: 0.44em 0 0.44em 1em;
+}
+.slide form.buscador input::-webkit-input-placeholder {
+  color: #565664;
+  font-size: 0.8em;
+  font-style: italic;
+}
+.slide form.buscador input:-moz-placeholder {
+  color: #565664;
+  font-size: 0.8em;
+  font-style: italic;
+}
+.slide form.buscador input::-moz-placeholder {
+  color: #565664;
+  font-size: 0.8em;
+  font-style: italic;
+}
+.slide form.buscador input:-ms-input-placeholder {
+  color: #565664;
+  font-size: 0.8em;
+  font-style: italic;
+}
+.slide form.buscador img {
+  position: absolute;
+  top: 1.2em;
+  right: 0.8em;
+  width: 8%;
+  height: auto;
+  max-width: 30px;
+}
+.slide div.contador {
+  background: #131317;
+  border-radius: 2em;
+  padding: 3em;
+  width: 90%;
+  position: absolute;
+  top: 4em;
+  left: 2em;
+}
+.slide p.prox {
+  display: block;
+  font-family: 'geogrotesque_bdbold';
+  font-size: 1.1em;
+  color: #fff;
+  text-align: center;
+  position: absolute;
+  width: 100%;
+}
+.slide img.b-derecha,
+.slide img.b-izquierda {
+  position: relative;
+}
+/*.slide img.b-derecha {
+  bottom: -1.7em;
+  right: 4em;
+  width: 29%;
+}
+.slide img.b-izquierda {
+  bottom: -1.7em;
+  left: 4em;
+  width: 29%;
+}*/
+.slide .fondo-rojo {
+  background-color: #c02136;
+}
+.slide .fondo-negro {
+  background-color: #24242c;
+}
+.slide .tactica {
+  border-top: 2px solid #818085;
+  padding: 1.5em 1em;
+}
+.slide .tactica .img-rounded {
+  border-radius: 40px;
+}
+.slide .tactica p {
+  font-family: 'HelveticaNeueLight';
+  color: #fff;
+  font-size: 1.22em;
+  text-align: left;
+}
+.slide .tactica p.nombre {
+  color: #fff;
+  font-size: 1.22em;
+  font-family: Arial;
+}
+.slide .tactica p.nombre span {
+  color: #e92036;
+}
+.slide .tactica p.nombre span.negro {
+  color: #27272f;
+}
+.slide .tactica p.num-rank {
+  color: #fff;
+  text-align: center;
+  font-size: 3.6em;
+  font-family: 'geogrotesque_lglight';
+  margin-left: 0.1em;
+}
+.slide .tactica p.votos {
+  font-size: 1em;
+  color: #fff;
+  font-family: arial, sans-serif;
+}
+.slide .tactica p.votos span {
+  color: #fff;
+  font-size: 1.556em;
+  font-family: 'geogrotesque_bdbold';
+  border-left: 1px solid #fff;
+  display: inline-block;
+  padding: 1em 0 1em 0.6em;
+  margin: 0;
+}
+.slide .tactica p.tit-tac {
+  color: #e92036;
+  font-size: 1.556em;
+  font-family: 'geogrotesque_bdbold';
+  text-transform: uppercase;
+}
+.slide .tactica p.tit-tac span {
+  color: #fff;
+}
+.slide .tactica p.tit-tac-negro {
+  color: #27272f;
+  font-size: 1.2em;
+  font-family: 'geogrotesque_bdbold';
+  text-transform: uppercase;
+}
+.slide .tactica p.tit-tac-negro span {
+  color: #fff;
+}
+.slide .tactica a.votar,
+.slide .tactica a.votar-negro {
+  padding: 0.7em;
+  background: #e42339;
+  -webkit-box-shadow: 0 3px 0 0 #c61f33;
+  box-shadow: 0 3px 0 0 #c61f33;
+  color: #fff;
+  font-family: 'geogrotesque_bdbold';
+  font-size: 1.2em;
+  display: block;
+  border-radius: 0.3em;
+  text-align: center;
+  cursor: pointer;
+  position: relative;
+  text-decoration: none;
+  max-width: 250px;
+  margin: 0 0 1em 0;
+  text-transform: uppercase;
+}
+.slide .tactica a.votar:active,
+.slide .tactica a.votar-negro:active {
+  top: 2px;
+  box-shadow: 0 1px 0 0 #c91f34;
+}
+.slide .tactica a.votar img,
+.slide .tactica a.votar-negro img {
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 0.5em;
+  max-width: 25%;
+}
+.slide .tactica a.votar-negro {
+  background: #26262e;
+  -webkit-box-shadow: 0 3px 0 0 #000;
+  box-shadow: 0 3px 0 0 #000;
+}
+.slide .tactica a.face-circle {
+  background: #405bbf;
+  padding: 1em;
+  border-radius: 50%;
+  float: left;
+  -webkit-box-shadow: 0 3px 0 0 #364da6;
+  box-shadow: 0 3px 0 0 #364da6;
+  margin-right: 1em;
+}
+.slide .tactica a.face-circle:active {
+  top: 2px;
+  box-shadow: 0 1px 0 0 #405bbf;
+}
+.slide .tactica a.twitter-circle {
+  background: #1ca9d1;
+  padding: 1em;
+  border-radius: 50%;
+  float: left;
+  -webkit-box-shadow: 0 3px 0 0 #1891b9;
+  box-shadow: 0 3px 0 0 #1891b9;
+}
+.slide .tactica a.twitter-circle:active {
+  top: 2px;
+  box-shadow: 0 1px 0 0 #1ca9d1;
+}
+.slide .last-borde {
+  border-bottom: 2px solid #818085;
+}
+.slide .pad-esp {
+  padding: 0 0 0 1em;
+}
+.rojo {
+  background: #eb1f36;
+  color: #fff;
+  padding: 0 0 1em 0;
+}
+.rojo p {
+  padding: 1em 0.8em;
+  font-family: 'HelveticaNeueLight';
+  font-size: 1em;
+  text-align: center;
+  font-weight: normal;
+  line-height: 1.5em;
+}
+.rojo p span {
+  display: block;
+  font-family: 'HelveticaNeueBold';
+}
+.rojo a.facebook {
+  padding: 1em;
+  background: #405bbf;
+  -webkit-box-shadow: 0 3px 0 0 #374fa9;
+  box-shadow: 0 3px 0 0 #374fa9;
+  color: #fff;
+  font-family: 'geogrotesque_bdbold';
+  font-size: 1.4em;
+  display: block;
+  border-radius: 0.1em;
+  text-align: center;
+  cursor: pointer;
+  position: relative;
+  text-decoration: none;
+  max-width: 250px;
+  margin: 0 auto;
+}
+.rojo a.facebook img {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 0.5em ;
+}
+.rojo a.facebook:active {
+  top: 2px;
+  box-shadow: 0 1px 0 0 #374fa9;
+}
+.rojo a.twitter {
+  padding: 1em;
+  background: #1caad2 url("../images/pattern.png") repeat top left;
+  -webkit-box-shadow: 0 3px 0 0 #1994bd;
+  box-shadow: 0 3px 0 0 #1994bd;
+  color: #fff;
+  font-family: 'geogrotesque_bdbold';
+  font-size: 1.4em;
+  display: block;
+  border-radius: 0.1em;
+  text-align: center;
+  cursor: pointer;
+  position: relative;
+  text-decoration: none;
+  max-width: 250px;
+  margin: 0 auto;
+}
+.rojo a.twitter img {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 0.5em ;
+}
+.rojo a.twitter:active {
+  top: 2px;
+  box-shadow: 0 1px 0 0 #1994bd;
+}
+.rojo p.bases {
+  font-family: 'geogrotesque_rgregular';
+  font-size: 1.2em;
+  color: #fff;
+  text-align: center;
+  margin: 1em 0 0;
+  padding: 0;
+}
+.rojo p.bases a {
+  color: #fff;
+  text-decoration: underline;
+}
+.tabla-pos {
+  background: #141317;
+  padding: 2em 1em;
+}
+.tabla-pos p {
+  text-align: left;
+  color: #fff;
+  padding-left: 2.5em;
+}
+.tabla-pos a.btn-tabla-pos {
+  padding: 0.7em;
+  background: #eaeaea;
+  -webkit-box-shadow: 0 3px 0 0 #bfc0c5;
+  box-shadow: 0 3px 0 0 #bfc0c5;
+  color: #eb2038;
+  font-family: 'geogrotesque_bdbold';
+  font-size: 1em;
+  display: block;
+  border-radius: 0.3em;
+  text-align: center;
+  cursor: pointer;
+  position: relative;
+  text-decoration: none;
+  max-width: 250px;
+  margin: 0 auto;
+  text-transform: uppercase;
+}
+.tabla-pos a.btn-tabla-pos:active {
+  top: 2px;
+  box-shadow: 0 1px 0 0 #eaeaea;
+}
+.tabla-pos a.btn-tabla-pos img {
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 0.5em;
+  max-width: 25%;
+}
+
+
+
+/* ------------------ MEDIA -----------------------------------------------------------------------------------------*/
+@media (max-width: 1200px) {
+  body {
+    font-size: 18px;
+  }
+  .logo img {
+    max-width: 60%;
+  }
+  .LG a {
+    line-height: 50px;
+    height: 50px;
+  }
+  .slide p {
+    font-size: 1.8em;
+  }
+  .header .lg-logo img {
+    margin-top: 1%;
+  }
+}
+@media (max-width: 640px) {
+  .logo img {
+    max-height: 90%;
+  }
+  .LG a {
+    line-height: 50px;
+    height: 50px;
+  }
+}
+@media (max-width: 570px) {
+  body {
+    font-size: 16px;
+  }
+  .rojo form .btns-compartir .slideOne.slidet {
+    margin-right: 3.5em;
+  }
+}
+@media (max-width: 480px) {
+  body {
+    font-size: 13px;
+  }
+  .header .lg-logo img {
+    margin-top: 2%;
+  }
+  .rojo form .btns-compartir .slideOne label.twitter img,
+  .rojo form .btns-compartir .slideOne label.facebook img {
+    margin-left: -1em;
+    margin-top: -1em;
+  }
+}
+@media (max-width: 420px) {
+  .rojo a.facebook,
+  .rojo a.twitter {
+    font-size: 1.1em;
+  }
+  .slide ul.equipos {
+    padding: 0 2em;
+  }
+}
+@media (max-width: 400px) {
+  .slide .tactica p.votos {
+    font-size: 0.8em;
+  }
+  .slide div.contador {
+    top: 3em;
+    padding: 2.5em;
+  }
+  .rojo form input.submit {
+    max-width: 7em;
+    padding: 0.8em 1em;
+  }
+  .rojo form .btns-compartir .slideOne.slidet {
+    margin-right: 2.6em;
+  }
+  .slide div.contador {
+    top: 3em;
+    padding: 2.5em;
+  }
+  .slide form.buscador img {
+    top: 1.4em;
+  }
+  .slide p.gracias-bajada {
+    font-size: 1.1em;
+  }
+  .slide .tactica form img {
+    max-width: 30px;
+  }
+  .slide .tactica a.face-circle {
+    padding: 0.4em;
+  }
+  .slide .tactica a.twitter-circle {
+    padding: 0.4em;
+  }
+  .slide .tactica p.votos {
+    font-size: 0.8em;
+  }
+}
+@media (max-width: 370px) {
+  .slide .tactica p.votos {
+    font-size: 0.8em;
+  }
+  .cinema img.smarttv {
+    right: -7em;
+    top: 6em;
+  }
+}
+@media (max-width: 340px) {
+  body {
+    font-size: 12px;
+  }
+  .rojo form {
+    width: 100%;
+  }
+}
+@media (max-width: 320px) {
+  .logo img {
+    max-height: 90%;
+  }
+  .LG a {
+    line-height: 30px;
+    height: 30px;
+  }
+  .rojo p {
+    padding: 1em 1em;
+  }
+  .rojo a.facebook,
+  .rojo a.twitter {
+    font-size: 1em;
+  }
+  .rojo a.facebook img,
+  .rojo a.twitter img {
+    max-width: 20%;
+  }
+  #m-des ul li a span.numero img {
+    margin: 0.3em 0 0 0;
+  }
+  .slide form.buscador img {
+    top: 1.4em;
+  }
+  .slide .tactica form img {
+    max-width: 30px;
+  }
+  .slide .tactica a.face-circle {
+    padding: 0.3em;
+  }
+  .slide .tactica a.twitter-circle {
+    padding: 0.3em;
+  }
+  .slide .tactica p.votos {
+    font-size: 0.8em;
+  }
 }
