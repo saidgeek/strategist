@@ -478,7 +478,7 @@ img {
   position: absolute;
   top: 50px;
   left: 0;
-  right: -17px;
+  right: -14px;
   bottom: 0;
   z-index: 100;
   background: #38434e url(../images/bg-pattern.png) repeat top left;
@@ -549,7 +549,7 @@ img {
   font-size: 1em;
 }
 #m-des ul li a span.numero img {
-  margin: 0.5em 0 0 0;
+  margin: -2px 0 0 -1px;
 }
 #m-des ul li a span.borde {
   width: 4px;
@@ -611,7 +611,7 @@ img {
 }
 .cinema p.text {
   font-size: 1.1em;
-  width: 54%;
+  width: 70%;
   line-height: 1.8em;
 }
 .cinema p.color-rojo {
@@ -621,7 +621,7 @@ img {
 .cinema img.smarttv {
   position: absolute;
   top: 10em;
-  right: -10em;
+  right: -7em;
   width: 65%;
 }
 .cinema ul.caracteristicas {
