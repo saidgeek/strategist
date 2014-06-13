@@ -57,6 +57,10 @@ angular.module('strategistApp', [
         url: '/estadiocdf/'
         templateUrl: 'partials/site/estadiocdf'
         authenticate: false
+      .state 'sweepstake',
+        url: '/sorteo/'
+        templateUrl: 'partials/site/sweepstake'
+        authenticate: false
       .state '404',
         url: '{path:.*}'
         templateUrl: 'partials/site/404'
