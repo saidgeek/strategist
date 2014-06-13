@@ -1602,6 +1602,105 @@ border-radius: 40px;
   margin: 0 auto 2em auto;
   border-radius: 0.3em;
 }
+
+/* ----------------- PASO 8 ----------------- */
+
+#paso89.top{
+  background: #38424e;
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #27252d), color-stop(1, #38424e));
+  background: -ms-linear-gradient(bottom, #27252d, #38424e);
+  background: -moz-linear-gradient(center bottom, #27252d 0%, #38424e 100%);
+  background: -o-linear-gradient(#38424e, #27252d);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#38424e', endColorstr='#27252d', GradientType=0);
+  border-bottom: 1px solid #6a696e;
+}
+#paso89.slide{
+  padding: 1em 0;
+}
+#paso89.slide p.titulo {
+  font-family: 'geogrotesque_smbdsemibold';
+  display: block;
+  font-size: 1.5em;
+  color: #fff;
+  text-align: left;
+  line-height: 1.3em;
+  position: absolute;
+  top: 25%;
+  left: 9%;
+  width: 80%;
+}
+#paso89.slide p.titulo.nombre {
+  display: block;
+  top: 40%;
+  color: #fff;
+}
+#paso89.slide p.titulo span {
+  color: #eb1f36;
+  display: inline;
+}
+#paso89.azul {
+  background: #27252d url("../images/pattern.png") repeat top left;
+  padding: 2em 0;
+  text-align: center;    
+  border-top: 1px solid #6a696e;
+  border-bottom: 1px solid #6a696e;
+}
+#paso89.azul p {
+  padding: 0 1em;
+  font-family: 'HelveticaNeueLight';
+  font-size: 1em;
+  text-align: justify;
+  font-weight: normal;
+  line-height: 1.5em;
+  color: #fff;
+}
+#paso89.azul p span.tit{
+  font-size: 1.222em;
+  display: block;
+  text-transform: uppercase;
+}
+#paso89.azul p span.bold{
+  display: block;
+  font-weight: bold;
+}
+#paso89.azul .boton {
+  display: block;
+  width: 100%;
+  background: #dedede;
+  padding: 1em 0;
+  color: #eb2038;
+  text-transform: uppercase;
+  -webkit-box-shadow: 0 3px 0 0 #bfc0c5;
+  box-shadow: 0 3px 0 0 #bfc0c5;
+  font-family: 'geogrotesque_bdbold';
+  font-size: 1.111em;
+  text-align: center;
+  cursor: pointer;
+  position: relative;
+  text-decoration: none;
+  margin: 0 auto;
+  -webkit-border-radius: 0.3em;
+  -moz-border-radius: 0.3em;
+  border-radius: 0.3em;
+}
+#paso89.azul .boton:active {
+  top: 2px;
+  box-shadow: 0 1px 0 0 #bfc0c5;
+}
+#paso89.logos p{
+  padding: 1em;
+  font-family: 'HelveticaNeueLight';
+  font-size: 1em;
+  text-align: left;
+  font-weight: normal;
+  line-height: 1.5em;
+  color: #fff;
+}
+#paso89.logos p a{
+  color: #eb2038;
+  text-decoration: underline;
+}
+
 /* ------------------ MEDIA -----------------------------------------------------------------------------------------*/
 @media (max-width: 1200px) {
   body {
