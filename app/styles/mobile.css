@@ -1646,10 +1646,10 @@ border-radius: 40px;
   border-bottom: 1px solid #6a696e;
 }
 #paso89.azul p {
-  padding: 1em;
+  padding: 0 1em;
   font-family: 'HelveticaNeueLight';
   font-size: 1em;
-  text-align: left;
+  text-align: justify;
   font-weight: normal;
   line-height: 1.5em;
   color: #fff;
@@ -1658,7 +1658,6 @@ border-radius: 40px;
   font-size: 1.222em;
   display: block;
   text-transform: uppercase;
-  margin-bottom: 1em;
 }
 #paso89.azul p span.bold{
   display: block;
