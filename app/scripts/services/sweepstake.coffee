@@ -80,7 +80,7 @@ angular.module("strategistApp")
     return {
       index: (cb) ->
         _index(cb)
-      show: (id, sb) ->
+      show: (id, cb) ->
         _show(id, cb)
       current: (cb) ->
         _current(cb)
