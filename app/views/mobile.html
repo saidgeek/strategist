@@ -29,14 +29,14 @@
   <meta name="author" content="Mundo LG">
 </head>
 
-<body data-sgk-open-menu ng-swipe-right="open()" ng-swipe-left="close()">
+<body>
 <div id="loader"><div class="loader"></div></div> 
 <div id="General">
 	<div id="m-des">
 	    <div class="titulo">
 	        <span>#MIMEJORTACTICA</span>
 	    </div>
-	    <div class="menu">
+	    <div class="menu" ng-swipe-right="open()" ng-swipe-left="close()">
 	        <ul>
 	            <li><a ui-sref-active="active" ui-sref="home" title="Home"><span class="numero">1</span>Home<span class="borde"></span></a>
 	            </li>
@@ -98,6 +98,7 @@
 
     <script src="bower_components/modernizr/modernizr.js"></script>
     <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="scripts/jquery.flexslider-min.js"></script>
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
     <script src="bower_components/angular-resource/angular-resource.js"></script>
@@ -149,6 +150,7 @@
     <script src="scripts/directives/mobile/position_list_me.js"></script>
     <script src="scripts/directives/mobile/button_vote.js"></script>
     <script src="scripts/directives/mobile/select_sweepstakes.js"></script>
+    <script src="scripts/directives/mobile/galery.js"></script>
 
 </body>
 </html>
