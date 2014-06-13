@@ -1700,7 +1700,105 @@ border-radius: 40px;
   color: #eb2038;
   text-decoration: underline;
 }
+/*--- MODALES ---*/
 
+.overlay-mobile{
+  position: fixed;
+  right: 0;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 999;
+  background: url("../images/pattern.png") repeat 0 0 rgba(0,0,0,0.8);
+}
+.overlay-mobile .dialogos{
+  margin: 7%;
+  background: #fff;
+  position: relative;
+  border-radius:3px;
+  -moz-border-radius:3px;
+  -webkit-border-radius:3px;
+}
+.overlay-mobile .dialogos .cell{
+  padding:5%;
+  text-align: center;
+}
+.overlay-mobile .dialogos .cell.mod{
+  text-align: center;
+  background: #f8bf00;
+  -moz-border-radius:3px 3px 0 0;
+  -webkit-border-radius:3px 3px 0 0;
+}
+.overlay-mobile .dialogos .cell h3 {
+  margin: 0 0 0.5em 0;
+  padding: 0;
+  color: #eb2038;
+  font: normal 1.3em 'geogrotesque_bdbold';
+  text-transform: uppercase;
+}
+.overlay-mobile .dialogos ul.logeo li {
+  display: inline-block;
+  margin:1em 0;
+  position: relative;
+}
+.overlay-mobile .dialogos ul.logeo li a {
+  display: block;
+  padding: 8px 16px;
+  color: #fff;
+  font: normal 14px 'geogrotesque_bdbold';
+  text-transform: uppercase;
+  border-radius: 3px;
+  line-height: 1.8em;
+  position: relative;
+}
+.overlay-mobile .dialogos ul.logeo li.facebook a {
+  background: #405bbf;
+  box-shadow: 0 3px 0 0 #374fa9;
+}
+.overlay-mobile .dialogos ul.logeo li.twitter a {
+  background: #1caad2;
+  box-shadow: 0 3px 0 0 #1994bd;
+}
+.overlay-mobile .dialogos ul.logeo li a span {
+  display: inline-block;
+  width: 19px;
+  height: 19px;
+  overflow: hidden;
+  text-indent: -999px;
+  margin: 0 0 -4px 12px;
+}
+.overlay-mobile .dialogos ul.logeo li.facebook a span {
+  background: url("../images/icon-facebook.png") no-repeat 0 0;
+}
+.overlay-mobile .dialogos ul.logeo li.twitter a span {
+  background: url("../images/icon-twitter.png") no-repeat 0 0;
+}
+.overlay-mobile .dialogos .cerrar {
+  position: absolute;
+  width: 29px;
+  height: 29px;
+  border-radius: 50%;
+  box-shadow: 0 0 5px 0 rgba(0,0,0,0.5);
+  overflow: hidden;
+  top: -14px;
+  right: -14px;
+}
+.overlay-mobile .dialogos .cerrar a {
+  display: block;
+  overflow: hidden;
+  text-indent: -999px;
+  width: 29px;
+  height: 29px;
+  background: url("../images/cerrar-lb-red.png") no-repeat 0 0;
+}
+a:hover{
+  text-decoration: none;
+}
+ul, ol{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
 /* ------------------ MEDIA -----------------------------------------------------------------------------------------*/
 @media (max-width: 1200px) {
   body {
