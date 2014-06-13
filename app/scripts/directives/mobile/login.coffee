@@ -7,6 +7,8 @@ angular.module('strategistApp')
     link: ($scope, $element, $attrs) ->
 
       $element.on 'click', (e) ->
+        console.log $rootScope.currentUser
+
         if !$rootScope.currentUser?
           e.stopPropagation()
           e.preventDefault()

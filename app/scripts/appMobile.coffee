@@ -136,7 +136,7 @@ angular.module('strategistApp', [
         IO.emit 'register.site.strategy.moderate', id: $rootScope.currentUser.id
     
     IO.on 'strategy.moderate', () ->
-      $http.get("directives/site/moderate").success (data) =>
+      $http.get("directives/mobile/moderate").success (data) =>
         $el = angular.element(data)
 
         $el.on 'click', '.cerrar, input[type="submit"]', (e) ->
@@ -167,27 +167,28 @@ angular.module('strategistApp', [
       #   angular.element('body').css 'background-color', '#26242c'
       #   angular.element("body").find('div.mivideo').css 'display', 'none'
 
-      # if $rootScope.currentUser? and !$rootScope.currentUser?.email?
-      #   $el = null
-      #   User.show $rootScope.currentUser.id, (err, user) ->
-      #     $rootScope.user = user
-      #     template = 'twitter'
-      #     $rootScope.user._provider = 'TWITTER'
-      #     if !user.email? and user.facebook.email?
-      #       template = 'facebook'
-      #       $rootScope.user.email = user.facebook.email
-      #       $rootScope.user._provider = 'FACEBOOK'
-      #     $http.get("directives/site/#{template}_email").success (data) =>
-      #       $el = angular.element(data)
-      #       angular.element('body').append $el
-      #       $compile($el.contents())($rootScope)
+      if $rootScope.currentUser? and !$rootScope.currentUser?.email?
+        $el = null
+        User.show $rootScope.currentUser.id, (err, user) ->
+          $rootScope.user = user
+          template = 'twitter'
+          $rootScope.user._provider = 'TWITTER'
+          if !user.email? and user.facebook.email?
+            template = 'facebook'
+            $rootScope.user.email = user.facebook.email
+            $rootScope.user._provider = 'FACEBOOK'
+          $http.get("directives/mobile/#{template}_email").success (data) =>
+            $el = angular.element(data)
+            if angular.element('body .overlay-mobile').length < 1
+              angular.element('body').prepend $el
+            $compile($el.contents())($rootScope)
 
-      # $rootScope.user_update = (form) ->
-      #   if form.$valid
-      #     User.update $rootScope.user._id, $rootScope.user, (err, user) ->
-      #       if !err
-      #         $rootScope.currentUser = user
-      #         $el.remove()
+      $rootScope.user_update = (form) ->
+        if form.$valid
+          User.update $rootScope.user._id, $rootScope.user, (err, user) ->
+            if !err
+              $rootScope.currentUser = user
+              $el.remove()
 
       # if toParams?.terms? and toParams.terms is 'terms'
       #   $http.get("directives/site/terms").success (data) =>

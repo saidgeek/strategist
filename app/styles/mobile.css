@@ -923,6 +923,36 @@ display: none;
   margin: 0 0 1em 0;
   text-transform: uppercase;
 }
+
+.slide .tactica div.votar {
+  display: block;
+  background: #f1f1f1;
+  color: rgb(38,36,44);
+  margin: 8px auto;
+  opacity: 0.9;
+  padding: 0.7em;
+  font-family: 'geogrotesque_bdbold';
+  font-size: 1.2em;
+  text-transform: uppercase;
+  border-radius: 3px;
+  line-height: 1.8em;
+  position: relative;
+}
+
+.slide .tactica div.votar span {
+  display: inline-block;
+  margin: 0 7px -5px 0;
+  width: 19px;
+  height: 19px;
+  overflow: hidden;
+  text-indent: -999px;
+  background: url("../images/check.png") no-repeat 0 0;
+}
+
+
+
+
+
 .slide .tactica a.votar:active,
 .slide .tactica a.votar-negro:active {
   top: 2px;

@@ -4,7 +4,12 @@ angular.module('strategistApp')
   .directive 'sgkButtonVote', ($rootScope, $http, $timeout, Strategy, $compile) ->
     restrict: 'A'
     template: """
-          <a href="javascript:{}" ng-click="addVote(user_id, strategy_id, sweepstake_id)"><span>Me Gusta</span>Votar</a>
+
+        <a class="votar" href="javascript:{}" ng-click="addVote(user_id, strategy_id, sweepstake_id)">
+          <img src="images/mano-votar.png" alt="icono mano">
+          Votar
+        </a>
+
         """
     scope: {}
     replace: true
@@ -12,6 +17,7 @@ angular.module('strategistApp')
       
       $scope.addVote = (user_id, strategy_id, sweepstake_id) ->
         if $rootScope.currentUser?
+          console.log $rootScope.currentUser.id
           Vote user_id, sweepstake_id, strategy_id, $rootScope.currentUser.id, (err, voted) ->
             if !err
               console.log 'voted:', voted
@@ -28,11 +34,11 @@ angular.module('strategistApp')
 
       template =
         check: """
-          <div><span>ok</span>votaste</div>
+          <div class="votar"><span>ok</span>votaste</div>
         """
 
       $scope.render = (strategy_id) ->
-        query = "#strategy_#{strategy_id} .votar a"
+        query = "#strategy_#{strategy_id} a.votar"
         $_el = angular.element(query)
         $el = angular.element(template.check)
         $_el.after $el

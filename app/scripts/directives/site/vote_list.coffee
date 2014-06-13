@@ -77,7 +77,8 @@ angular.module('strategistApp')
             $el_parent = $element.parents('.lista-posiciones')
             $_add_scroll $el_parent
 
-            $el_parent.mCustomScrollbar 'update'
+            if $el_parent.find('.mCustomScrollBox').length is 0
+              $el_parent.mCustomScrollbar 'update'
 
             if $state.params.strategy_id?
               query = "div#strategy_#{$state.params.strategy_id}"
