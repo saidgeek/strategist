@@ -896,7 +896,7 @@ display: none;
   color: #fff;
 }
 .slide .tactica p.tit-tac-negro {
-  color: #27272f;
+  color: #e42339;
   font-size: 1.556em;
   font-family: 'geogrotesque_bdbold';
   text-transform: uppercase;
@@ -1165,7 +1165,7 @@ img.altura{
   padding: 1.5em 1em;
 }
 .slide .tactica .img-rounded {
-  margin: 0 -10px 0 0;
+  margin: 0 -10px;
   border-radius: 50%;
   max-width: 180%;
 }
@@ -1216,7 +1216,7 @@ img.altura{
   color: #fff;
 }
 .slide .tactica p.tit-tac-negro {
-  color: #27272f;
+  color: #e42339;
   font-size: 1.2em;
   font-family: 'geogrotesque_bdbold';
   text-transform: uppercase;
