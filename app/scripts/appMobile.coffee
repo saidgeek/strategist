@@ -6,7 +6,8 @@ angular.module('strategistApp', [
   'ngSanitize',
   'ui.router',
   'ngScrollbar',
-  'btford.socket-io'
+  'btford.socket-io',
+  'ngTouch'
 ])
   .config ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) ->
     $httpProvider.defaults.headers.common['token-auth'] =  uuid.v4()
@@ -120,6 +121,12 @@ angular.module('strategistApp', [
     }
 
   .run ($rootScope, $state, Auth, $timeout, IO, $compile, User, $http, $sce, $window, $location, Strategy) ->
+
+    $rootScope.open = () ->
+        angular.element("#cont, #m-des, .menu").addClass("active");
+
+    $rootScope.close = () ->
+      angular.element("#cont, #m-des, .menu").removeClass("active");
 
     $rootScope.domain = "#{ $location.$$protocol }://#{ $location.$$host }"
     IO.emit 'register.strategy.globals', { user_id: ($rootScope.currentUser?.id || null) }

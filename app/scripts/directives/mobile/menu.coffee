@@ -15,4 +15,3 @@ angular.module('strategistApp')
           .toggleClass("active");
 
         return false
-      
