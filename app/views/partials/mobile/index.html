@@ -16,11 +16,15 @@
 		            </div>
 		        </div>
 		        <div class="row">
-		            <div class="col-md-6 col-xs-6">
+		            <div class="col-md-6 col-xs-6" ng-if="!currentUser">
 		                <a href="/auth/facebook" target="_self" class="facebook" title="Ingresa por Facebook">INGRESA POR <img src="images/ico-facebook.png" alt="Facebook"></a>
 		            </div>
-		            <div class="col-md-6 col-xs-6">
+		            <div class="col-md-6 col-xs-6" ng-if="!currentUser">
 		                <a href="/auth/twitter" target="_self" class="twitter" title="Ingresa por Twitter">INGRESA POR <img src="images/ico-twitter.png" alt="Twitter"> </a>
+		            </div>
+		            <div class="col-md-6 col-xs-6 btn-concursar" ng-if="currentUser">
+                		<a href="/mobile/ganadores/">Ir a concursar</a>
+	              </li>
 		            </div>
 		        </div>
 		        <div class="row">

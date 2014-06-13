@@ -1390,6 +1390,26 @@ img.altura{
   top: 2px;
   box-shadow: 0 1px 0 0 #1994bd;
 }
+
+.rojo .btn-concursar a{
+  padding: 0.7em;
+  background: #eaeaea;
+  -webkit-box-shadow: 0 3px 0 0 #bfc0c5;
+  box-shadow: 0 3px 0 0 #bfc0c5;
+  color: #eb2038;
+  font-family: 'geogrotesque_bdbold';
+  font-size: 1em;
+  display: block;
+  border-radius: 0.3em;
+  text-align: center;
+  cursor: pointer;
+  position: relative;
+  text-decoration: none;
+  max-width: 250px;
+  margin: 0 auto;
+  text-transform: uppercase;
+  text-align: center;
+}
 .rojo p.bases {
   font-family: 'geogrotesque_rgregular';
   font-size: 1.2em;
