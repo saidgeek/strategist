@@ -2300,8 +2300,15 @@ form#post input.submit:active {
   overflow: hidden;
 }
 #awards .hinchas .cell .table .cell{
-  width: 33.3%;
+  width: 25%;
   padding:0.3em 1em;
+  vertical-align: middle;
+}
+#awards .hinchas .cell .table .cell:last-child{
+  width: 50%;
+}
+#awards .hinchas .cell .table .cell img{
+  margin-bottom: -4px;
 }
 #awards .hinchas .cell .table .cell span{
   color: #ee2642;
