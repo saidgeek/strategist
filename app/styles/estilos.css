@@ -1071,16 +1071,23 @@ form#post input.submit:active {
 #right div.lista-posiciones.me {
   margin: 10px 0;
 }
-
-#right div.lista-posiciones .listar {
+.captura-ganador{
+  width: 60%;
+  border-right: 1px solid rgba(255,255,255,0.3);
+  margin: -22px 0;
+  padding: 22px 0;
+}
+#right div.lista-posiciones .listar, .captura-ganador .listar {
   display: table;
   width: 100%;
   margin: 0;
   padding: 0;
   border-bottom: 1px solid rgba(251,251,251,0.25);
 }
-
-#right div.lista-posiciones .listar .cell {
+.captura-ganador .listar{
+  border:none;
+}
+#right div.lista-posiciones .listar .cell, .captura-ganador .listar .cell {
   display: table-cell;
   vertical-align: top;
 }
@@ -1102,7 +1109,8 @@ form#post input.submit:active {
 }
 
 #right div.lista-posiciones .listar.first .cell.center .username span,
-#right div.lista-posiciones .listar.first .cell.center .usertactics .mmt span {
+#right div.lista-posiciones .listar.first .cell.center .usertactics .mmt span,
+.captura-ganador .listar .cell.center .usertactics .mmt span {
   color: rgb(38,36,44);
 }
 
@@ -1114,16 +1122,19 @@ form#post input.submit:active {
   font-family: 'geogrotesque_ullgultralight';
 }
 
-#right div.lista-posiciones .listar .cell.center .username {
+#right div.lista-posiciones .listar .cell.center .username,
+.captura-ganador .listar .cell.center .username {
   padding: 0 0 5px 0;
 }
 
-#right div.lista-posiciones .listar .cell.center .username span {
+#right div.lista-posiciones .listar .cell.center .username span,
+.captura-ganador .listar .cell.center .username span {
   color: #e92036;
   font-family: 'geogrotesque_ullgultralight';
 }
 
-#right div.lista-posiciones .listar .cell.center .usertactics .mmt {
+#right div.lista-posiciones .listar .cell.center .usertactics .mmt,
+.captura-ganador .listar .cell.center .usertactics .mmt {
   font: normal 18px 'geogrotesque_bdbold';
   text-transform: uppercase;
 }
@@ -1256,12 +1267,16 @@ form#post input.submit:active {
   padding: 15px;
 }
 
-#right div.lista-posiciones .listar .cell .cell {
+#right div.lista-posiciones .listar .cell .cell,
+.captura-ganador .listar .cell .cell {
   padding: 0 10px 0 0;
   width: 50%;
 }
-
-#right div.lista-posiciones .listar .cell .cell.votos {
+.captura-ganador .listar .cell p{
+  margin-bottom: 0;
+}
+#right div.lista-posiciones .listar .cell .cell.votos,
+.captura-ganador .listar .cell .cell.votos {
   border-left: 1px solid rgba(255,255,255,0.3);
   padding: 0 0 0 10px;
   font: normal 28px 'geogrotesque_bdbold';
@@ -1269,18 +1284,23 @@ form#post input.submit:active {
   vertical-align: middle;
 }
 
-#right div.lista-posiciones .listar .cell .cell.votos span {
+#right div.lista-posiciones .listar .cell .cell.votos span,
+.captura-ganador .listar .cell .cell.votos span {
   display: block;
   margin: 0 0 -3px 0;
   font: normal 10px 'geogrotesque_ullgultralight';
   text-transform: uppercase;
 }
 
-#tablaposiciones #right div.lista-posiciones .listar .cell.pic {
+#tablaposiciones #right div.lista-posiciones .listar .cell.pic,
+.captura-ganador .listar .cell.pic {
   width: 40px;
 }
-
-#right div.lista-posiciones .listar .cell.pic img {
+.captura-ganador .listar .cell.pic{
+  padding: 0 15px 0 0;
+}
+#right div.lista-posiciones .listar .cell.pic img,
+.captura-ganador .listar .cell.pic img {
   width: 100%;
   height: auto;
   overflow: hidden;
@@ -1407,7 +1427,14 @@ form#post input.submit:active {
 #ganadores .hinchas .cell .fechasorteo span {
   color: #fff;
 }
-
+#ganadores .hinchas .cell p strong{
+  font: normal 18px 'geogrotesque_bdbold';
+  margin: 0 0 8px 0;
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #ee2743;
+}
 #ganadores span.number {
   display: block;
   width: 56px;
@@ -1423,7 +1450,7 @@ form#post input.submit:active {
 }
 
 #ganadores h2 {
-  font: normal 30px 'geogrotesque_bdbold';
+  font: normal 28px 'geogrotesque_bdbold';
   margin: 0 0 0 10px;
   line-height: 35px;
   text-transform: uppercase;
@@ -2415,7 +2442,7 @@ form#post input.submit:active {
 ul.tabs {
   position: absolute;
   right: 60px;
-  top: 145px;
+  top: 130px;
   z-index: 100;
 }
 
