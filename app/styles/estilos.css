@@ -2256,21 +2256,20 @@ form#post input.submit:active {
 /*----// PREMIOS //----*/
 
 #awards .hinchas {
-  padding: 50px 45px 0 40px;
-  width: 804px;
+  padding: 30px 45px 0 40px;
+  width: 824px;
   margin-top: -40px;
 }
-
 #awards .hinchas .cell {
   display: table-cell;
-  vertical-align: top;
+  vertical-align: middle;
   padding: 0 15px;
   position: relative;
   opacity: 1;
   bottom: 0;
   -moz-box-sizing: border-box; 
   box-sizing: border-box;
-  width: 50%;
+  /*width: 50%;*/
 }
 
 #awards .hinchas .cell img {
@@ -2279,7 +2278,34 @@ form#post input.submit:active {
   opacity: 1;
   bottom: 0;
 }
-
+#awards .hinchas .cell.tv img{
+  width: 250px;
+}
+#awards .hinchas .cell .table{
+  border: 1px solid rgba(255,255,255,0.23);
+  border-top: none;
+  display: table;
+  width: 100%;
+  box-sizing: border-box;
+  border-spacing: 0;
+  border-collapse: inherit;
+}
+#awards .hinchas .cell .table h2{
+  padding:0.5em 1em;
+  margin: 0;
+  border-top: 1px solid rgba(255,255,255,0.23);
+}
+.tablafechas{
+  height: 120px;
+  overflow: hidden;
+}
+#awards .hinchas .cell .table .cell{
+  width: 33.3%;
+  padding:0.3em 1em;
+}
+#awards .hinchas .cell .table .cell span{
+  color: #ee2642;
+}
 #awards .hinchas .cell .bloque {
   position: relative;
   left: 0;
@@ -2294,17 +2320,38 @@ form#post input.submit:active {
 #awards .hinchas .cell .cell.app {
   padding-right: 10px;
 }
-
+#awards .hinchas .cell .cell.borde{
+  width: 50%;
+  border-box: box-sizing;
+  padding: 0 10px;
+  vertical-align: middle;
+  text-align: center;
+}
+#awards .hinchas .cell .cell.borde p{
+  font: normal 12px 'geogrotesque_ullgultralight';
+  text-transform: inherit;
+}
+#awards .hinchas .cell .cell.borde img{
+  margin: 0 auto;
+}
+#awards .hinchas .cell .cell.borde.linea{
+  border-right: 1px solid rgba(255,255,255,0.23);
+  text-align: left;
+}
 #awards .hinchas .cell.border {
   border-right: 1px solid rgba(255,255,255,0.25);
 }
 
 #awards .hinchas h2 {
-  font: normal 19px 'geogrotesque_bdbold';
-  color: #ee2642;
+  font: normal 16px 'geogrotesque_bdbold';
+  color: #fff;
   text-transform: uppercase;
+  margin: 0;
+  padding: 0;
 }
-
+#awards .hinchas h2 span{
+  color: #ee2642;
+}
 #awards .hinchas .cell ul li, #ganadores ul.lista li {
   margin: 8px 0;
   padding: 0 0 0 20px;
@@ -2315,10 +2362,10 @@ form#post input.submit:active {
 #ganadores ul.lista li{
   margin: 5px 0;
 }
-#awards .hinchas .info-premio {
+/*#awards .hinchas .info-premio {
   padding-bottom: 20px;
   border-bottom: 1px solid rgba(255,255,255,0.25);
-}
+}*/
 
 #awards .hinchas .cell p a {
   color: #eb2038;
@@ -2355,7 +2402,9 @@ form#post input.submit:active {
   left: -100%;
   opacity: 0;
 }
-
+#awards .hinchas .cell .bloque p span{
+  color: #ee2642;
+}
 ul.tabs {
   position: absolute;
   right: 60px;
@@ -2410,7 +2459,12 @@ ul.tabs li div {
   -webkit-transform: scale(1) skewX(30deg);
   transform: scale(1) skewX(30deg);
 }
-
+#awards .hinchas .cell ul li{
+  margin: 6px 0;
+}
+#awards .hinchas .cell .bloque{
+  margin-bottom:10px; 
+}
 /*----// FIN PREMIOS //----*/
 
 /*----// VIDEOS //----*/
@@ -2474,7 +2528,8 @@ video{
 /*-- SCROLLBAR--*/
 #estadios .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar,
 #listatacticas .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar,
-#tablaposiciones .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar{
+#tablaposiciones .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar,
+#awards .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar{
   background-color: rgba(233,32,64,0.75);
 }
 
