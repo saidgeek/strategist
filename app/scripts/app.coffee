@@ -131,6 +131,9 @@ angular.module('strategistApp', [
     $rootScope.$watch 'currentUser', (user) ->
       if user?.id?
         IO.emit 'register.site.strategy.moderate', id: $rootScope.currentUser.id
+
+    IO.on 'sweepstake.redirect.to.wins', () ->
+      $state.transitionTo 'wins'
     
     IO.on 'strategy.moderate', () ->
       $http.get("directives/site/moderate").success (data) =>
