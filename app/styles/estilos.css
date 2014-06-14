@@ -1071,16 +1071,23 @@ form#post input.submit:active {
 #right div.lista-posiciones.me {
   margin: 10px 0;
 }
-
-#right div.lista-posiciones .listar {
+.captura-ganador{
+  width: 60%;
+  border-right: 1px solid rgba(255,255,255,0.3);
+  margin: -22px 0;
+  padding: 22px 0;
+}
+#right div.lista-posiciones .listar, .captura-ganador .listar {
   display: table;
   width: 100%;
   margin: 0;
   padding: 0;
   border-bottom: 1px solid rgba(251,251,251,0.25);
 }
-
-#right div.lista-posiciones .listar .cell {
+.captura-ganador .listar{
+  border:none;
+}
+#right div.lista-posiciones .listar .cell, .captura-ganador .listar .cell {
   display: table-cell;
   vertical-align: top;
 }
@@ -1102,7 +1109,8 @@ form#post input.submit:active {
 }
 
 #right div.lista-posiciones .listar.first .cell.center .username span,
-#right div.lista-posiciones .listar.first .cell.center .usertactics .mmt span {
+#right div.lista-posiciones .listar.first .cell.center .usertactics .mmt span,
+.captura-ganador .listar .cell.center .usertactics .mmt span {
   color: rgb(38,36,44);
 }
 
@@ -1114,16 +1122,19 @@ form#post input.submit:active {
   font-family: 'geogrotesque_ullgultralight';
 }
 
-#right div.lista-posiciones .listar .cell.center .username {
+#right div.lista-posiciones .listar .cell.center .username,
+.captura-ganador .listar .cell.center .username {
   padding: 0 0 5px 0;
 }
 
-#right div.lista-posiciones .listar .cell.center .username span {
+#right div.lista-posiciones .listar .cell.center .username span,
+.captura-ganador .listar .cell.center .username span {
   color: #e92036;
   font-family: 'geogrotesque_ullgultralight';
 }
 
-#right div.lista-posiciones .listar .cell.center .usertactics .mmt {
+#right div.lista-posiciones .listar .cell.center .usertactics .mmt,
+.captura-ganador .listar .cell.center .usertactics .mmt {
   font: normal 18px 'geogrotesque_bdbold';
   text-transform: uppercase;
 }
@@ -1256,12 +1267,16 @@ form#post input.submit:active {
   padding: 15px;
 }
 
-#right div.lista-posiciones .listar .cell .cell {
+#right div.lista-posiciones .listar .cell .cell,
+.captura-ganador .listar .cell .cell {
   padding: 0 10px 0 0;
   width: 50%;
 }
-
-#right div.lista-posiciones .listar .cell .cell.votos {
+.captura-ganador .listar .cell p{
+  margin-bottom: 0;
+}
+#right div.lista-posiciones .listar .cell .cell.votos,
+.captura-ganador .listar .cell .cell.votos {
   border-left: 1px solid rgba(255,255,255,0.3);
   padding: 0 0 0 10px;
   font: normal 28px 'geogrotesque_bdbold';
@@ -1269,18 +1284,23 @@ form#post input.submit:active {
   vertical-align: middle;
 }
 
-#right div.lista-posiciones .listar .cell .cell.votos span {
+#right div.lista-posiciones .listar .cell .cell.votos span,
+.captura-ganador .listar .cell .cell.votos span {
   display: block;
   margin: 0 0 -3px 0;
   font: normal 10px 'geogrotesque_ullgultralight';
   text-transform: uppercase;
 }
 
-#tablaposiciones #right div.lista-posiciones .listar .cell.pic {
+#tablaposiciones #right div.lista-posiciones .listar .cell.pic,
+.captura-ganador .listar .cell.pic {
   width: 40px;
 }
-
-#right div.lista-posiciones .listar .cell.pic img {
+.captura-ganador .listar .cell.pic{
+  padding: 0 15px 0 0;
+}
+#right div.lista-posiciones .listar .cell.pic img,
+.captura-ganador .listar .cell.pic img {
   width: 100%;
   height: auto;
   overflow: hidden;
@@ -1407,7 +1427,14 @@ form#post input.submit:active {
 #ganadores .hinchas .cell .fechasorteo span {
   color: #fff;
 }
-
+#ganadores .hinchas .cell p strong{
+  font: normal 18px 'geogrotesque_bdbold';
+  margin: 0 0 8px 0;
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #ee2743;
+}
 #ganadores span.number {
   display: block;
   width: 56px;
@@ -1423,7 +1450,7 @@ form#post input.submit:active {
 }
 
 #ganadores h2 {
-  font: normal 30px 'geogrotesque_bdbold';
+  font: normal 28px 'geogrotesque_bdbold';
   margin: 0 0 0 10px;
   line-height: 35px;
   text-transform: uppercase;
@@ -2256,21 +2283,20 @@ form#post input.submit:active {
 /*----// PREMIOS //----*/
 
 #awards .hinchas {
-  padding: 50px 45px 0 40px;
-  width: 804px;
+  padding: 30px 45px 0 40px;
+  width: 824px;
   margin-top: -40px;
 }
-
 #awards .hinchas .cell {
   display: table-cell;
-  vertical-align: top;
+  vertical-align: middle;
   padding: 0 15px;
   position: relative;
   opacity: 1;
   bottom: 0;
   -moz-box-sizing: border-box; 
   box-sizing: border-box;
-  width: 50%;
+  /*width: 50%;*/
 }
 
 #awards .hinchas .cell img {
@@ -2279,7 +2305,41 @@ form#post input.submit:active {
   opacity: 1;
   bottom: 0;
 }
-
+#awards .hinchas .cell.tv img{
+  width: 250px;
+}
+#awards .hinchas .cell .table{
+  border: 1px solid rgba(255,255,255,0.23);
+  border-top: none;
+  display: table;
+  width: 100%;
+  box-sizing: border-box;
+  border-spacing: 0;
+  border-collapse: inherit;
+}
+#awards .hinchas .cell .table h2{
+  padding:0.5em 1em;
+  margin: 0;
+  border-top: 1px solid rgba(255,255,255,0.23);
+}
+.tablafechas{
+  height: 120px;
+  overflow: hidden;
+}
+#awards .hinchas .cell .table .cell{
+  width: 25%;
+  padding:0.3em 1em;
+  vertical-align: middle;
+}
+#awards .hinchas .cell .table .cell:last-child{
+  width: 50%;
+}
+#awards .hinchas .cell .table .cell img{
+  margin-bottom: -4px;
+}
+#awards .hinchas .cell .table .cell span{
+  color: #ee2642;
+}
 #awards .hinchas .cell .bloque {
   position: relative;
   left: 0;
@@ -2294,17 +2354,38 @@ form#post input.submit:active {
 #awards .hinchas .cell .cell.app {
   padding-right: 10px;
 }
-
+#awards .hinchas .cell .cell.borde{
+  width: 50%;
+  border-box: box-sizing;
+  padding: 0 10px;
+  vertical-align: middle;
+  text-align: center;
+}
+#awards .hinchas .cell .cell.borde p{
+  font: normal 12px 'geogrotesque_ullgultralight';
+  text-transform: inherit;
+}
+#awards .hinchas .cell .cell.borde img{
+  margin: 0 auto;
+}
+#awards .hinchas .cell .cell.borde.linea{
+  border-right: 1px solid rgba(255,255,255,0.23);
+  text-align: left;
+}
 #awards .hinchas .cell.border {
   border-right: 1px solid rgba(255,255,255,0.25);
 }
 
 #awards .hinchas h2 {
-  font: normal 19px 'geogrotesque_bdbold';
-  color: #ee2642;
+  font: normal 16px 'geogrotesque_bdbold';
+  color: #fff;
   text-transform: uppercase;
+  margin: 0;
+  padding: 0;
 }
-
+#awards .hinchas h2 span{
+  color: #ee2642;
+}
 #awards .hinchas .cell ul li, #ganadores ul.lista li {
   margin: 8px 0;
   padding: 0 0 0 20px;
@@ -2315,10 +2396,10 @@ form#post input.submit:active {
 #ganadores ul.lista li{
   margin: 5px 0;
 }
-#awards .hinchas .info-premio {
+/*#awards .hinchas .info-premio {
   padding-bottom: 20px;
   border-bottom: 1px solid rgba(255,255,255,0.25);
-}
+}*/
 
 #awards .hinchas .cell p a {
   color: #eb2038;
@@ -2355,11 +2436,13 @@ form#post input.submit:active {
   left: -100%;
   opacity: 0;
 }
-
+#awards .hinchas .cell .bloque p span{
+  color: #ee2642;
+}
 ul.tabs {
   position: absolute;
   right: 60px;
-  top: 145px;
+  top: 130px;
   z-index: 100;
 }
 
@@ -2410,7 +2493,12 @@ ul.tabs li div {
   -webkit-transform: scale(1) skewX(30deg);
   transform: scale(1) skewX(30deg);
 }
-
+#awards .hinchas .cell ul li{
+  margin: 6px 0;
+}
+#awards .hinchas .cell .bloque{
+  margin-bottom:10px; 
+}
 /*----// FIN PREMIOS //----*/
 
 /*----// VIDEOS //----*/
@@ -2474,7 +2562,8 @@ video{
 /*-- SCROLLBAR--*/
 #estadios .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar,
 #listatacticas .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar,
-#tablaposiciones .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar{
+#tablaposiciones .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar,
+#awards .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar{
   background-color: rgba(233,32,64,0.75);
 }
 
