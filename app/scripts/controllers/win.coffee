@@ -1,9 +1,11 @@
 'use strict'
 
 angular.module('strategistApp')
-  .controller 'WinCtrl', ($scope, $rootScope, $compile, $http, Sweepstake) ->
+  .controller 'WinCtrl', ($scope, $rootScope, $compile, $http, Sweepstake, Winner, Strategy) ->
     $scope.sweepstakes = null
     $scope.sweepstake = null
+    $scope.win = null
+    $scope.strategy = null
 
     Sweepstake.index (err, sweepstakes) ->
       if !err
@@ -34,7 +36,15 @@ angular.module('strategistApp')
 
 
     $scope.tab = (sweepstake) ->
-      render(sweepstake)
+      console.log sweepstake.winner
+      Winner.show sweepstake.winner, (err, win) ->
+        if !err
+          $scope.win = win
+          Strategy.show win.vote.strategy, (err, strategy) ->
+            if !err
+              $scope.strategy = strategy
+              $scope.strategy.content = $scope.strategy.content.replace(/\+/g, ' ')
+              render(sweepstake)
 
     $scope.day = (date) ->
       moment(date).format 'D'

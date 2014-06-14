@@ -7,7 +7,7 @@
             <!-- / FI MENSAJE AL GANADOR / -->
             <div class="fechasorteo"><span>{{ day(sweepstake.init_at) }}</span> {{ month(sweepstake.init_at) }}</div>
             <!-- / MENSAJE AL GANADOR / -->
-            <p><strong>Felicitaciones @nombreGanador</strong> Planteaste la mejor táctica futbolera para el triunfo de Chile y venciste con claridad sobre tus contendores, coronándote campeón de #MiMejorTáctica. ¡Un aplauso, estratega del deporte rey!</p>
+            <p><strong>Felicitaciones {{ win.user.name }}</strong> Planteaste la mejor táctica futbolera para el triunfo de Chile y venciste con claridad sobre tus contendores, coronándote campeón de #MiMejorTáctica. ¡Un aplauso, estratega del deporte rey!</p>
         </div>
         <div class="cell">
             <img src="images/hincha-ganador.png" alt="Hincha" class="hincha-ganador animate" data-sgk-animate="1000">                                
@@ -33,13 +33,13 @@
           </div>
           <div class="cell center">
             <div class="cell">
-              <div class="username ng-binding">Néstor Bustamante <!-- ngIf: strategy.user.twitter_screen_name --></div>
+              <div class="username ng-binding">{{ win.user.name }} <!-- ngIf: strategy.user.twitter_screen_name --></div>
               <div class="usertactics">
                 <div class="mmt"><span>#</span>mimejor<span>táctica</span></div>
               </div>
             </div> 
-            <div class="cell votos ng-binding"><span>Votos</span> 2</div>
-            <p class="ng-binding">#mimejortáctica para este partido es que Bravo no se mande "La Gran Bravo" y que el niño maravilla se eche el equipo al hombro #chaocanguros</p>
+            <!-- <div class="cell votos ng-binding"><span>Votos</span> 2</div> -->
+            <p class="ng-binding">{{ strategy.content }}</p>
           </div>
         </div>
          <!-- / FIN GANADOR / -->
