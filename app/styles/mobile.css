@@ -614,12 +614,12 @@ img {
 }
 .cinema p.titulo {
   margin: 1.5em 0 0.5em 0;
-  font-size: 1.4em;
+  font-size: 1.2em;
 }
 .cinema p.text {
-  font-size: 1.1em;
-  width: 70%;
-  line-height: 1.8em;
+  font: normal 1em "Helvetica Neue",Helvetica,Arial,sans-serif;
+  line-height: 1.6em;
+  margin: 2em 0; 
 }
 .cinema p.color-rojo {
   color: #ea1d32;
@@ -637,36 +637,88 @@ img {
   list-style-position: inside;
   padding: 0;
 }
+.cinema ul.caracteristicas li{
+  padding: 0 0 0 15px;
+  background: url("../images/dot-list.png") no-repeat 0 50%;
+  font: normal 12px 'geogrotesque_ullgultralight';
+  text-transform: uppercase;
+}
 .cinema ul.caracteristicas li span {
   color: #fff;
   font-size: 0.9em;
   font-family: 'HelveticaNeueRegular';
 }
+.cinema .tablafechas{
+  margin: 2em 0 0 0;
+}
+.cinema .table {
+  border: 1px solid rgba(255,255,255,0.23);
+  border-top: none;
+  display: table;
+  width: 100%;
+  margin:0; 
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  border-spacing: 0;
+  border-collapse: inherit;
+}
+.cinema .table h2 {
+  padding: 0.5em 1em;
+  margin: 0;
+  border-top: 1px solid rgba(255,255,255,0.23);
+  font: normal 1.4em 'geogrotesque_bdbold';
+  color: #fff;
+  text-transform: uppercase;
+}
+.cinema .table h2 span, .cinema .table .cell span{
+color: #ee2642;
+}
+.cinema .table .cell {
+  padding: 0.3em 1em;
+  text-align: center;
+  color: #fff;
+}
+.cinema .table .cell:first-child{
+  font: normal 1.2em 'geogrotesque_bdbold';
+  text-transform: uppercase;
+}
+#paso6 h2{
+  font: normal 1.4em 'geogrotesque_bdbold';
+  margin: 0 0 8px 0;
+  display: block;
+  text-transform: uppercase;
+  color: #ee2743;
+}
+#paso6 h2 span{
+  color: #fff;
+  display: block;
+}
+#paso6 .slide{
+  margin:0 -15px;
+}
+#paso6 .slide .tactica p.nombre {
+  color: #fff;
+  font-size: 1.22em;
+  font-family: Arial;
+}
+#paso6 .slide .tactica p{
+  padding: 0;
+}
+#paso6 .slide .tactica p.tit-tac {
+  color: #e92036;
+  font-size: 1.556em;
+  font-family: 'geogrotesque_bdbold';
+  text-transform: uppercase;
+}
 .apptv {
-  background: #38424e url(../images/bg-pattern.png) repeat;
-  /* Old browsers */
-
+  background: #38424e url("../images/bg-pattern.png") repeat;
   background: -moz-linear-gradient(top, #38424e 0%, #27252d 74%);
-  /* FF3.6+ */
-
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #38424e), color-stop(74%, #27252d));
-  /* Chrome,Safari4+ */
-
   background: -webkit-linear-gradient(top, #38424e 0%, #27252d 74%);
-  /* Chrome10+,Safari5.1+ */
-
   background: -o-linear-gradient(top, #38424e 0%, #27252d 74%);
-  /* Opera 11.10+ */
-
   background: -ms-linear-gradient(top, #38424e 0%, #27252d 74%);
-  /* IE10+ */
-
   background: linear-gradient(to bottom, #38424e 0%, #27252d 74%);
-  /* W3C */
-
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#38424e', endColorstr='#27252d', GradientType=0);
-  /* IE6-9 */
-
   padding: 1em 0;
   border-bottom: 1px solid #4c4c53;
 }
