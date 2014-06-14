@@ -1,7 +1,7 @@
 'use strict'
 
 angular.module('strategistApp')
-  .directive 'sgkSelectSweepstakes', ($timeout, Sweepstake, $http, $compile) ->
+  .directive 'sgkSelectSweepstakes', ($timeout, Sweepstake, $http, $compile, Winner, Strategy) ->
     restrict: 'A'
     scope: {}
     templateUrl: 'directives/mobile/select_sweepstakes'
@@ -39,6 +39,17 @@ angular.module('strategistApp')
         Sweepstake.show id, (err, sweepstake) ->
           if !err
             $scope.sweepstake = sweepstake
+
+            if sweepstake.winner?
+              Winner.show sweepstake.winner, (err, win) ->
+                if !err
+                  $scope.win = win
+                  Strategy.show win.vote.strategy, (err, strategy) ->
+                    if !err
+                      $scope.strategy = strategy
+                      $scope.strategy.content = $scope.strategy.content.replace(/\+/g, ' ')
+
+
             template = 'next_aword'
             aword = '_cdf'
             if $scope.sweepstake.type is 'GROUP'
@@ -59,7 +70,12 @@ angular.module('strategistApp')
 
             $http.get("directives/mobile/win/#{template}#{aword}").success (data) =>
               $el = angular.element(data)
+              angular.element('.azul').remove()
+              angular.element('.participa').remove()
+              
               angular.element('.slide').after $el
+              $compile($el.contents())($scope)
+              angular.element('#selectfechas').find('option').removeAttr 'selected'
               angular.element('#selectfechas').find(query).attr 'selected', 'selected'
 
 

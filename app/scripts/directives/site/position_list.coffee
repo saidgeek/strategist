@@ -19,7 +19,7 @@ angular.module('strategistApp')
         $before_element = null
         query = "#strategy_#{ data.id }"
         $el = $element.find(query)
-        # $el.find('.cell.votos').html "<span>Votos</span> #{ data.amount }"
+        $el.find('.cell.votos').html "<span>Votos</span> #{ data.amount }"
         # $el.attr('data-votes', data.amount.toString())
         # console.log $el.data('position'), $el.data('votes')
         # if $el.data('position') > 1
@@ -101,9 +101,17 @@ angular.module('strategistApp')
             $el_parent.mCustomScrollbar 'update'
 
             if $state.params.strategy_id?
-              query = "div#strategy_#{$state.params.strategy_id}"
-              $element.find(query).addClass 'first'
-              $el_parent.mCustomScrollbar "scrollTo", query
+              Strategy.show $state.params.strategy_id, (err, strategy) ->
+                if !err
+                  query = "div#strategy_#{strategy._id}"
+                  _votes = """
+                    <div class="cell votos"><span>Votos</span> #{strategy.votes.count}</div>
+                  """
+
+                  if $element.find(query).find('.cell.votos').length < 1
+                    $element.find(query).find('.cell.center .cell').after _votes
+                    $element.find(query).addClass 'first'
+                    $el_parent.mCustomScrollbar "scrollTo", query
 
           , 0
         , 0

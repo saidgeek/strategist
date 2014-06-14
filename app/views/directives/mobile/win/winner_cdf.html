@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-12 col-xs-12">
-        <h2>FELICITACIONES <span>JUAN PABLO HERNÁNDEZ RIQUELME</span></h2>
+        <h2>FELICITACIONES <span>{{ win.user.name }}</span></h2>
         <p>Planteaste la mejor táctica futbolera para el triunfo de Chile y venciste con claridad sobre tus contendores, coronándote campeón de #MiMejorTáctica. ¡Un aplauso, estratega del deporte rey!</p>
 
         <div class="slide">
@@ -10,12 +10,12 @@
             <div class="container">
               <div class="row">
                 <div class="col-xs-2">
-                  <img src="https://graph.facebook.com/10203700260923925/picture?type=square" class="img-rounded">
+                  <img src="{{ win.user.avatar }}" class="img-rounded">
                 </div>    
                 <div class="col-xs-10">
-                  <p class="nombre ng-binding">Néstor Bustamante <!-- ngIf: s.user.twitter_screen_name --></p>
+                  <p class="nombre ng-binding">{{ win.user.name }}
                   <p class="tit-tac">#<span>mimejor</span> táctica</p>
-                  <p class="ng-binding">lalalal</p>
+                  <p class="ng-binding">{{ strategy.content }}</p>
                 </div>  
               </div>
             </div>    
