@@ -14,10 +14,11 @@ angular.module('strategistApp')
         for s in sweepstakes
           if s.winner?
             winner = s
-        render(winner)
+
+        render(winner || sweepstakes[0])
 
     render = (sweepstake) ->
-      if sweepstake.winner?
+      if sweepstake?.winner?
         Winner.show sweepstake.winner, (err, win) ->
           if !err
             $scope.win = win
