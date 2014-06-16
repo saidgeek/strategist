@@ -123,10 +123,6 @@ angular.module('strategistApp', [
             angular.element('html head meta[name="description"]').attr('content', meta_title.estadio_cdf.desc)
             angular.element('html head meta[name="twitter:description"]').attr('content', meta_title.estadio_cdf.desc)
         authenticate: false
-      .state 'sweepstake',
-        url: '/sorteo/'
-        templateUrl: 'partials/site/sweepstake'
-        authenticate: false
       .state '404',
         url: '{path:.*}'
         templateUrl: 'partials/site/404'
