@@ -8,7 +8,7 @@ angular.module('strategistApp')
     controller: ($scope, $rootScope, Strategy) ->
       $scope.strategies = null
 
-      Strategy.index (err, strategies) ->
+      Strategy.index 10, 0, (err, strategies) ->
         if !err
           $scope.strategies = strategies
 
@@ -25,6 +25,9 @@ angular.module('strategistApp')
             if _length <= 0
               plapElement.play()
               $scope.strategies.unshift strategy
+              $el_parent = $element.parents('.lista-posiciones')
+              query = "div#strategy_#{strategy._id}"
+              $el_parent.mCustomScrollbar "scrollTo", query
 
       specialChars = [
         {val:"a",let:"áàãâä"}
@@ -68,8 +71,24 @@ angular.module('strategistApp')
       $_add_scroll = ($el) ->
         if $el.find('.mCustomScrollBox').length is 0
           $el.mCustomScrollbar
+            scrollInertia: 1000
             scrollButtons:
               enable: false
+            callbacks:
+              onTotalScroll: () ->
+                amount = $element.find('.listar').length
+                page = Math.round(amount/10)
+
+                Strategy.index 10, page, (err, strategies) ->
+                  if !err
+                    if strategies.length > 0
+                      for s in strategies
+                        $scope.strategies.push s
+                      console.log '$scope.strategies:', $scope.strategies
+                      $el.mCustomScrollbar 'update'
+
+              onTotalScrollOffset: 500
+
 
       $scope.$watch 'strategies', (v) ->
         $timeout () =>

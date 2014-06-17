@@ -8,7 +8,7 @@ angular.module('strategistApp')
     controller: ($scope, $rootScope, Strategy) ->
       $scope.strategies = null
 
-      Strategy.sort 'votes', (err, strategies) ->
+      Strategy.sort 'votes', 10, 0, (err, strategies) ->
         if !err
           $scope.strategies = strategies
 
@@ -89,8 +89,22 @@ angular.module('strategistApp')
       $_add_scroll = ($el) ->
         if $el.find('.mCustomScrollBox').length is 0
           $el.mCustomScrollbar
+            scrollInertia: 1000
             scrollButtons:
               enable: false
+            callbacks:
+              onTotalScroll: () ->
+                amount = $element.find('.listar').length
+                page = Math.round(amount/10)
+
+                Strategy.sort 'votes', 10, page, (err, strategies) ->
+                  if !err
+                    if strategies.length > 0
+                      for s in strategies
+                        $scope.strategies.push s
+                      $el.mCustomScrollbar 'update'
+
+              onTotalScrollOffset: 500
 
       $scope.$watch 'strategies', (v) ->
         $timeout () =>
