@@ -1,0 +1,12 @@
+<div class="row" id="strategy_{{ strategy._id }}" ng-repeat="strategy in strategies">
+  <div class="col-sm-12 well">
+    <blockquote>
+      <p>{{ strategy.content | removePlus }}</p>
+      <footer>
+        {{ strategy.user.name }} 
+        <cite title="Source Title">{{ strategy.created_at | formatDate }}</cite>
+        <a href="javascript:{}" class="btn btn-danger pull-right" ng-click="rejected(strategy._id, $index)">Rechazar</a>
+      </footer>
+    </blockquote>
+  </div>
+</div>

@@ -44,6 +44,17 @@ angular.module('strategistApp', [
             templateUrl: 'partials/admin/sweepstake'
             controller: 'SweepstakeCtrl'
         authenticate: true
+      .state 'admin.strategy',
+        url: "/admin/tacticas/"
+        views:
+          'layout':
+            templateUrl: 'partials/admin/strategy'
+            resolve:
+              _strategy: (Strategy) ->
+                Strategy.index 10, 0, (err, strategies) ->
+                  if !err
+                    return strategies
+            controller: 'StrategyCtrl'
 
 
     $locationProvider.html5Mode true

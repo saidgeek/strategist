@@ -5,9 +5,10 @@
       <a class="navbar-brand" href="#">Administración Stratega LG</a>
     </div>
 
-    <ul class="nav navbar-nav" ng-if="currentUser.role === 'ADMIN'">
+    <ul class="nav navbar-nav">
       <li ui-sref-active="active"><a ui-sref="admin.moderate">Moderar</a></li>
-      <li ui-sref-active="active"><a ui-sref="admin.sweepstake">Sorteos</a></li>
+      <li ui-sref-active="active"><a ui-sref="admin.strategy">Tácticas</a></li>
+      <li ui-sref-active="active" ng-if="currentUser.role === 'ADMIN'"><a ui-sref="admin.sweepstake">Sorteos</a></li>
     </ul>
 
     <button type="button" class="btn btn-default navbar-btn pull-right" ng-click="logout()">Salir</button>
