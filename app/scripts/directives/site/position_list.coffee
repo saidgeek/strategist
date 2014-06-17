@@ -95,7 +95,7 @@ angular.module('strategistApp')
             callbacks:
               onTotalScroll: () ->
                 amount = $element.find('.listar').length
-                page = Math.round(amount/10)
+                page = Math.abs(amount/10)
 
                 Strategy.sort 'votes', 10, page, (err, strategies) ->
                   if !err

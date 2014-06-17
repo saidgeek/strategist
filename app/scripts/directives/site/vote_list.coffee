@@ -71,13 +71,15 @@ angular.module('strategistApp')
       $_add_scroll = ($el) ->
         if $el.find('.mCustomScrollBox').length is 0
           $el.mCustomScrollbar
-            scrollInertia: 1000
+            scrollInertia: 2000
             scrollButtons:
               enable: false
             callbacks:
               onTotalScroll: () ->
                 amount = $element.find('.listar').length
-                page = Math.round(amount/10)
+                page = Math.abs(amount/10)
+
+                console.log '---->', amount, page
 
                 Strategy.index 10, page, (err, strategies) ->
                   if !err
@@ -86,8 +88,6 @@ angular.module('strategistApp')
                         $scope.strategies.push s
                       console.log '$scope.strategies:', $scope.strategies
                       $el.mCustomScrollbar 'update'
-
-              onTotalScrollOffset: 500
 
 
       $scope.$watch 'strategies', (v) ->
