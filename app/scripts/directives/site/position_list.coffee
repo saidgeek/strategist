@@ -8,7 +8,7 @@ angular.module('strategistApp')
     controller: ($scope, $rootScope, Strategy) ->
       $scope.strategies = null
 
-      Strategy.sort 'votes', (err, strategies) ->
+      Strategy.sort 'votes', 10, 0, (err, strategies) ->
         if !err
           $scope.strategies = strategies
 
@@ -19,7 +19,7 @@ angular.module('strategistApp')
         $before_element = null
         query = "#strategy_#{ data.id }"
         $el = $element.find(query)
-        # $el.find('.cell.votos').html "<span>Votos</span> #{ data.amount }"
+        $el.find('.cell.votos').html "<span>Votos</span> #{ data.amount }"
         # $el.attr('data-votes', data.amount.toString())
         # console.log $el.data('position'), $el.data('votes')
         # if $el.data('position') > 1
@@ -89,8 +89,22 @@ angular.module('strategistApp')
       $_add_scroll = ($el) ->
         if $el.find('.mCustomScrollBox').length is 0
           $el.mCustomScrollbar
+            scrollInertia: 1000
             scrollButtons:
               enable: false
+            callbacks:
+              onTotalScroll: () ->
+                amount = $element.find('.listar').length
+                page = Math.round(amount/10)
+
+                Strategy.sort 'votes', 10, page, (err, strategies) ->
+                  if !err
+                    if strategies.length > 0
+                      for s in strategies
+                        $scope.strategies.push s
+                      $el.mCustomScrollbar 'update'
+
+              onTotalScrollOffset: 500
 
       $scope.$watch 'strategies', (v) ->
         $timeout () =>
@@ -101,9 +115,17 @@ angular.module('strategistApp')
             $el_parent.mCustomScrollbar 'update'
 
             if $state.params.strategy_id?
-              query = "div#strategy_#{$state.params.strategy_id}"
-              $element.find(query).addClass 'first'
-              $el_parent.mCustomScrollbar "scrollTo", query
+              Strategy.show $state.params.strategy_id, (err, strategy) ->
+                if !err
+                  query = "div#strategy_#{strategy._id}"
+                  _votes = """
+                    <div class="cell votos"><span>Votos</span> #{strategy.votes.count}</div>
+                  """
+
+                  if $element.find(query).find('.cell.votos').length < 1
+                    $element.find(query).find('.cell.center .cell').after _votes
+                    $element.find(query).addClass 'first'
+                    $el_parent.mCustomScrollbar "scrollTo", query
 
           , 0
         , 0

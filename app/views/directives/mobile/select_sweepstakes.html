@@ -1,3 +1,3 @@
 <select id="selectfechas">
-  <option value="{{ s._id }}"ng-selected="{{ s.is_active }}" ng-repeat="s in sweepstakes">{{ s.init_at | Date }}</option>
+  <option value="{{ s._id }}" id="sweepstake_{{ s._id }}" ng-repeat="s in sweepstakes">{{ s.init_at | Date }}</option>
 </select>

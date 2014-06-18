@@ -11,7 +11,7 @@
                 
                 <ul class="tabs">
                     <li ng-repeat="s in sweepstakes" id="sweepstake_{{ s._id }}">
-                        <a href="javascript:{}" ng-click="tab(s)" ng-class="{winner: s.winner, active: s.is_active}">
+                        <a href="javascript:{}" ng-click="tab(s)" ng-class="{winner: s.winner}">
                             <span>dot</span>
                             <div>{{ s.init_at | Date}}</div>
                         </a>

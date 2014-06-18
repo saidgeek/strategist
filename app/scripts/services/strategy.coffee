@@ -5,7 +5,9 @@ angular.module("strategistApp")
     resource = $resource "", {},
       index:
         method: 'GET'
-        params: {}
+        params:
+          perPage: '@perPage'
+          page: '@page'
         url: '/api/strategies'
         isArray: true
 
@@ -13,6 +15,8 @@ angular.module("strategistApp")
         method: 'GET'
         params:
           sort_by: '@sort'
+          perPage: '@perPage'
+          page: '@page'
         url: '/api/strategies/sort/:sort_by'
         isArray: true
 
@@ -60,18 +64,21 @@ angular.module("strategistApp")
           strategy: '@strategy'
         url: '/api/strategies'
 
-      _index = (cb) ->
+      _index = (perPage, page, cb) ->
         resource.index(
-          {}
+          perPage: perPage
+          page: page
         , (strategies) ->
           cb null, strategies
         , (err) ->
           cb err.data
         ).$promise
 
-      _sort = (sort, cb) ->
+      _sort = (sort, perPage, page, cb) ->
         resource.sort(
           sort_by: sort
+          perPage: perPage
+          page: page
         , (strategies) ->
           cb null, strategies
         , (err) ->
@@ -142,10 +149,10 @@ angular.module("strategistApp")
         ).$promise
 
     return {
-      index: (cb) ->
-        _index(cb)
-      sort: (sort, cb) ->
-        _sort(sort, cb)
+      index: (perPage, page, cb) ->
+        _index(perPage, page, cb)
+      sort: (sort, perPage, page, cb) ->
+        _sort(sort, perPage, page, cb)
       last_published: (user_id, cb) ->
         _last_published(user_id, cb)
       more_votes: (user_id, cb) ->

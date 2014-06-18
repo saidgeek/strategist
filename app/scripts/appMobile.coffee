@@ -15,10 +15,41 @@ angular.module('strategistApp', [
 
     $urlRouterProvider.otherwise '404'
 
+    meta_title = 
+      home:
+        title: "Mi Mejor Táctica. LG",
+        desc: "Arma tu mejor táctica y sale a ganar. Por cada partido de la Selección en el Mundial, comparte tu táctica ganadora en 140 caracteres. Vota y gánate la Smart TV que mereces."
+      strategy:
+        title: "¿Cuál es Tu Mejor Táctica? | Mi Mejor Táctica. LG"
+        desc: "¿Cuál es tu mejor táctica para que tu equipo gane este encuentro?. Escríbela en 140 caracteres y consigue votos para obtener más posibilidades de ganar."
+      votes:
+        title: "Vota por la mejor táctica | Mi Mejor Táctica. LG"
+        desc: "Revisa todas las tácticas y vota por la mejor. Participa con tu mejor táctica y vive la pasión del fútbol desde tu casa."
+      positions:
+        title: "Tabla de posiciones | Mi Mejor Táctica. LG",
+        desc: "Tácticas que lideran la Tabla de Posiciones. ¿No estás aún entre ellas? Comparte la tuya, obtén votos y gana."
+      wins:
+        title: "Ganadores | Mi Mejor Táctica. LG"
+        desc: "Si tu táctica futbolera para este sorteo se convierte en la ganadora, disfrutarás 6 meses gratis de los mejores partidos del fútbol nacional y los partidos chilenos en las distintas ligas donde participan, vía streaming, a través de Estadio CDF, aplicación exclusiva para Smart TV."
+      awords:
+        title: "Premios | Mi Mejor Táctica. LG"
+        desc: "¡Llévate un espectacular LG Smart TV + 1 año de Estadio CDF, si tu mejor táctica resulta  ganadora!"
+      estadio_lg:
+        title: "Estadio LG | Estadísticas de fútbol en vivo | Mi Mejor Táctica. LG"
+        desc: "Con Estadio LG podrás ver las estadísticas en vivo de los principales campeonatos de fútbol de Chile y el Mundo. Descarga la aplicación en tu LG Smart TV y tendrás acceso en vivo a las estadísticas más importantes de tu equipo favorito."
+      estadio_cdf:
+        title: "Estadio CDF | Campeonato Nacional | Primera B | Copa Chile"
+        desc: "En la aplicación de Estadio CDF podrás disfrutar en vivo y on demmand cada uno de los partidos que CDF transmita del Campeonato Nacional, de la Primera B y de Copa Chile."
+
     $stateProvider
       .state 'home',
         url: '/mobile'
         templateUrl: 'partials/mobile/index'
+        resolve:
+          metas: () ->
+            angular.element('html head title').html(meta_title.home.title)
+            angular.element('html head meta[name="description"]').attr('content', meta_title.home.desc)
+            angular.element('html head meta[name="twitter:description"]').attr('content', meta_title.home.desc)
         authenticate: false
       .state 'home.facebook',
         url: '/mobile/facebbok/:id'
@@ -32,31 +63,65 @@ angular.module('strategistApp', [
         url: '/mobile/mi-mejor-tactica/'
         controller: 'StrategyCtrl'
         templateUrl: 'partials/mobile/strategy'
+        resolve:
+          metas: () ->
+            angular.element('html head title').html(meta_title.strategy.title)
+            angular.element('html head meta[name="description"]').attr('content', meta_title.strategy.desc)
+            angular.element('html head meta[name="twitter:description"]').attr('content', meta_title.strategy.desc)
         authenticate: false
       .state 'votes',
         url: '/mobile/tacticas/:strategy_id'
         templateUrl: 'partials/mobile/votes'
+        resolve:
+          metas: () ->
+            angular.element('html head title').html(meta_title.votes.title)
+            angular.element('html head meta[name="description"]').attr('content', meta_title.votes.desc)
+            angular.element('html head meta[name="twitter:description"]').attr('content', meta_title.votes.desc)
         authenticate: false
       .state 'positions',
         url: '/mobile/tabla-de-posiciones/:strategy_id'
         templateUrl: 'partials/mobile/positions'
+        resolve:
+          metas: () ->
+            angular.element('html head title').html(meta_title.positions.title)
+            angular.element('html head meta[name="description"]').attr('content', meta_title.positions.desc)
+            angular.element('html head meta[name="twitter:description"]').attr('content', meta_title.positions.desc)
         authenticate: false
       .state 'wins',
         url: '/mobile/ganadores/'
         templateUrl: 'partials/mobile/wins'
-        controller: 'WinCtrl'
+        resolve:
+          metas: () ->
+            angular.element('html head title').html(meta_title.wins.title)
+            angular.element('html head meta[name="description"]').attr('content', meta_title.wins.desc)
+            angular.element('html head meta[name="twitter:description"]').attr('content', meta_title.wins.desc)
         authenticate: false
       .state 'awards',
         url: '/mobile/premios/'
         templateUrl: 'partials/mobile/awords'
+        resolve:
+          metas: () ->
+            angular.element('html head title').html(meta_title.awords.title)
+            angular.element('html head meta[name="description"]').attr('content', meta_title.awords.desc)
+            angular.element('html head meta[name="twitter:description"]').attr('content', meta_title.awords.desc)
         authenticate: false   
       .state 'estadio_lg',
         url: '/mobile/estadiolg/'
         templateUrl: 'partials/mobile/estadiolg'
+        resolve:
+          metas: () ->
+            angular.element('html head title').html(meta_title.estadio_lg.title)
+            angular.element('html head meta[name="description"]').attr('content', meta_title.estadio_lg.desc)
+            angular.element('html head meta[name="twitter:description"]').attr('content', meta_title.estadio_lg.desc)
         authenticate: false
       .state 'estadio_cdf',
         url: '/mobile/estadiocdf/'
         templateUrl: 'partials/mobile/estadiocdf'
+        resolve:
+          metas: () ->
+            angular.element('html head title').html(meta_title.estadio_cdf.title)
+            angular.element('html head meta[name="description"]').attr('content', meta_title.estadio_cdf.desc)
+            angular.element('html head meta[name="twitter:description"]').attr('content', meta_title.estadio_cdf.desc)
         authenticate: false
       .state '404',
         url: '{path:.*}'

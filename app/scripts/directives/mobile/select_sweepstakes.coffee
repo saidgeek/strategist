@@ -1,7 +1,7 @@
 'use strict'
 
 angular.module('strategistApp')
-  .directive 'sgkSelectSweepstakes', ($timeout, Sweepstake, $http, $compile) ->
+  .directive 'sgkSelectSweepstakes', ($timeout, Sweepstake, $http, $compile, Winner, Strategy) ->
     restrict: 'A'
     scope: {}
     templateUrl: 'directives/mobile/select_sweepstakes'
@@ -12,6 +12,11 @@ angular.module('strategistApp')
       Sweepstake.index (err, sweepstakes) ->
         if !err
           $scope.sweepstakes = sweepstakes
+          winner = null
+          for s in sweepstakes
+            if s.winner?
+              winner = s
+          $scope.render(winner._id)
 
 
     link: ($scope, $element, $attrs) ->
@@ -30,10 +35,21 @@ angular.module('strategistApp')
           """
           angular.element('.proxsorteo').html template
 
-      render = (id) ->
+      $scope.render = (id) ->
         Sweepstake.show id, (err, sweepstake) ->
           if !err
             $scope.sweepstake = sweepstake
+
+            if sweepstake.winner?
+              Winner.show sweepstake.winner, (err, win) ->
+                if !err
+                  $scope.win = win
+                  Strategy.show win.vote.strategy, (err, strategy) ->
+                    if !err
+                      $scope.strategy = strategy
+                      $scope.strategy.content = $scope.strategy.content.replace(/\+/g, ' ')
+
+
             template = 'next_aword'
             aword = '_cdf'
             if $scope.sweepstake.type is 'GROUP'
@@ -47,9 +63,21 @@ angular.module('strategistApp')
             else
               _header.next(sweepstake)
 
+            if sweepstake.winner?
+              _header.active(sweepstake)
+
+            query = "option#sweepstake_#{ sweepstake._id }"
+
             $http.get("directives/mobile/win/#{template}#{aword}").success (data) =>
               $el = angular.element(data)
+              angular.element('.azul').remove()
+              angular.element('.participa').remove()
+              
               angular.element('.slide').after $el
+              $compile($el.contents())($scope)
+              angular.element('#selectfechas').find('option').removeAttr 'selected'
+              angular.element('#selectfechas').find(query).attr 'selected', 'selected'
+
 
       $element.find('#selectfechas')
         .on 'change', (e) ->
@@ -57,15 +85,15 @@ angular.module('strategistApp')
 
           $el = angular.element(e.target).find('option:selected')
 
-          render $el.val()
+          $scope.render $el.val()
 
           return false
 
-      $scope.$watch 'sweepstakes', () =>
-        $timeout () =>
-          $timeout () =>
-            $el = angular.element('#selectfechas').find('option:selected')        
-            render $el.val()
-          , 0
-        , 0
+      # $scope.$watch 'sweepstakes', () =>
+      #   $timeout () =>
+      #     $timeout () =>
+      #       $el = angular.element('#selectfechas').find('option:first')        
+      #       $scope.render $el.val()
+      #     , 0
+      #   , 0
       

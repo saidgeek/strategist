@@ -19,6 +19,9 @@ body {
 :focus, :active{
   outline: none;
 }
+img.imgmobile{
+  margin: 15px 0 0 0;
+}
 #General,
 #m-des,
 #cont {

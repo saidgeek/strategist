@@ -18,5 +18,15 @@ angular.module('strategistApp')
       $scope.$watch 'sweepstake', (sweepstake) =>
         if sweepstake
           teams = sweepstake.match.split '_'
-          $scope.local = teams[0].toLowerCase()
-          $scope.visit = teams[1].toLowerCase()
+
+          _local = teams[0].toLowerCase()
+          _visit = teams[1].toLowerCase()
+
+          if _local is 'españa'
+            _local = 'espana'
+
+          if _visit is 'españa'
+            _visit = 'espana'
+
+          $scope.local = _local
+          $scope.visit = _visit
