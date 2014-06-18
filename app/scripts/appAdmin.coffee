@@ -50,10 +50,13 @@ angular.module('strategistApp', [
           'layout':
             templateUrl: 'partials/admin/strategy'
             resolve:
-              _strategy: (Strategy) ->
-                Strategy.index 10, 0, (err, strategies) ->
+              _strategy_data: (Strategy) ->
+                Strategy.index 10, 0, (err, strategies, total_items) ->
                   if !err
-                    return strategies
+                    return {
+                      strategies: strategies
+                      total_items: total_items
+                    }
             controller: 'StrategyCtrl'
 
 

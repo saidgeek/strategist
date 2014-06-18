@@ -114,7 +114,7 @@ angular.module('strategistApp')
 
             $el_parent.mCustomScrollbar 'update'
 
-            if $state.params.strategy_id?
+            if $state.params.strategy_id isnt ''
               Strategy.show $state.params.strategy_id, (err, strategy) ->
                 if !err
                   query = "div#strategy_#{strategy._id}"

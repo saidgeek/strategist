@@ -9,7 +9,6 @@ angular.module("strategistApp")
           perPage: '@perPage'
           page: '@page'
         url: '/api/strategies'
-        isArray: true
 
       sort:
         method: 'GET'
@@ -18,7 +17,6 @@ angular.module("strategistApp")
           perPage: '@perPage'
           page: '@page'
         url: '/api/strategies/sort/:sort_by'
-        isArray: true
 
       last_published:
         method: 'GET'
@@ -68,8 +66,8 @@ angular.module("strategistApp")
         resource.index(
           perPage: perPage
           page: page
-        , (strategies) ->
-          cb null, strategies
+        , (data) ->
+          cb null, data.strategies, data.total_items
         , (err) ->
           cb err.data
         ).$promise
@@ -79,8 +77,8 @@ angular.module("strategistApp")
           sort_by: sort
           perPage: perPage
           page: page
-        , (strategies) ->
-          cb null, strategies
+        , (data) ->
+          cb null, data.strategies
         , (err) ->
           cb err.data
         ).$promise
