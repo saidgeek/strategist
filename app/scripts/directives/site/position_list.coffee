@@ -8,7 +8,7 @@ angular.module('strategistApp')
     controller: ($scope, $rootScope, Strategy) ->
       $scope.strategies = null
 
-      Strategy.sort 'votes', 10, 0, (err, strategies) ->
+      Strategy.sort 'votes', 1000, 0, (err, strategies) ->
         if !err
           $scope.strategies = strategies
 
