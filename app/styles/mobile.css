@@ -1446,6 +1446,9 @@ img.altura{
   box-shadow: 0 1px 0 0 #1994bd;
 }
 
+.rojo .btn-concursar {
+  text-align: center;
+}
 .rojo .btn-concursar a{
   padding: 0.7em;
   background: #eaeaea;
@@ -1454,7 +1457,7 @@ img.altura{
   color: #eb2038;
   font-family: 'geogrotesque_bdbold';
   font-size: 1em;
-  display: block;
+  display: inline-block;
   border-radius: 0.3em;
   text-align: center;
   cursor: pointer;
