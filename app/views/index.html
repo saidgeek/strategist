@@ -1,9 +1,15 @@
 <!doctype html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" ng-app="strategistApp"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" ng-app="strategistApp"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9" ng-app="strategistApp"> <![endif]-->
+<!--[if lt IE 7]>
+  <html class="no-js lt-ie9 lt-ie8 lt-ie7" ng-app="strategistApp" prefix="og:http://ogp.me/ns#">
+<![endif]-->
+<!--[if IE 7]>
+  <html class="no-js lt-ie9 lt-ie8" ng-app="strategistApp" prefix="og:http://ogp.me/ns#">
+<![endif]-->
+<!--[if IE 8]>
+  <html class="no-js lt-ie9" ng-app="strategistApp" prefix="og:http://ogp.me/ns#">
+<![endif]-->
 <!--[if gt IE 8]><!-->
-<html class="no-js" ng-app="strategistApp" prefix="og:http://ogp.me/ns#">
+  <html class="no-js" ng-app="strategistApp" prefix="og:http://ogp.me/ns#">
 <!--<![endif]-->
 
 <head>
@@ -86,14 +92,9 @@
     <script src="bower_components/node-uuid/uuid.js"></script>  
     <script src="bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
     <script src="bower_components/countdown/jquery.countdown.js"></script>
+
     <script src="scripts/app.js"></script>
-    <script src="scripts/controllers/main.js"></script>
-    <script src="scripts/controllers/navbar.js"></script>
-    <script src="scripts/controllers/login.js"></script>
-    <script src="scripts/controllers/signup.js"></script>
-    <script src="scripts/controllers/settings.js"></script>
-    <script src="scripts/controllers/strategy.js"></script>
-    <script src="scripts/controllers/win.js"></script>
+    
     <script src="scripts/services/auth.js"></script>
     <script src="scripts/services/session.js"></script>
     <script src="scripts/services/filters.js"></script>
@@ -103,6 +104,16 @@
     <script src="scripts/services/win.js"></script>
     <script src="scripts/services/vote.js"></script>
     <script src="scripts/services/sweepstake.js"></script>
+    
+    <script src="scripts/controllers/main.js"></script>
+    <script src="scripts/controllers/navbar.js"></script>
+    <script src="scripts/controllers/login.js"></script>
+    <script src="scripts/controllers/signup.js"></script>
+    <script src="scripts/controllers/settings.js"></script>
+    <script src="scripts/controllers/strategy.js"></script>
+    <script src="scripts/controllers/win.js"></script>
+    
+    
     <script src="scripts/directives/facebook.js"></script>
     <script src="scripts/directives/twitter.js"></script>
     <script src="scripts/directives/mongooseError.js"></script>

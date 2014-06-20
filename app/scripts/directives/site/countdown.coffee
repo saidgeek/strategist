@@ -20,7 +20,7 @@ angular.module('strategistApp')
           endDate = moment(sweepstake.init_at).format("MMM D, YYYY HH:mm:ss")
 
           $element.find('#defaultCountdown').countdown
-            date: endDate
+            date: sweepstake.init_at
             render: (data) ->
                 _html = """
                   <div class='countdown-section'>
@@ -41,4 +41,5 @@ angular.module('strategistApp')
                   </div>
                 """
                 $element.find(@el).html(_html)
+          return false
 
