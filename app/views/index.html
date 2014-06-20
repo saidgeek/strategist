@@ -3,8 +3,8 @@
 <![endif]-->
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" ng-app="strategistApp"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" ng-app="strategistApp"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9" ng-app="strategistApp"> <![endif]-->
-<!--[if gt IE 8]><!-->
+<!--[if IE 9]>         <html class="no-js lt-ie9" ng-app="strategistApp"> <![endif]-->
+<!--[if gt IE 9]><!-->
 <!doctype html>
 <html class="no-js" ng-app="strategistApp" prefix="og:http://ogp.me/ns#">
 <!--<![endif]-->
@@ -125,12 +125,16 @@
     <script src="scripts/directives/site/button_vote.js"></script>
     <script src="scripts/directives/site/galery.js"></script>
     <script src="scripts/directives/site/sweepstake.js"></script>
-
+    
+    <!--[if lt IE 9]><!-->
     <div class="mivideo">
       <video autoplay loop id="bkg">
         <source type="video/mp4" src="videos/home.mp4">
       </video>   
-    </div><!--// .video //-->
+    </div>
+    <!--<![endif]-->
+    
+    <!--// .video //-->
 
   <footer>
     <div class="footer">
