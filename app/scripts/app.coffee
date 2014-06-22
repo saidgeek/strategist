@@ -41,6 +41,7 @@ angular.module('strategistApp', [
         desc: "En la aplicación de Estadio CDF podrás disfrutar en vivo y on demmand cada uno de los partidos que CDF transmita del Campeonato Nacional, de la Primera B y de Copa Chile."
 
     $stateProvider
+      # HOME
       .state 'home',
         url: '/:terms'
         templateUrl: 'partials/site/index'
@@ -50,24 +51,22 @@ angular.module('strategistApp', [
             angular.element('html head meta[name="description"]').attr('content', meta_title.home.desc)
             angular.element('html head meta[name="twitter:description"]').attr('content', meta_title.home.desc)
         authenticate: false
-      .state 'home.facebook',
-        url: '/facebbok/:id'
-        templateUrl: 'partials/site/index'
-        authenticate: false
-      .state 'home.twitter',
-        url: '/twitter/:id'
-        templateUrl: 'partials/site/index'
-        authenticate: false
+      # STRATEGY
       .state 'strategy',
         url: '/mi-mejor-tactica/:terms'
-        controller: 'StrategyCtrl'
         templateUrl: 'partials/site/strategy'
         resolve:
           metas: () ->
             angular.element('html head title').html(meta_title.strategy.title)
             angular.element('html head meta[name="description"]').attr('content', meta_title.strategy.desc)
             angular.element('html head meta[name="twitter:description"]').attr('content', meta_title.strategy.desc)
+          _sweepstake: (Sweepstake) ->
+            Sweepstake.current (err, sweepstake) ->
+              if !err
+                return sweepstake
+        controller: 'StrategyCtrl'
         authenticate: false
+      # VOTES
       .state 'votes',
         url: '/tacticas/:strategy_id'
         templateUrl: 'partials/site/votes'
@@ -76,7 +75,23 @@ angular.module('strategistApp', [
             angular.element('html head title').html(meta_title.votes.title)
             angular.element('html head meta[name="description"]').attr('content', meta_title.votes.desc)
             angular.element('html head meta[name="twitter:description"]').attr('content', meta_title.votes.desc)
+          _my: (Strategy) ->
+            Strategy.last_published (err, strategy) ->
+              if !err
+                if strategy?
+                  strategy.content = strategy.content.replace(/\+/g, ' ')
+                return strategy || false
+          _data: (Strategy) ->
+            Strategy.index 10, 0, (err, data) ->
+              if !err
+                return data
+          _voted: (Strategy) ->
+            Strategy.voted (err, data) ->
+              if !err
+                return data
+        controller: 'StrategiesCtrl'
         authenticate: false
+      # POSITIONS
       .state 'positions',
         url: '/tabla-de-posiciones/:strategy_id'
         templateUrl: 'partials/site/positions'
@@ -85,7 +100,23 @@ angular.module('strategistApp', [
             angular.element('html head title').html(meta_title.positions.title)
             angular.element('html head meta[name="description"]').attr('content', meta_title.positions.desc)
             angular.element('html head meta[name="twitter:description"]').attr('content', meta_title.positions.desc)
+          _my: (Strategy) ->
+            Strategy.more_votes (err, strategy) ->
+              if !err
+                if strategy?
+                  strategy.content = strategy.content.replace(/\+/g, ' ')
+                return strategy
+          _data: (Strategy) ->
+            Strategy.sort 'votes', 10, 0, (err, data) ->
+              if !err
+                return data
+          _voted: (Strategy) ->
+            Strategy.voted (err, data) ->
+              if !err
+                return data
+        controller: 'StrategiesCtrl'
         authenticate: false
+      # WINS
       .state 'wins',
         url: '/ganadores/'
         templateUrl: 'partials/site/wins'
@@ -96,6 +127,7 @@ angular.module('strategistApp', [
             angular.element('html head meta[name="twitter:description"]').attr('content', meta_title.wins.desc)
         controller: 'WinCtrl'
         authenticate: false
+      # AWORDS
       .state 'awards',
         url: '/premios/'
         templateUrl: 'partials/site/awords'
@@ -105,6 +137,7 @@ angular.module('strategistApp', [
             angular.element('html head meta[name="description"]').attr('content', meta_title.awords.desc)
             angular.element('html head meta[name="twitter:description"]').attr('content', meta_title.awords.desc)
         authenticate: false   
+      # ESTADIO LG
       .state 'estadio_lg',
         url: '/estadiolg/'
         templateUrl: 'partials/site/estadiolg'
@@ -114,6 +147,7 @@ angular.module('strategistApp', [
             angular.element('html head meta[name="description"]').attr('content', meta_title.estadio_lg.desc)
             angular.element('html head meta[name="twitter:description"]').attr('content', meta_title.estadio_lg.desc)
         authenticate: false
+      # ESTADIO CDF
       .state 'estadio_cdf',
         url: '/estadiocdf/'
         templateUrl: 'partials/site/estadiocdf'
@@ -123,10 +157,12 @@ angular.module('strategistApp', [
             angular.element('html head meta[name="description"]').attr('content', meta_title.estadio_cdf.desc)
             angular.element('html head meta[name="twitter:description"]').attr('content', meta_title.estadio_cdf.desc)
         authenticate: false
+      # SWEEPSTAKE
       .state 'sweepstake',
         url: '/sorteo/'
         templateUrl: 'partials/site/sweepstake'
         authenticate: false
+      # 404
       .state '404',
         url: '{path:.*}'
         templateUrl: 'partials/site/404'
@@ -269,7 +305,7 @@ angular.module('strategistApp', [
       #   $state.transitionTo 'home'
       #   event.preventDefault()
 
-    $rootScope.$on '$viewContentLoaded', (event, toState, toParams, fromParams) ->
+    $rootScope.$on '$stateChangeSuccess', (event, toState, toParams, fromParams) ->
       angular.element("#loader").fadeOut("slow");
 
       $timeout () =>

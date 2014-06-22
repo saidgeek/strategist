@@ -1186,7 +1186,7 @@ form#post input.submit:active {
   background: url("../images/like-hand.png") no-repeat 0 0;
 }
 
-#right div.lista-posiciones .listar .cell.buttons ul.impbuttons li.votar div {
+#right div.lista-posiciones .listar .cell.buttons ul.impbuttons li.votar a.voted {
   display: block;
   background: #f1f1f1;
   color: rgb(38,36,44);
@@ -1201,7 +1201,7 @@ form#post input.submit:active {
   position: relative;
 }
 
-#right div.lista-posiciones .listar .cell.buttons ul.impbuttons li.votar div span {
+#right div.lista-posiciones .listar .cell.buttons ul.impbuttons li.votar a.voted span {
   display: inline-block;
   margin: 0 7px -5px 0;
   width: 19px;

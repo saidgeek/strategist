@@ -1,18 +1,10 @@
 'use strict'
 
 angular.module('strategistApp')
-  .directive 'sgkCountdown', ($rootScope, $timeout, User) ->
+  .directive 'sgkCountdown', ($rootScope, $timeout) ->
     restrict: 'A'
-    scope: {}
     templateUrl: 'directives/site/countdown'
     replace: true
-    controller: ($scope, Sweepstake) ->
-      $scope.sweepstake = null
-      
-      Sweepstake.current (err, sweepstake) ->
-        if !err
-          $scope.sweepstake = sweepstake
-
     link: ($scope, $element, $attrs) ->
       endDate = null
       $scope.$watch 'sweepstake', (sweepstake) =>

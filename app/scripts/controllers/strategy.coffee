@@ -1,15 +1,27 @@
 'use strict'
 
 angular.module('strategistApp')
-  .controller 'StrategyCtrl', ($scope, $rootScope, $state, Sweepstake, Strategy) ->
-    $scope.sweepstake = null
+  .controller 'StrategyCtrl', ($scope, $rootScope, _sweepstake, Strategy) ->
+    $scope.sweepstake = _sweepstake
+    $scope.local = null
+    $scope.visit = null
+
+    _local = _sweepstake.match.split('_')[0].toLowerCase()
+    _visit = _sweepstake.match.split('_')[1].toLowerCase()
+
     $scope.strategy = null
     $scope.error = null
     $scope.submitted = false
 
-    Sweepstake.current (err, sweepstake) ->
-      if !err
-        $scope.sweepstake = sweepstake
+    
+    if _local is 'españa'
+      _local = 'espana'
+
+    if _visit is 'españa'
+      _visit = 'espana'
+    
+    $scope.local = "images/#{_local}.png"
+    $scope.visit = "images/#{_visit}.png"
 
     $scope.create = (form, match_id) ->
       if form.$valid
@@ -22,4 +34,3 @@ angular.module('strategistApp')
           $scope.strategy.sweepstake = null
           $scope.strategy.user = null
           $scope.submitted = false
-

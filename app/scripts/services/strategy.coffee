@@ -1,7 +1,7 @@
 "use strict"
 
 angular.module("strategistApp")
-  .factory "Strategy", ($resource) ->
+  .factory "Strategy", ($resource, $rootScope) ->
     resource = $resource "", {},
       index:
         method: 'GET'
@@ -56,6 +56,12 @@ angular.module("strategistApp")
           id: '@id'
         url: '/api/strategies/:id'
 
+      voted:
+        method: 'GET'
+        params:
+          user_id: '@user_id'
+        url: '/api/strategies/:user_id/voted'
+
       create:
         method: 'POST'
         params:
@@ -83,23 +89,29 @@ angular.module("strategistApp")
           cb err.data
         ).$promise
 
-      _last_published = (user_id, cb) ->
-        resource.last_published(
-          user_id: user_id
-        , (strategy) ->
-          cb null, strategy
-        , (err) ->
-          cb err.data
-        ).$promise
+      _last_published = (cb) ->
+        if $rootScope.currentUser?.id?
+          resource.last_published(
+            user_id: $rootScope.currentUser.id
+          , (strategy) ->
+            cb null, strategy
+          , (err) ->
+            cb err.data
+          ).$promise
+        else
+          cb null, null
 
-      _more_votes = (user_id, cb) ->
-        resource.more_votes(
-          user_id: user_id
-        , (strategy) ->
-          cb null, strategy
-        , (err) ->
-          cb err.data
-        ).$promise
+      _more_votes = (cb) ->
+        if $rootScope.currentUser?.id?
+          resource.more_votes(
+            user_id: $rootScope.currentUser.id
+          , (strategy) ->
+            cb null, strategy
+          , (err) ->
+            cb err.data
+          ).$promise
+        else
+          cb null, null
 
       _moderate = (cb) ->
         resource.moderate(
@@ -137,6 +149,18 @@ angular.module("strategistApp")
           cb err.data
         ).$promise
 
+      _voted = (cb) ->
+        if $rootScope.currentUser?.id?
+          resource.voted(
+            user_id: $rootScope.currentUser.id
+          , (ids) ->
+            cb null, ids
+          , (err) ->
+            cb err.data
+          ).$promise
+        else
+          cb null, new Array()
+
       _create = (data, cb) ->
         resource.create(
           strategy: data
@@ -151,16 +175,18 @@ angular.module("strategistApp")
         _index(perPage, page, cb)
       sort: (sort, perPage, page, cb) ->
         _sort(sort, perPage, page, cb)
-      last_published: (user_id, cb) ->
-        _last_published(user_id, cb)
-      more_votes: (user_id, cb) ->
-        _more_votes(user_id, cb)
+      last_published: (cb) ->
+        _last_published(cb)
+      more_votes: (cb) ->
+        _more_votes(cb)
       moderate: (cb) ->
         _moderate(cb)
       approved: (id, cb) ->
         _approved(id, cb)
       rejected: (id, cb) ->
         _rejected(id, cb)
+      voted: (cb) ->
+        _voted(cb)
       show: (id, cb) ->
         _show(id, cb)
       create: (data, cb) ->

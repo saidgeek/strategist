@@ -8,7 +8,7 @@ angular.module('strategistApp')
 
       $element.mCustomScrollbar
         scrollButtons:
-              enable: false
+          enable: false
 
       $timeout () =>
         $timeout () =>
