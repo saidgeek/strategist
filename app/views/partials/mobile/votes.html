@@ -14,8 +14,67 @@
                         </div>    
                     </div>
                 </div>
-                <div data-sgk-strategy-list-me ng-if="currentUser"></div>
-                <div data-sgk-strategy-list></div>
+                
+                <!-- My -->
+                <div class="row" id="strategy_{{ my._id }}" ng-if="my">
+                  <div class="col-md-12 col-xs-12">
+                      <div class="tactica fondo-rojo">
+                          <div class="container">
+                              <div class="row">
+                                <div class="col-xs-2"><img src="{{ my.user.avatar }}" class="img-rounded"></div>    
+                                <div class="col-xs-10">
+                                      <p class="nombre">{{ my.user.name }} <span ng-if="my.user.twitter_screen_name">{{ my.user.twitter_screen_name }}</span></p>
+                                      <p class="tit-tac-negro">#<span>mimejor</span> táctica</p>
+                                      <p>{{ my.content | removePlus }}</p>
+                                      <div class="row">
+                                          <div class="col-xs-6">
+                                            <a class="votar" href="javascript:{}" data-sgk-login ng-class="{voted: voted(my._id)}" ng-click="vote(my.user._id, my.sweepstake._id, my._id)">
+                                              <img src="images/mano-votar.png" alt="icono mano">
+                                              Votar
+                                            </a>
+                                          </div>
+                                          <div class="col-xs-6">
+                                              <a class="face-circle" href="javascript:{}" data-sgk-facebook-share="{{ my._id }}"><img src="images/ico-facebook.png" alt="Facebook"></a>
+                                              <a class="twitter-circle" href="javascript:{}" data-sgk-twitter-share="{{ my._id }}"><img src="images/ico-twitter.png" alt="Twitter"></a>
+                                          </div>
+                                      </div>
+                                  </div>  
+                              </div>
+                          </div>    
+                      </div>
+                  </div>
+              </div>
+                
+              <!-- lista -->
+              <div class="row" id="strategy_{{ s._id }}" ng-repeat="s in strategies" data-sgk-add-strategy data-sgk-prefix-id="strategy">
+                <div class="col-md-12 col-xs-12">
+                    <div class="tactica">
+                        <div class="container">
+                            <div class="row">
+                              <div class="col-xs-2"><img src="{{ s.user.avatar }}" class="img-rounded"></div>    
+                              <div class="col-xs-10">
+                                    <p class="nombre">{{ s.user.name }} <span ng-if="s.user.twitter_screen_name">{{ s.user.twitter_screen_name }}</span></p>
+                                    <p class="tit-tac">#<span>mimejor</span> táctica</p>
+                                    <p>{{ s.content | removePlus }}</p>
+                                    <div class="row">
+                                        <div class="col-xs-6">
+                                          <a class="votar" href="javascript:{}" data-sgk-login ng-class="{voted: voted(s._id)}" ng-click="vote(s.user._id, s.sweepstake._id, s._id)">
+                                            <img src="images/mano-votar.png" alt="icono mano">
+                                            Votar
+                                          </a>
+                                        </div>
+                                        <div class="col-xs-6">
+                                            <a class="face-circle" href="javascript:{}" data-sgk-facebook-share="{{ s._id }}"><img src="images/ico-facebook.png" alt="Facebook"></a>
+                                            <a class="twitter-circle" href="javascript:{}" data-sgk-twitter-share="{{ s._id }}"><img src="images/ico-twitter.png" alt="Twitter"></a>
+                                        </div>
+                                    </div>
+                                </div>  
+                            </div>
+                        </div>    
+                    </div>
+                </div>
+            </div>
+
             </div>
         </div>
     

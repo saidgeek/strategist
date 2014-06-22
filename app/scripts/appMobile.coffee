@@ -76,6 +76,21 @@ angular.module('strategistApp', [
             angular.element('html head title').html(meta_title.votes.title)
             angular.element('html head meta[name="description"]').attr('content', meta_title.votes.desc)
             angular.element('html head meta[name="twitter:description"]').attr('content', meta_title.votes.desc)
+          _my: (Strategy) ->
+            Strategy.last_published (err, strategy) ->
+              if !err
+                if strategy?
+                  strategy.content = strategy.content.replace(/\+/g, ' ')
+                return strategy || false
+          _data: (Strategy) ->
+            Strategy.index 1000, 0, (err, data) ->
+              if !err
+                return data
+          _voted: (Strategy) ->
+            Strategy.voted (err, data) ->
+              if !err
+                return data
+        controller: 'StrategiesCtrl'
         authenticate: false
       # POSITIONS
       .state 'positions',
@@ -86,6 +101,21 @@ angular.module('strategistApp', [
             angular.element('html head title').html(meta_title.positions.title)
             angular.element('html head meta[name="description"]').attr('content', meta_title.positions.desc)
             angular.element('html head meta[name="twitter:description"]').attr('content', meta_title.positions.desc)
+          _my: (Strategy) ->
+            Strategy.more_votes (err, strategy) ->
+              if !err
+                if strategy?
+                  strategy.content = strategy.content.replace(/\+/g, ' ')
+                return strategy
+          _data: (Strategy) ->
+            Strategy.sort 'votes', 1000, 0, (err, data) ->
+              if !err
+                return data
+          _voted: (Strategy) ->
+            Strategy.voted (err, data) ->
+              if !err
+                return data
+        controller: 'StrategiesCtrl'
         authenticate: false
       # WINS
       .state 'wins',

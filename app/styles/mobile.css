@@ -979,7 +979,7 @@ display: none;
   text-transform: uppercase;
 }
 
-.slide .tactica div.votar {
+.slide .tactica a.votar.voted {
   display: block;
   background: #f1f1f1;
   color: rgb(38,36,44);
@@ -994,14 +994,14 @@ display: none;
   position: relative;
 }
 
-.slide .tactica div.votar span {
+.slide .tactica a.votar.voted img {
   display: inline-block;
   margin: 0 7px -5px 0;
   width: 19px;
   height: 19px;
   overflow: hidden;
   text-indent: -999px;
-  background: url("../images/check.png") no-repeat 0 0;
+  content: url("../images/check.png") no-repeat 0 0;
 }
 
 

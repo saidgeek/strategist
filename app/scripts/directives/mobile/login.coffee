@@ -3,10 +3,9 @@
 angular.module('strategistApp')
   .directive 'sgkLogin', ($rootScope, $http) ->
     restrict: 'A'
-    scope: {}
     link: ($scope, $element, $attrs) ->
 
-      $element.on 'click', (e) ->
+      $element.on 'click keyup keypress', (e) ->
         console.log $rootScope.currentUser
 
         if !$rootScope.currentUser?
