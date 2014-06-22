@@ -42,6 +42,7 @@ angular.module('strategistApp', [
         desc: "En la aplicación de Estadio CDF podrás disfrutar en vivo y on demmand cada uno de los partidos que CDF transmita del Campeonato Nacional, de la Primera B y de Copa Chile."
 
     $stateProvider
+      # HOME
       .state 'home',
         url: '/mobile'
         templateUrl: 'partials/mobile/index'
@@ -51,14 +52,7 @@ angular.module('strategistApp', [
             angular.element('html head meta[name="description"]').attr('content', meta_title.home.desc)
             angular.element('html head meta[name="twitter:description"]').attr('content', meta_title.home.desc)
         authenticate: false
-      .state 'home.facebook',
-        url: '/mobile/facebbok/:id'
-        templateUrl: 'partials/mobile/index'
-        authenticate: false
-      .state 'home.twitter',
-        url: '/mobile/twitter/:id'
-        templateUrl: 'partials/mobile/index'
-        authenticate: false
+      # STRATEGY
       .state 'strategy',
         url: '/mobile/mi-mejor-tactica/'
         controller: 'StrategyCtrl'
@@ -68,7 +62,12 @@ angular.module('strategistApp', [
             angular.element('html head title').html(meta_title.strategy.title)
             angular.element('html head meta[name="description"]').attr('content', meta_title.strategy.desc)
             angular.element('html head meta[name="twitter:description"]').attr('content', meta_title.strategy.desc)
+          _sweepstake: (Sweepstake) ->
+            Sweepstake.current (err, sweepstake) ->
+              if !err
+                return sweepstake
         authenticate: false
+      # VOTES
       .state 'votes',
         url: '/mobile/tacticas/:strategy_id'
         templateUrl: 'partials/mobile/votes'
@@ -78,6 +77,7 @@ angular.module('strategistApp', [
             angular.element('html head meta[name="description"]').attr('content', meta_title.votes.desc)
             angular.element('html head meta[name="twitter:description"]').attr('content', meta_title.votes.desc)
         authenticate: false
+      # POSITIONS
       .state 'positions',
         url: '/mobile/tabla-de-posiciones/:strategy_id'
         templateUrl: 'partials/mobile/positions'
@@ -87,6 +87,7 @@ angular.module('strategistApp', [
             angular.element('html head meta[name="description"]').attr('content', meta_title.positions.desc)
             angular.element('html head meta[name="twitter:description"]').attr('content', meta_title.positions.desc)
         authenticate: false
+      # WINS
       .state 'wins',
         url: '/mobile/ganadores/'
         templateUrl: 'partials/mobile/wins'
@@ -96,6 +97,7 @@ angular.module('strategistApp', [
             angular.element('html head meta[name="description"]').attr('content', meta_title.wins.desc)
             angular.element('html head meta[name="twitter:description"]').attr('content', meta_title.wins.desc)
         authenticate: false
+      #AWORDS
       .state 'awards',
         url: '/mobile/premios/'
         templateUrl: 'partials/mobile/awords'
@@ -105,6 +107,7 @@ angular.module('strategistApp', [
             angular.element('html head meta[name="description"]').attr('content', meta_title.awords.desc)
             angular.element('html head meta[name="twitter:description"]').attr('content', meta_title.awords.desc)
         authenticate: false   
+      # ESTADIO LG
       .state 'estadio_lg',
         url: '/mobile/estadiolg/'
         templateUrl: 'partials/mobile/estadiolg'
@@ -114,6 +117,7 @@ angular.module('strategistApp', [
             angular.element('html head meta[name="description"]').attr('content', meta_title.estadio_lg.desc)
             angular.element('html head meta[name="twitter:description"]').attr('content', meta_title.estadio_lg.desc)
         authenticate: false
+      # ESPATIO CDF
       .state 'estadio_cdf',
         url: '/mobile/estadiocdf/'
         templateUrl: 'partials/mobile/estadiocdf'
@@ -123,6 +127,7 @@ angular.module('strategistApp', [
             angular.element('html head meta[name="description"]').attr('content', meta_title.estadio_cdf.desc)
             angular.element('html head meta[name="twitter:description"]').attr('content', meta_title.estadio_cdf.desc)
         authenticate: false
+      # 404
       .state '404',
         url: '{path:.*}'
         templateUrl: 'partials/mobile/404'
@@ -269,7 +274,7 @@ angular.module('strategistApp', [
       #   $state.transitionTo 'home'
       #   event.preventDefault()
 
-    $rootScope.$on '$viewContentLoaded', (event, toState, toParams, fromParams) ->
+    $rootScope.$on '$stateChangeSuccess', (event, toState, toParams, fromParams) ->
       angular.element("#loader").fadeOut("slow");
 
       angular.element("#cont, #m-des, .menu")

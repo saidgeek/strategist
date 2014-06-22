@@ -4,7 +4,13 @@
                     
                         
                     <div data-sgk-countdown></div>
-                    <div data-sgk-vs></div>
+                    <div class="col-md-12 col-xs-12">
+                      <ul class="equipos">
+                        <li><img src="" ng-src="{{ local }}" class="b-izquierda" alt="Chile"></li>
+                        <li><img src="images/slash.png" class="slash"></li>
+                        <li><img src="" ng-src="{{ visit }}" class="b-derecha" alt="Holanda"></li>
+                      </ul>
+                    </div>
 
                 </div>       
             </div>
@@ -19,7 +25,7 @@
                 <div class="row sinmargenleft">
                     <form name="form" id="post" ng-submit="create(form, match._id)" novalidate>
                         <textarea name="elpost" id="elpost" placeholder="Escribe tu táctica aquí" ng-trim="false" minlength="10" maxlength="140" ng-model="strategy.content" data-sgk-disabled-enter required></textarea>
-                        <span>{{ 140 - strategy.content.length || 140 }}</span>
+                        <span>{{ 140 - strategy.content.length || 0 }}</span>
                         <input type="submit" ng-click="submitted = true" value="Enviar" data-sgk-login class="submit">
                         <p ng-show="form.elpost.$error.required && submitted" class="error">Este campo es requerido</p>
                     </form>                                
