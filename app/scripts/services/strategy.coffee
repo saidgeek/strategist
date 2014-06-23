@@ -68,6 +68,13 @@ angular.module("strategistApp")
           strategy: '@strategy'
         url: '/api/strategies'
 
+      search:
+        method: 'GET'
+        params:
+          q: '@q'
+        url: '/api/strategies/search/:q'
+        isArray: true
+
       _index = (perPage, page, cb) ->
         resource.index(
           perPage: perPage
@@ -170,6 +177,15 @@ angular.module("strategistApp")
           cb err.data
         ).$promise
 
+      _search = (q, cb) ->
+        resource.search(
+          q: q
+        , (strategies) ->
+          cb null, strategies
+        , (err) ->
+          cb err.data
+        ).$promise
+
     return {
       index: (perPage, page, cb) ->
         _index(perPage, page, cb)
@@ -191,4 +207,6 @@ angular.module("strategistApp")
         _show(id, cb)
       create: (data, cb) ->
         _create(data, cb)
+      search: (q, cb) ->
+        _search(q, cb)
     }

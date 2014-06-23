@@ -28,7 +28,7 @@
                                     <p>Revisa todas las tácticas y vota por la mejor. </p>
                                 </div>
                                 <form action="" id="search" name="search">
-                                    <input type="search" data-role="search" id="searchbox" class="searchbox" placeholder="Busca a tu amigo y vota por él">
+                                    <input type="search" data-sgk-search id="searchbox" class="searchbox" placeholder="Busca a tu amigo y vota por él">
                                 </form>                                
                             </div>
                             <span class="number">3</span>
@@ -38,7 +38,7 @@
                             
                           <div id="strategy_{{ my._id }}" class="listar first" ng-if="my">
                             <div class="cell pic">
-                              <img src="{{ my.user.avatar }}">
+                              <img src="", ng-src="{{ my.user.avatar }}">
                             </div>
                             <div class="cell center">
                               <div class="cell">
@@ -75,7 +75,7 @@
                           
                           <div id="strategy_{{ s._id }}" class="listar" ng-repeat="s in strategies" data-search="{{ s.user.name }} {{ s.user.twitter_screen_name }}">
                             <div class="cell pic">
-                              <img src="{{ s.user.avatar }}">
+                              <img src="" ng-src="{{ s.user.avatar }}">
                             </div>
                             <div class="cell center">
                               <div class="cell">

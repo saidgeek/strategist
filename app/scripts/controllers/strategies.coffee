@@ -17,3 +17,16 @@ angular.module('strategistApp')
     $scope.voted = (id) ->
       if $scope.voted_ids?
         $scope.voted_ids.indexOf(id) > -1
+
+    $rootScope.$on 'search', (e, q) ->
+      if q?
+        Strategy.search q, (err, strategies) ->
+          if !err
+            if strategies.length > 0
+              $scope.strategies = strategies
+            else
+              $scope.strategies = null
+      else
+        Strategy.index 10, 0, (err, data) ->
+          if !err
+            $scope.strategies = data
