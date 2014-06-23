@@ -15,6 +15,7 @@ html,
 body {
   height: 100%;
   min-width: 320px;
+  background-color: #26242c;
 }
 :focus, :active{
   outline: none;
@@ -2091,4 +2092,8 @@ ul, ol{
   .slide .tactica p.votos {
     font-size: 0.8em;
   }
+}
+
+.rojo.opacity, .equipos.opacity {
+  opacity: 0;
 }
