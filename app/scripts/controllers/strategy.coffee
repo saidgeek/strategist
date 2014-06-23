@@ -6,22 +6,25 @@ angular.module('strategistApp')
     $scope.local = null
     $scope.visit = null
 
-    _local = _sweepstake.match.split('_')[0].toLowerCase()
-    _visit = _sweepstake.match.split('_')[1].toLowerCase()
-
     $scope.strategy = null
     $scope.error = null
     $scope.submitted = false
 
-    
-    if _local is 'españa'
-      _local = 'espana'
+    $scope.opacity = () ->
+      $scope.sweepstake.type is 'GROUP'
 
-    if _visit is 'españa'
-      _visit = 'espana'
-    
-    $scope.local = "images/#{_local}.png"
-    $scope.visit = "images/#{_visit}.png"
+    if $scope.sweepstake.type isnt 'GROUP'
+      _local = _sweepstake.match.split('_')[0].toLowerCase()
+      _visit = _sweepstake.match.split('_')[1].toLowerCase()
+      
+      if _local is 'españa'
+        _local = 'espana'
+
+      if _visit is 'españa'
+        _visit = 'espana'
+      
+      $scope.local = "images/#{_local}.png"
+      $scope.visit = "images/#{_visit}.png"
 
     $scope.create = (form, match_id) ->
       if form.$valid

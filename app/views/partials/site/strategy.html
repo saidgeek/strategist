@@ -23,7 +23,7 @@
 
                 <div data-sgk-countdown></div>
 
-                <div class="hinchas animate">
+                <div class="hinchas animate" ng-class="{ opacity: opacity() }">
                   <ul class="liketable">
                     <li><img src="" ng-src="{{local}}" alt="Chile"></li>
                     <li class="vs"><img src="images/vs.png" alt="v/s"></li>
@@ -31,7 +31,7 @@
                   </ul>
                 </div>
 
-                <div class="forma animate">
+                <div class="forma animate" ng-class="{ opacity: opacity() }">
                     <div class="txt">
                         <h1>¿Cuál es tu mejor táctica para que tu equipo gane este encuentro?</h1>
                         <p>Escríbela en 140 caracteres y consigue votos para obtener más posibilidades de ganar.</p>
