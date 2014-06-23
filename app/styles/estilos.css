@@ -771,6 +771,10 @@ ul {
   margin: 0;
 }
 
+#tactica .hinchas.opacity, #tactica .forma.opacity{
+  opacity: 0;
+}
+
 #tactica .hinchas ul.liketable {
   display: table;
   width: 61%;
@@ -1079,6 +1083,12 @@ form#post input.submit:active {
   border-right: 1px solid rgba(255,255,255,0.3);
   margin: -22px 0;
   padding: 22px 0;
+}
+.captura-ganador.smarttv{
+  width: 100%;
+  border-right: none;
+  margin: 0;
+  padding: 0;
 }
 #right div.lista-posiciones .listar, .captura-ganador .listar {
   display: table;
@@ -1582,6 +1592,14 @@ form#post input.submit:active {
 }
 #ganadores .app .margin{
   margin: 15px 0;
+}
+#ganadores .app img{
+  max-width: 100%;
+  height: auto;
+}
+#ganadores .app img.lgsmarttv{
+  margin:30px -20px 0 0;
+  width: 100%;
 }
 #ganadores .tv-app {
   width: 295px;
