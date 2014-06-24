@@ -22,9 +22,13 @@ angular.module('strategistApp')
         Strategy.show $attrs.sgkTwitterShare, (err, strategy) ->
           if !err
             domain = "#{ $location.$$protocol }://#{ $location.$$host }"
-            _url = "#{ domain }#{ $location.$$path }#{ strategy._id }"
+            _url = "#{ domain }/tabla-de-posiciones/#{ strategy._id }"
             _text = """
-              Vota por mi mejor tactica en
+              Vota por mi mejor táctica para Chile y gana un LG Smart TV
             """
+            if strategy.user._id is $rootScope.currentUser.id
+              _text = """
+                Esta es la mejor táctica para chile, vota y gana un LG Smart TV
+              """
             url = "https://twitter.com/share?text=#{ _text }&url=#{ _url }&hashtags=mimejortactica"
             $window.open url, '', "top=200, left=500, width=400, height=300"
