@@ -1,18 +1,18 @@
 <!--[if lt IE 10]>
   <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <![endif]-->
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" xmlns:ng="http://angularjs.org" ng-app="strategistApp"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" xmlns:ng="http://angularjs.org" ng-app="strategistApp"> <![endif]-->
-<!--[if IE 9]>         <html class="no-js lt-ie9" xmlns:ng="http://angularjs.org" ng-app="strategistApp"> <![endif]-->
+<!--[if lt IE 7]>      <html lang="es" class="no-js lt-ie9 lt-ie8 lt-ie7" xmlns:ng="http://angularjs.org" ng-app="strategistApp"> <![endif]-->
+<!--[if IE 7]>         <html lang="es" class="no-js lt-ie9 lt-ie8" xmlns:ng="http://angularjs.org" ng-app="strategistApp"> <![endif]-->
+<!--[if IE 9]>         <html lang="es" class="no-js lt-ie9" xmlns:ng="http://angularjs.org" ng-app="strategistApp"> <![endif]-->
 <!--[if gt IE 9]><!-->
 <!doctype html>
-<html class="no-js" ng-app="strategistApp" prefix="og:http://ogp.me/ns#">
+<html lang="es" class="no-js" ng-app="strategistApp" prefix="og:http://ogp.me/ns#">
 <!--<![endif]-->
 
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title></title>
+  <title>Mi Mejor Táctica. LG</title>
   <base href="/">
   <meta name="description" content="Arma tu mejor táctica y sale a ganar. Por cada partido de la Selección en el Mundial, comparte tu táctica ganadora en 140 caracteres. Vota y gánate la Smart TV que mereces.">
   <meta property="og:title" content="Mi Mejor Táctica. LG">
@@ -62,7 +62,60 @@
     </div>
 
     <!-- Add your site or application content here -->
-    <div class="container" ui-view=""></div>
+    <div class="container" ui-view="">
+      
+            <div class="relative">
+        <div class="contenedor">
+
+          <div class="logos animate" data-sgk-animate="200">
+            <div class="mmt">
+              <a href="#;">
+                <img src="images/mimejortactica-logo.png" alt="Mi Mejor Táctica. LG">
+              </a>
+            </div>
+            <div class="elg">
+              <a ui-sref="estadio_lg">
+                <span><img src="images/estadio-lg-logo.png" alt="Estadio LG"></span>
+                <p>No te pierdas los detalles de tus partidos y ligas favoritas, en tiempo real, con esta aplicación exclusiva para LG Smart TV.<br><span>Ver más</span></p>
+              </a>
+            </div>
+            <div class="ecdf">
+              <a ui-sref="estadio_cdf">
+                <span><img src="images/estadio-cdf-logo.png" alt="Estadio CDF"></span>
+                <p>Accede a todos los partidos del Campeonato Nacional y duelos históricos, los programas y encuentros transmitidos por CDF, en vivo y on demand <span>Ver más</span></p>
+              </a>
+            </div>
+
+          </div><!--// .logos //-->
+            
+          <div class="hinchas animate">
+            <div class="imghinchas"><img src="images/hinchas.png" alt="hinchas"></div>
+          </div><!--// .hinchas //-->
+
+          <div class="forma animate">
+            <div class="txt">
+              <h1>¡Arma tu mejor táctica y sal a ganar!</h1>
+              <p>Comparte tu mejor táctica para este encuentro en 140 caracteres y participa por un <strong>LG SMART TV + 1 año de Estadio CDF</strong>. <span>Mientras más participes y más votos obtengas, más posibilidades tienes de ganar.</span></p>
+              <span class="number">1</span>
+              <ul class="logeo animate" ng-if="!currentUser">
+                <li class="facebook"><a href="/auth/facebook" target="_self">Ingresa vía <span>Facebook</span></a></li>
+                <li class="twitter"><a href="/auth/twitter" target="_self">Ingresa vía <span>Twitter</span></a></a></li>
+              </ul>
+              <ul class="logeo animate" ng-if="currentUser">
+                <li class="concursar">
+                  <a ui-sref="strategy" target="_self">Ir a Concursar</a>
+                </li>
+              </ul>
+              <!-- <p class="acepto" ng-if="!currentUser"><a href="javascript:{}" data-sgk-terms>Acepto Bases del Concurso</a></p> -->
+            </div>
+            <div class="tv"><img src="images/tv-lg.png" alt="Smart TV LG"></div>
+          </div><!--// .forma //-->
+
+        </div><!--// .contenedor //-->
+      </div><!--// .relative //-->
+
+
+    </div>
     <div class="pattern"></div><!--// .pattern //-->
 
     <!--[if lt IE 9]>
