@@ -12,10 +12,10 @@ angular.module('strategistApp')
         domain = "#{ $location.$$protocol }://#{ $location.$$host }"
         FB.ui
           method: 'feed'
-          link: "#{ domain }#{ $location.$$path }#{ strategy._id }"
+          link: "#{ domain }/tabla-de-posiciones/#{ strategy._id }"
           picture: "#{ domain }/images/logo-social.jpg"
           name: strategy.user.name
-          description: strategy.content.replace(/\+/g, ' ')
+          description: "#{strategy.content.replace(/\+/g, ' ')} ¡participa y gana un Smart TV!"
         , (response) ->
           return cb(false) if !response
           return cb(null, response)
