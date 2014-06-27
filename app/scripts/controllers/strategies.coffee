@@ -6,6 +6,8 @@ angular.module('strategistApp')
     $scope.strategies = _data.strategies
     $scope.voted_ids = _voted.ids
 
+    console.log '$scope.my:', $scope.my
+
     $scope.vote = (user_id, sweepstake_id, strategy_id) ->
       if $rootScope.currentUser?.id? and $scope.voted_ids.indexOf(strategy_id) < 0
         Vote user_id, sweepstake_id, strategy_id, $rootScope.currentUser.id, (err, voted) ->

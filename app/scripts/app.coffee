@@ -78,10 +78,10 @@ angular.module('strategistApp', [
           _my: (Strategy) ->
             Strategy.last_published (err, strategy) ->
               if !err
+                console.log strategy
                 if strategy?.content?
                   strategy.content = strategy.content.replace(/\+/g, ' ')
                   return strategy
-            return false
           _data: (Strategy) ->
             Strategy.index 10, 0, (err, data) ->
               if !err
@@ -107,7 +107,6 @@ angular.module('strategistApp', [
                 if strategy?.content?
                   strategy.content = strategy.content.replace(/\+/g, ' ')
                   return strategy
-            return false
           _data: (Strategy) ->
             Strategy.sort 'votes', 10, 0, (err, data) ->
               if !err

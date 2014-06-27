@@ -37,6 +37,14 @@ angular.module('strategistApp', [
             templateUrl: 'partials/admin/match'
             controller: 'MatchCtrl'
         authenticate: true
+      .state 'admin.contestants',
+        url: '/admin/participantes/'
+        views:
+          'layout':
+              templateUrl: 'partials/admin/contestants'
+              controller: 'ContestantsCtrl'
+        authenticate: true
+
       .state 'admin.sweepstake',
         url: '/admin/sorteos/'
         views:

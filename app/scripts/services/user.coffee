@@ -17,6 +17,11 @@ angular.module("strategistApp")
           id: '@id'
         url: '/api/users/:id'
 
+      contestants:
+        method: 'GET'
+        url: '/api/users/contestants'
+        isArray: true
+
       update:
         method: 'PUT'
         params:
@@ -24,6 +29,15 @@ angular.module("strategistApp")
         data:
           user: '@user'
         url: '/api/users/:id'
+
+    _contestants = (cb) ->
+      resource.contestants(
+        {}
+      , (contestants) ->
+        cb null, contestants
+      , (err) ->
+        cb err.data
+      ).$promise
 
     _show = (id, cb) ->
       resource.show(
@@ -45,6 +59,8 @@ angular.module("strategistApp")
       ).$promise
 
     return {
+      contestants: (cb) ->
+        _contestants(cb)
       show: (id, cb) ->
         _show(id, cb)
       update: (id, data, cb) ->
