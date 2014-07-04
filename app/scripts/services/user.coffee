@@ -19,7 +19,9 @@ angular.module("strategistApp")
 
       contestants:
         method: 'GET'
-        url: '/api/users/contestants'
+        params:
+          sweepstake_id: '@sweepstake_id'
+        url: '/api/users/contestants/:sweepstake_id'
         isArray: true
 
       update:
@@ -30,9 +32,9 @@ angular.module("strategistApp")
           user: '@user'
         url: '/api/users/:id'
 
-    _contestants = (cb) ->
+    _contestants = (sweepstake_id, cb) ->
       resource.contestants(
-        {}
+        sweepstake_id: sweepstake_id
       , (contestants) ->
         cb null, contestants
       , (err) ->
@@ -59,8 +61,8 @@ angular.module("strategistApp")
       ).$promise
 
     return {
-      contestants: (cb) ->
-        _contestants(cb)
+      contestants: (sweepstake_id, cb) ->
+        _contestants(sweepstake_id, cb)
       show: (id, cb) ->
         _show(id, cb)
       update: (id, data, cb) ->

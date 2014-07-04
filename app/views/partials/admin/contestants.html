@@ -1,7 +1,27 @@
+
 <div class="row">
+  <div class="col-sm-12">
+    <select class="form-control" ng-options="s._id as s.match for s in sweepstakes" ng-model="sweepstake" ng-change="change()"></select>
+  </div>
+</div>
 
-  <p ng-repeat="c in contestants">
-    {{ c.name }}, {{ c.email }}
-  </p>
-
+<div class="row" ng-if="contestants">
+  <div class="col-sm-12">
+    <table class="table">
+      <thead>
+        <tr>
+          <td>id</td>
+          <td>Nombre</td>
+          <td>Email</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="c in contestants">
+          <td>{{ c._id }}</td>
+          <td>{{ c.name }}</td>
+          <td>{{ c.email }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>

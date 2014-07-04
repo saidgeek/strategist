@@ -55,3 +55,20 @@ angular.module('strategistApp')
 
     $scope.month = (date) ->
       moment(date).format 'MMMM'
+
+  .controller 'WinSelectCtrl', ($scope, $rootScope, Sweepstake, Winner) ->
+    $scope.sweepstakes = []
+    $scope.sweepstake = null
+    $scope.user = null
+
+    Sweepstake.index (err, sweepstakes) ->
+      if !err
+        console.log 'sweepstakes:', sweepstakes
+        $scope.sweepstakes = sweepstakes
+
+    $scope.select = (user) ->
+      console.log 'user, $scope.sweepstake:', user, $scope.sweepstake
+      if user? and $scope.sweepstake?
+        Winner.select user, $scope.sweepstake, (err) ->
+          if !err
+            console.log 'elegido'

@@ -1,0 +1,14 @@
+<div class="row">
+  <div class="col-sm-12">
+    <select class="form-control" ng-options="s._id as s.match for s in sweepstakes" ng-model="sweepstake" ng-change="change()"></select>
+  </div>
+</div>
+
+<div class="row" ng-if="sweepstake">
+  <div class="col-sm-12">
+    <input type="text" ng-model="user">
+  </div>
+  <div class="col-sm-12">
+    <a href="javascript:{}", class="btn btn-primary" ng-click="select(user)">Elegir ganador</a>
+  </div>
+</div>

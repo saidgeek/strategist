@@ -7,11 +7,20 @@ angular.module('strategistApp')
       console.log '$scope.user', $scope.user
       # if form.$valid
 
-  .controller 'ContestantsCtrl', ($scope, User) ->
+  .controller 'ContestantsCtrl', ($scope, User, Sweepstake) ->
     $scope.contestants = null
+    $scope.sweepstakes = []
+    $scope.sweepstake = null
     console.log 'kajsbdkasndjn'
 
-    User.contestants (err, contestants) ->
+    Sweepstake.index (err, sweepstakes) ->
       if !err
-        console.log 'contestants:', contestants
-        $scope.contestants = contestants
+        console.log 'sweepstakes:', sweepstakes
+        $scope.sweepstakes = sweepstakes
+
+    $scope.change = () ->
+      console.log 'sweepstake_id:', $scope.sweepstake
+      User.contestants $scope.sweepstake, (err, contestants) ->
+        if !err
+          console.log 'contestants:', contestants
+          $scope.contestants = contestants

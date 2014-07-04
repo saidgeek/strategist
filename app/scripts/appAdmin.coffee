@@ -52,6 +52,13 @@ angular.module('strategistApp', [
             templateUrl: 'partials/admin/sweepstake'
             controller: 'SweepstakeCtrl'
         authenticate: true
+      .state 'admin.win',
+        url: '/admin/win/'
+        views:
+          'layout':
+            templateUrl: 'partials/admin/win'
+            controller: 'WinSelectCtrl'
+        authenticate: true
       .state 'admin.strategy',
         url: "/admin/tacticas/"
         views:

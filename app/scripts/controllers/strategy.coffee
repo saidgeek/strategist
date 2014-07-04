@@ -10,6 +10,8 @@ angular.module('strategistApp')
     $scope.error = null
     $scope.submitted = false
 
+    console.log '_sweepstake:', _sweepstake
+
     $scope.opacity = () ->
       $scope.sweepstake.type is 'GROUP'
 
