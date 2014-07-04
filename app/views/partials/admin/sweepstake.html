@@ -7,9 +7,10 @@
   </div>
 </div>
 
-<div class="row item well col-sm-11" style="height: 190px;" ng-repeat="sweepstake in sweepstakes">
+<div id="{{ sweepstake._id }}" class="row item well col-sm-11" style="height: 190px;" ng-repeat="sweepstake in sweepstakes">
   <div class="pull-right">
-    <a href="javascript:{}" class="btn btn-danger btn-xs">Borrar</a>
+    <a href="javascript:{}" class="btn btn-primary btn-xs" ng-if="sweepstake.type != 'GROUP' ? true : false" ng-click="edit_open(sweepstake._id)">Editar</a>
+    <a href="javascript:{}" class="btn btn-danger btn-xs" ng-click="remove(sweepstake._id)">Borrar</a>
   </div>
   <div class="row">
     <div class="col-sm-6">

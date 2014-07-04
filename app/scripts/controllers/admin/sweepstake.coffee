@@ -8,12 +8,45 @@ angular.module('strategistApp')
       if !err && sweepstakes.length > 0
         $scope.sweepstakes = sweepstakes
 
+    $rootScope.$on 'refresh', ->
+      Sweepstake.index (err, sweepstakes) ->
+        if !err && sweepstakes.length > 0
+          $scope.sweepstakes = sweepstakes
+
     $rootScope.$on 'reloadSweepstake', (e, sweepstake) =>
       $scope.sweepstakes.push sweepstake
 
+    $scope.remove = (id) ->
+      Sweepstake.remove id, (err) ->
+        if !err
+          query = "##{id}"
+          angular.element(query).remove()
+
+    $scope.edit_open = (id) ->
+      modalSweepstakeInstance = $modal.open
+        templateUrl: 'partials/admin/sweepstake_edit_modal'
+        controller: 'SweepstakeEditModalCtrl'
+        backdrop: 'static'
+        resolve:
+          _sweepstake: () ->
+            Sweepstake.show id, (err, sweepstake) ->
+              if !err
+                return sweepstake
+          _sweepstakes_amount: () ->
+            return $scope.sweepstakes.length
+          _sweepstakes: () ->
+            result = []
+            if $scope.sweepstakes.length > 0
+              for s in $scope.sweepstakes
+                console.log 's:', s
+                if s.in_sweepstake_group is false
+                  result.push s
+              console.log 'result:', result
+              return result
+
     $scope.open = () ->
       modalSweepstakeInstance = $modal.open
-        templateUrl: 'partials/admin/sweepstake_model'
+        templateUrl: 'partials/admin/sweepstake_modal'
         controller: 'SweepstakeModalCtrl'
         backdrop: 'static'
         resolve:
@@ -71,6 +104,27 @@ angular.module('strategistApp')
             console.log 'sweepstake:', sweepstake
             $rootScope.$emit 'reloadSweepstake', sweepstake
             $modalInstance.dismiss 'cancel'
+        
+
+    $scope.close = () =>
+      $modalInstance.dismiss 'cancel'
+
+  .controller 'SweepstakeEditModalCtrl', ($scope, $rootScope, $modalInstance, Matches, Sweepstake, _sweepstake, _sweepstakes, _sweepstakes_amount, $state) ->
+    console.log '_sweepstake:', _sweepstake
+    $scope.sweepstake = _sweepstake
+    $scope.matches = Matches
+    $scope.sweepstakes = _sweepstakes
+    $scope.disabled = false
+
+    # console.log '$scope.sweepstakes:', $scope.sweepstakes
+
+    $scope.update = (form) ->
+      console.log '$scope.sweepstake:', $scope.sweepstake
+      Sweepstake.update $scope.sweepstake._id, $scope.sweepstake, (err, sweepstake) ->
+        if !err
+          $rootScope.$emit 'refresh'
+          $modalInstance.dismiss 'cancel'
+
         
 
     $scope.close = () =>

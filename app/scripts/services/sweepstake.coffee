@@ -15,6 +15,14 @@ angular.module("strategistApp")
           id: '@id'
         url: '/api/sweepstakes/:id'
 
+      update:
+        method: 'PUT'
+        params:
+          id: '@id'
+        data:
+          sweepstake: '@sweepstake'
+        url: '/api/sweepstakes/:id'
+
       current:
         method: 'GET'
         params: {}
@@ -50,6 +58,16 @@ angular.module("strategistApp")
         cb err.data
       ).$promise
 
+    _update = (id, sweepstake, cb) ->
+      resource.update(
+        id: id
+        sweepstake: sweepstake
+      , (sweepstake) ->
+        cb null, sweepstake
+      , (err) ->
+        cb err.data
+      ).$promise
+
     _current = (cb) ->
       resource.current(
         {}
@@ -71,8 +89,8 @@ angular.module("strategistApp")
     _remove = (id, cb) ->
       resource.remove(
         id: id
-      , (sweepstake) ->
-        cb null, sweepstake
+      , () ->
+        cb()
       , (err) ->
         cb err.data
       ).$promise
@@ -82,6 +100,8 @@ angular.module("strategistApp")
         _index(cb)
       show: (id, cb) ->
         _show(id, cb)
+      update: (id, sweepstake, cb) ->
+        _update(id, sweepstake, cb)
       current: (cb) ->
         _current(cb)
       create: (data, cb) ->
