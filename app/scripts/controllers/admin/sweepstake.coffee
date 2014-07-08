@@ -22,6 +22,22 @@ angular.module('strategistApp')
           query = "##{id}"
           angular.element(query).remove()
 
+    $scope.active = (id) ->
+      Sweepstake.is_active id, (err) ->
+        if !err
+          console.log 'esta activado'
+          Sweepstake.index (err, sweepstakes) ->
+            if !err && sweepstakes.length > 0
+              $scope.sweepstakes = sweepstakes
+
+    $scope.closed = (id) ->
+      Sweepstake.is_closed id, (err) ->
+        if !err
+          console.log 'esta cerrado'
+          Sweepstake.index (err, sweepstakes) ->
+            if !err && sweepstakes.length > 0
+              $scope.sweepstakes = sweepstakes
+
     $scope.edit_open = (id) ->
       modalSweepstakeInstance = $modal.open
         templateUrl: 'partials/admin/sweepstake_edit_modal'

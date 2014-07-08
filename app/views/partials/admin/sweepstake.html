@@ -9,6 +9,8 @@
 
 <div id="{{ sweepstake._id }}" class="row item well col-sm-11" style="height: 190px;" ng-repeat="sweepstake in sweepstakes">
   <div class="pull-right">
+    <a href="javascript:{}" class="btn btn-primary btn-xs" ng-if="sweepstake.is_closed == false && sweepstake.is_active == false" ng-click="active(sweepstake._id)"> activar</a>
+    <a href="javascript:{}" class="btn btn-primary btn-xs" ng-if="sweepstake.is_closed == false && sweepstake.is_active == true" ng-click="closed(sweepstake._id)"> cerrar</a>
     <a href="javascript:{}" class="btn btn-primary btn-xs" ng-if="sweepstake.type != 'GROUP' ? true : false" ng-click="edit_open(sweepstake._id)">Editar</a>
     <a href="javascript:{}" class="btn btn-danger btn-xs" ng-click="remove(sweepstake._id)">Borrar</a>
   </div>

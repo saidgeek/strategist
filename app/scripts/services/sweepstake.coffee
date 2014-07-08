@@ -40,6 +40,18 @@ angular.module("strategistApp")
           id: '@id'
         url: '/api/sweepstakes/:id'
 
+      is_active:
+        method: 'PUT'
+        params:
+          id: '@id'
+        url: '/api/sweepstakes/:id/active'
+
+      is_closed:
+        method: 'PUT'
+        params:
+          id: '@id'
+        url: '/api/sweepstakes/:id/closed'
+
     _index = (cb) ->
       resource.index(
         {}
@@ -95,6 +107,24 @@ angular.module("strategistApp")
         cb err.data
       ).$promise
 
+    _is_active = (id, cb) ->
+      resource.is_active(
+        id: id
+      , ->
+        cb null
+      , (err) ->
+        cb err
+      ).$promise
+
+    _is_closed = (id, cb) ->
+      resource.is_closed(
+        id: id
+      , ->
+        cb null
+      , (err) ->
+        cb err
+      ).$promise
+
     return {
       index: (cb) ->
         _index(cb)
@@ -108,5 +138,9 @@ angular.module("strategistApp")
         _create(data, cb)
       remove: (id, cb) ->
         _remove(id, cb)
+      is_active: (id, cb) ->
+        _is_active(id, cb)
+      is_closed: (id, cb) ->
+        _is_closed(id, cb)
 
     }
