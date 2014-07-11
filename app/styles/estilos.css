@@ -785,6 +785,7 @@ ul {
 #tactica .hinchas ul.liketable li {
   display: table-cell;
   vertical-align: top;
+  text-align: center;
 }
 
 #tactica .hinchas ul.liketable li.vs {
@@ -2651,7 +2652,11 @@ bottom: 3px;
   zoom:1;
 }
 
-
-
+#tactica .hinchas ul.liketable.tvsmart{
+  margin: -20px auto 0 auto;
+}
+#tactica .forma.tvsmart{
+  margin: -20px auto 0 auto;
+}
 
 

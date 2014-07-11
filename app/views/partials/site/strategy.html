@@ -24,19 +24,23 @@
                 <div data-sgk-countdown></div>
 
                 <div class="hinchas animate" ng-class="{ opacity: opacity() }">
-                  <ul class="liketable">
+                  <ul class="liketable" style="display:none">
                     <li><img src="" ng-src="{{local}}" alt="Chile"></li>
                     <li class="vs"><img src="images/vs.png" alt="v/s"></li>
                     <li><img src="" ng-src="{{visit}}" alt="Holanda"></li>
                   </ul>
+
+                  <ul class="liketable tvsmart">
+                    <li><img src="images/tele1-01.png" alt="LG Smart TV"></li>
+                  </ul>
                 </div>
 
-                <div class="forma animate" ng-class="{ opacity: opacity() }">
+                <div class="forma animate tvsmart" ng-class="{ opacity: opacity() }">
                     <div class="txt">
                         <h1>¿Cuál es tu mejor táctica para que tu equipo gane este encuentro?</h1>
                         <p>Escríbela en 140 caracteres y consigue votos para obtener más posibilidades de ganar.</p>
                         <form name="form" id="post" ng-submit="create(form, match._id)" novalidate>
-                            <textarea name="elpost" id="elpost" placeholder="Escribe tu táctica aquí" ng-trim="false" 
+                            <textarea disabled name="elpost" id="elpost" placeholder="Escribe tu táctica aquí" ng-trim="false" 
                             minlength="10" maxlength="140" ng-model="strategy.content" data-sgk-login data-sgk-disabled-enter required></textarea>
                             <span>{{ 140 - strategy.content.length || 0 }}</span>
                             <input type="submit" ng-click="submitted = true" value="Enviar" data-sgk-login class="submit">
